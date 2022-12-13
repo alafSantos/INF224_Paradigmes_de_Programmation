@@ -10,12 +10,12 @@ private:
 
 public:
     Video(std::string fileName, std::string path, unsigned int length);
+    Video();
     ~Video();
     void setLength(unsigned int length);
     const unsigned int getLength();
-    void play();
-
-    const void showVariables(std::ostream &s);
+    const void play();
+    const void showVariables(std::ostream &dst);
 };
 
 #endif

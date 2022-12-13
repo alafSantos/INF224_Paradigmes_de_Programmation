@@ -12,21 +12,23 @@ using namespace std;
 
 int main(int argc, const char* argv[])
 {
-    // unsigned int size = 2;
 
-    Multimedia *media = new Multimedia("fakePath/", "file.png");
-    // Multimedia *tabMedia = new Multimedia[size];
+    Video *myVideo = new Video("media/", "me.mp4", 45);
+    Photo *myPhoto = new Photo("media/", "me.jpg", 2.2, 3.5);
 
-    // tabMedia[0] = new Photo("fakePath/", "file.png", 2.2, 3.5);
-    // tabMedia[1] = new Video("fakePath/", "file.png", 45);
+    unsigned int size = 2;
+    Multimedia *media[size];
+    media[0] = myVideo;
+    media[1] = myPhoto;
 
-    media->showVariables(std::cout);
+    std::cout << "---------------\n";
+    for(unsigned int i = 0; i < size; i++){
+        media[i]->showVariables(std::cout);
+        // media[i]->play();
+        std::cout << "---------------\n";
+    }
 
-    // for(unsigned int i = 0; i < size; i++){
-    //     tabMedia[i]->play();
-    // }
-
-    // delete tabMedia;
-    delete media;
+    delete myPhoto;
+    delete myVideo;
     return 0;
 }

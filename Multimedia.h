@@ -18,7 +18,7 @@ public:
     Multimedia(std::string path, std::string name);
 
     /* Destructeur */
-    ~Multimedia() { std::cout << "I'm about to die, see ya!" << std::endl; }
+    virtual ~Multimedia() { std::cout << "I'm about to die, see ya!" << std::endl; }
 
     /* Accesseur */
     const std::string getPath();
@@ -29,9 +29,9 @@ public:
     void setFileName(std::string name);
 
     /* Méthode d'affichage */
-    const void showVariables(std::ostream &s);
+    const void showVariables(std::ostream &dst);
 
-    virtual void play();
+    virtual const void play() = 0;
 };
 
 #endif

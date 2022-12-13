@@ -10,15 +10,15 @@ private:
     float longitude;
 
 public:
+    Photo();
     Photo(std::string fileName, std::string path, float latitude, float longitude);
     ~Photo();
     void setLatitude(float latitude);
     void setLongitude(float longitude);
     const float getLatitude();
     const float getLongitude();
-    void play();
-
-    const void showVariables(std::ostream &s);
+    const void play();
+    const void showVariables(std::ostream &dst);
 };
 
 #endif

@@ -1,5 +1,10 @@
 #include "Photo.h"
 
+Photo::Photo(){
+    this->latitude = 0;
+    this->longitude = 0;
+}
+
 Photo::Photo(std::string fileName, std::string path, float latitude, float longitude):
 Multimedia(fileName, path),
 latitude(latitude),
@@ -26,11 +31,13 @@ const float Photo::getLongitude(){
     return this->longitude;
 }
 
-void Photo::play(){
-    std::string str = "mpv " + this->getPath() + this->getFileName() + " &";
+const void Photo::play(){
+    std::string str = "imagej " + this->getPath() + this->getFileName() + " &";
     system(str.data());
 }
 
-const void Photo::showVariables(std::ostream &s){
-
+const void Photo::showVariables(std::ostream &dst){
+    Multimedia::showVariables(dst);
+    dst << "Photo latitude: " << this->getLatitude() << std::endl;
+    dst << "Photo longitude: " << this->getLongitude() << std::endl;
 }
