@@ -15,8 +15,8 @@ public:
     ~Photo();
     void setLatitude(float latitude);
     void setLongitude(float longitude);
-    const float getLatitude();
-    const float getLongitude();
+    float getLatitude() const;
+    float getLongitude() const;
     const void play();
     const void showVariables(std::ostream &dst);
 };

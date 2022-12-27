@@ -7,8 +7,8 @@
 class Multimedia
 {
 private:
-    std::string path;
-    std::string fileName;
+    std::string path; // le chemin complet
+    std::string fileName; // le nom du fichier
 
 public:
     /* Constructeur sans argument */
@@ -31,6 +31,8 @@ public:
     /* Méthode d'affichage */
     const void showVariables(std::ostream &dst);
 
+    /* Méthode virtuel qui permette de jouer l'objet multimédia.
+    L'implementation n'est-elle disponible que dans les sous-classes */
     virtual const void play() = 0;
 };
 

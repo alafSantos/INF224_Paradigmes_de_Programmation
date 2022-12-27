@@ -10,8 +10,7 @@ Multimedia(fileName, path),
 latitude(latitude),
 longitude(longitude){}
 
-Photo::~Photo()
-{
+Photo::~Photo(){
     std::cout << "Bye, Photo..." << std::endl;
 }
 
@@ -23,11 +22,11 @@ void Photo::setLongitude(float longitude){
    this->longitude = longitude; 
 }
 
-const float Photo::getLatitude(){
+float Photo::getLatitude() const{
     return this->latitude;
 }
 
-const float Photo::getLongitude(){
+float Photo::getLongitude() const{
     return this->longitude;
 }
 

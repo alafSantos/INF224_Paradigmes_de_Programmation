@@ -16,7 +16,7 @@ void Video::setLength(unsigned int length){
     this->length = length;
 }
 
-const unsigned int Video::getLength(){
+unsigned int Video::getLength() const{
     return this->length;
 }
 

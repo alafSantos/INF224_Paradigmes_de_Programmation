@@ -8,11 +8,14 @@
 #include "Photo.h"
 #include "Video.h"
 
+#define VERSION_ETAPES_1_5 // pour le code de traitement uniforme (en utilisant le polymorphisme)
+
 using namespace std;
 
 int main(int argc, const char* argv[])
 {
 
+#ifdef VERSION_ETAPES_1_5
     Video *myVideo = new Video("media/", "me.mp4", 45);
     Photo *myPhoto = new Photo("media/", "me.jpg", 2.2, 3.5);
 
@@ -24,11 +27,12 @@ int main(int argc, const char* argv[])
     std::cout << "---------------\n";
     for(unsigned int i = 0; i < size; i++){
         media[i]->showVariables(std::cout);
-        // media[i]->play();
+        media[i]->play();
         std::cout << "---------------\n";
     }
-
     delete myPhoto;
     delete myVideo;
+#endif
+
     return 0;
 }
