@@ -13,7 +13,7 @@ public:
     Video();
     ~Video();
     void setLength(unsigned int length);
-    const unsigned int getLength();
+    unsigned int getLength() const;
     const void play();
     const void showVariables(std::ostream &dst);
 };
