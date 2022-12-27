@@ -37,7 +37,22 @@ Le but de la cinquième étapa est de pouvoir traiter de manière uniforme une l
 
 ## 6e étape. Films et tableaux
 
+Ensuite, la sixième étape est dediée à la definition d'une sous-classe Film dérivant de la classe Video. La principale différence est que les Films comportent des chapitres permettant d'accéder rapidement à une partie du film. Pour ce faire on a utilisé un tableau d'entiers contenant la durée de chaque chapitre.
+
+Les principales fichiers pour cette étape sont :
+- Film.h
+- Film.cpp
+
 ## 7e étape. Destruction et copie des objets
+
+Pour l'étape 7, on a modifié quelques classes précédentes afin qu'il n'y ait pas de fuite mémoire quand on détruit les objets. La raison pour cet étape s'explique par le fait que, contrairement à Java, C++ ne gère pas la mémoire dynamique automatiquement : comme il n'y a pas de **ramasse miettes**, ce qui est créé avec new occupe de la mémoire jusqu'à la terminaison du programme, sauf si on le detruit avec delete.
+
+Il est demandé :
+
+* Parmi les classes précédemment écrites quelles sont celles qu'il faut modifier afin qu'il n'y ait pas de fuite mémoire quand on détruit les objets ? 
+    - Il a été necessaire de changer la classe Film pour qu'on puisse bien utiliser la memoire alloué pour le tableau d'entiers contenant la durée de chaque chapitre.
+
+* La copie d'objet peut également poser problème quand ils ont des variables d'instance qui sont des pointeurs. Quel est le problème et quelles sont les solutions ?
 
 ## 8e étape. Créer des groupes
 
