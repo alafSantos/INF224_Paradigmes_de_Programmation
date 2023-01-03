@@ -21,15 +21,15 @@ public:
     virtual ~Multimedia() { std::cout << "I'm about to die, see ya!" << std::endl; }
 
     /* Accesseur */
-    const std::string getPath();
-    const std::string getFileName();
+    std::string getPath() const;
+    std::string getFileName() const;
 
     /* Modifieur */
     void setPath(std::string path);
     void setFileName(std::string name);
 
     /* Méthode d'affichage */
-    const void showVariables(std::ostream &dst);
+    void showVariables(std::ostream &dst) const;
 
     /* Méthode virtuel qui permette de jouer l'objet multimédia.
     L'implementation n'est-elle disponible que dans les sous-classes */

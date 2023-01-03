@@ -15,7 +15,7 @@ public:
     void setLength(unsigned int length);
     unsigned int getLength() const;
     const void play();
-    const void showVariables(std::ostream &dst);
+    void showVariables(std::ostream &dst) const;
 };
 
 #endif

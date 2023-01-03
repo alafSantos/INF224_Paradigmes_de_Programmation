@@ -7,6 +7,7 @@
 #include "Multimedia.h"
 #include "Photo.h"
 #include "Video.h"
+#include "Film.h"
 
 #define VERSION_ETAPES_1_5 // pour le code de traitement uniforme (en utilisant le polymorphisme)
 
@@ -33,6 +34,8 @@ int main(int argc, const char* argv[])
     delete myPhoto;
     delete myVideo;
 #endif
+
+    Film film;
 
     return 0;
 }

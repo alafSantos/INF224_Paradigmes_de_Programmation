@@ -6,22 +6,19 @@
 class Film : public Video
 {
 private:
-    int arraySize;
-    int *chapterSizes;
+    int allChaptersSize = 0;
+    int *allChapters = nullptr;
 
 public:
     Film();
-    Film(int arraySize, int *chapterSizes);
+    Film(const int *allChapters, int allChaptersSize);
     ~Film();
     
-    int getArraySize() const;
-    int *getChaptersArray() const;
-    int getChapterSize(int i) const;
-
-    void setArraySize(int size);
-    void setChaptersArray(int *array, int size);
-
-    const void showVariables(std::ostream &dst);
+    const int getAllChaptersSize() const; // all array
+    const int *getChapters() const;
+    const int getChapterSize(int i) const; //a single chapter (position)
+    void setChapters(const int *chapters, int chapterSize);
+    void showVariables(std::ostream &dst) const;
 };
 
 #endif

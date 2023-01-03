@@ -18,7 +18,7 @@ public:
     float getLatitude() const;
     float getLongitude() const;
     const void play();
-    const void showVariables(std::ostream &dst);
+    void showVariables(std::ostream &dst) const;
 };
 
 #endif

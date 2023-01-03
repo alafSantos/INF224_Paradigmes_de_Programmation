@@ -1,56 +1,57 @@
 #include "Film.h"
 
-Film::Film(){
-    arraySize = 0;
-    chapterSizes = nullptr;
+Film::Film() {}
+
+Film::Film(const int *chapters, int chapterSize) : 
+Video()
+{
+    setChapters(chapters, chapterSize);
 }
 
-Film::Film(int arraySize, int *chapterSizes) :
-Video(),
-arraySize(arraySize), 
-chapterSizes(chapterSizes){}
-
-Film::~Film(){
+Film::~Film()
+{
     std::cout << "Bye, Film..." << std::endl;
-    delete [] chapterSizes;
+    delete[] this->allChapters;
 }
 
-int Film::getArraySize() const{
-    return this->arraySize;
+const int Film::getAllChaptersSize() const
+{
+    return this->allChaptersSize;
 }
 
-void Film::setArraySize(int size){
-    this->arraySize = size;
-}
+void Film::setChapters(const int *chapters, int chapterSize)
+{
+    delete[] chapters;
 
-void Film::setChaptersArray(int *array, int size){
-    if(chapterSizes)
-        delete [] chapterSizes;
+    this->allChaptersSize = 0;
+    this->allChapters = nullptr;
 
-    if(array){
-        this->chapterSizes = new int[size];
-        for(int i = 0; i < size; i++)
-            this->chapterSizes[i] = array[i];
-        this->setArraySize(size);
-        return;
+    if (chapters && chapterSize > 0)
+    {
+        this->allChapters = new int[chapterSize];
+        for (int i = 0; i < chapterSize; i++)
+        {
+            this->allChapters[i] = chapters[i];
+        }
+        this->allChaptersSize = chapterSize;
     }
-
-    this->arraySize = 0;
-    this->chapterSizes = array;
 }
 
-int *Film::getChaptersArray() const{
-    return this->chapterSizes;
+const int *Film::getChapters() const
+{
+    return this->allChapters;
 }
 
-int Film::getChapterSize(int i) const{
-    return this->chapterSizes[i];
+const int Film::getChapterSize(int i) const
+{
+    return this->allChapters[i];
 }
 
-const void Film::showVariables(std::ostream &dst){
+void Film::showVariables(std::ostream &dst) const
+{
     Multimedia::showVariables(dst);
-    dst << "Number of chapters: " << this->getArraySize() << std::endl;
+    dst << "Number of chapters: " << this->getAllChaptersSize() << std::endl;
 
-    for(int i=0; i < this->getArraySize(); i++)
-        dst << "Length of chapter "<< i+1 << ": " << this->getChapterSize(i) << std::endl;
+    for (int i = 0; i < this->getAllChaptersSize(); i++)
+        dst << "Length of chapter " << i + 1 << ": " << this->getChapterSize(i) << std::endl;
 }

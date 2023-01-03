@@ -35,7 +35,7 @@ const void Photo::play(){
     system(str.data());
 }
 
-const void Photo::showVariables(std::ostream &dst){
+void Photo::showVariables(std::ostream &dst) const{
     Multimedia::showVariables(dst);
     dst << "Photo latitude: " << this->getLatitude() << std::endl;
     dst << "Photo longitude: " << this->getLongitude() << std::endl;

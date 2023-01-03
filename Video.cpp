@@ -25,7 +25,7 @@ const void Video::play(){
     system(str.data());
 }
 
-const void Video::showVariables(std::ostream &dst){
+void Video::showVariables(std::ostream &dst) const{
     Multimedia::showVariables(dst);
     dst << "Video Length: " << this->getLength() << std::endl;
 }
