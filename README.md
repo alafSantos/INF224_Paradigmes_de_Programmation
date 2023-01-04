@@ -22,6 +22,12 @@ Les principales fichiers pour cette étape sont :
 
 Mais aussi on a modifié le Makefile pour qu'on puisse compiler le programme.
 
+Il est demandé :
+
+* Si vous avez fait ce qui précède comme demandé, il ne sera plus possible d'instancer des objets de la classe de base. Pourquoi ?
+    - Parce qu'on a maintenant une méthode abstraite (**play**) dans cette classe, donc elle s'agit d'une classe abstraite.
+
+
 ## 5e Etape: Traitement uniforme (en utilisant le polymorphisme)
 
 Le but de la cinquième étapa est de pouvoir traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type. On a fait ça dans le fichier main.cpp et le morceau de code dédié à cette partie peut être trouvé dans la directive de pré-compilation **#ifdef VERSION_ETAPES_1_5**.
@@ -56,6 +62,20 @@ Il est demandé :
     - Il s'agit d'un problème qui se pose quand on fait une copie superficielle (shallow). Alors, les pointeurs pointent sur le même adresse et de plus l'objet peux être détruit plusieurs fois. Une bonne solution pour ce type de problème est la redéfinition des opérateurs de copie pour faire de la copie profonde (deep). Telle solution a été implémentée au sein de la classe Film. Il serait également possible de les interdire.
 
 ## 8e étape. Créer des groupes
+
+On a créé une nouvelle classe servant à contenir un groupe d'objets dérivant de la classe de base. Un groupe peut contenir un ensemble d'objets similaires (e.g. un groupe pour toutes les photos et un autre pour toutes les vidéos) ou pas (e.g. un groupe pour les photos et vidéos de vacances).
+
+La classe groupe hérite d'une liste d'objets de la classe parente. On a défini les méthodes suivantes: un constructeur, un accesseur qui renvoie le nom du groupe et une méthode d'affichage qui affiche les attributs de tous les objets de la liste.
+
+Les principales fichiers pour cette étape sont :
+- Group.h
+- Group.cpp
+
+Il est demandé :
+
+* Le groupe ne doit pas détruire les objets quand il est détruit car un objet peut appartenir à plusieurs groupes. On rappelle aussi que la liste d'objets doit en fait être une liste de pointeurs d'objets. Pourquoi ? Comparer à Java.
+
+On est obligé de faire la liste avec de pointeurs d'objets car on ne veut détruit que les pointeurs lors de l'appel du destructeur. Il est nécessaire de conserver les pointés, ou les objets, parce qu'ils peuvent appartenir à des différents groupes. Dans le cas du Java, il existe la ramasse-miettes, ainsi les objets ne sont détruits qu'au cas où il n'y aurait plus de références à eux.
 
 ## 9e étape. Gestion automatique de la mémoire
 

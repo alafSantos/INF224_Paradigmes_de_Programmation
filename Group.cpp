@@ -1,5 +1,17 @@
 #include "Group.h"
 
-Group::Group(){}
+Group::Group(std::string name) : name(name) {}
 
-Group::~Group(){}
+std::string Group::getName() const
+{
+    return this->name;
+}
+
+void Group::showGroup(std::ostream &dst) const
+{
+    dst << "Group Name: " << this->getName() << std::endl;
+    for (auto it = this->begin(); it != this->end(); ++it)
+    {
+        (*it)->showVariables(dst);
+    }
+}

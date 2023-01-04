@@ -1,18 +1,19 @@
 #ifndef GROUP_H
 #define GROUP_H
 
-#include<list>
+#include <memory>
+#include <list>
 #include "Multimedia.h"
 
-class Group {
-
+class Group : public std::list<Multimedia*>
+{
 private:
-    std::list<Multimedia*> medias;
+    std::string name;
 
 public:
-    Group();
-    ~Group();
-
+    Group(std::string name); // constructeur
+    std::string getName() const; // accesseur
+    void showGroup(std::ostream &dst) const; // méthode d'affichage
 };
 
 #endif
