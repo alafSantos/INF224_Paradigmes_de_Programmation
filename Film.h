@@ -10,7 +10,7 @@ private:
     int *allChapters = nullptr;
 
 public:
-    Film();
+    Film() : Video(){};
     Film(const int *allChapters, int allChaptersSize);
     ~Film();
     
@@ -19,6 +19,10 @@ public:
     const int getChapterSize(int i) const; //a single chapter (position)
     void setChapters(const int *chapters, int chapterSize);
     void showVariables(std::ostream &dst) const;
+
+    // On peut redéfinir les opérateurs de copie pour faire de la copie profonde
+    Film(const Film& from);
+    Film& operator=(const Film& from);
 };
 
 #endif

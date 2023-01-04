@@ -1,9 +1,6 @@
 #include "Film.h"
 
-Film::Film() {}
-
-Film::Film(const int *chapters, int chapterSize) : 
-Video()
+Film::Film(const int *chapters, int chapterSize) : Video()
 {
     setChapters(chapters, chapterSize);
 }
@@ -14,14 +11,9 @@ Film::~Film()
     delete[] this->allChapters;
 }
 
-const int Film::getAllChaptersSize() const
-{
-    return this->allChaptersSize;
-}
-
 void Film::setChapters(const int *chapters, int chapterSize)
 {
-    delete[] chapters;
+    delete[] this->allChapters;
 
     this->allChaptersSize = 0;
     this->allChapters = nullptr;
@@ -37,6 +29,11 @@ void Film::setChapters(const int *chapters, int chapterSize)
     }
 }
 
+const int Film::getAllChaptersSize() const
+{
+    return this->allChaptersSize;
+}
+
 const int *Film::getChapters() const
 {
     return this->allChapters;
@@ -49,9 +46,32 @@ const int Film::getChapterSize(int i) const
 
 void Film::showVariables(std::ostream &dst) const
 {
-    Multimedia::showVariables(dst);
+    Video::showVariables(dst);
     dst << "Number of chapters: " << this->getAllChaptersSize() << std::endl;
 
     for (int i = 0; i < this->getAllChaptersSize(); i++)
         dst << "Length of chapter " << i + 1 << ": " << this->getChapterSize(i) << std::endl;
+}
+
+Film::Film(const Film &from) : Video(from)
+{
+    this->allChaptersSize = from.allChaptersSize;
+    this->allChapters = from.allChapters ? new int(*from.allChapters) : nullptr;
+}
+
+Film &Film::operator=(const Film &from)
+{
+    Video::operator=(from);
+    this->allChaptersSize = from.allChaptersSize;
+    delete allChapters;
+    if (this->allChaptersSize && from.allChapters)
+    {
+        this->setChapters(from.allChapters, from.allChaptersSize);
+    }
+    else
+    {
+        this->allChapters = nullptr;
+        this->allChapters = from.allChapters ? new int(*from.allChapters) : nullptr;
+    }
+    return *this;
 }

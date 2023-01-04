@@ -50,9 +50,10 @@ Pour l'étape 7, on a modifié quelques classes précédentes afin qu'il n'y ait
 Il est demandé :
 
 * Parmi les classes précédemment écrites quelles sont celles qu'il faut modifier afin qu'il n'y ait pas de fuite mémoire quand on détruit les objets ? 
-    - Il a été necessaire de changer la classe Film pour qu'on puisse bien utiliser la memoire alloué pour le tableau d'entiers contenant la durée de chaque chapitre.
+    - Il a été necessaire de changer la classe Film pour qu'on puisse bien utiliser la memoire alloué pour le tableau d'entiers contenant la durée de chaque chapitre. Pour cela, en utilisant **new**, pour allouer la memoire, dans la fonction **setChapters**, le tableau donné en argument a été initialisé dans le tableau dynamique **allChapters**. Pour désallouer, il existe un **delete []** dans le destructeur de la classe et aussi au début de la fonction **setChapters**, parce que sans delete l'objet existe jusqu’à la fin du programme.
 
 * La copie d'objet peut également poser problème quand ils ont des variables d'instance qui sont des pointeurs. Quel est le problème et quelles sont les solutions ?
+    - Il s'agit d'un problème qui se pose quand on fait une copie superficielle (shallow). Alors, les pointeurs pointent sur le même adresse et de plus l'objet peux être détruit plusieurs fois. Une bonne solution pour ce type de problème est la redéfinition des opérateurs de copie pour faire de la copie profonde (deep). Telle solution a été implémentée au sein de la classe Film. Il serait également possible de les interdire.
 
 ## 8e étape. Créer des groupes
 
