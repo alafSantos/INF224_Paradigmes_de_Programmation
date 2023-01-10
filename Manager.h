@@ -23,27 +23,27 @@ typedef std::map<std::string, GroupPtr> GroupMap;
 class Manager
 {
 private:
-    MultimediaMap MultimediaTable;
-    GroupMap GroupTable;
+    MultimediaMap multimediaTable;
+    GroupMap groupTable;
 
 public:
     Manager(){};
     ~Manager(){};
 
     /* Créér */
-    PhotoPtr createPhoto(std::string fileName, std::string path, int latitude, int longitude);
-    VideoPtr createVideo(std::string fileName, std::string path, int length);
-    FilmPtr createFilm(const int *allChapters, int allChaptersSize);
-    GroupPtr createGroupe(std::string name);
+    PhotoPtr addPhoto(std::string fileName, std::string path, int latitude, int longitude);
+    VideoPtr addVideo(std::string fileName, std::string path, int length);
+    FilmPtr addFilm(std::string fileName, const int *allChapters, int allChaptersSize);
+    GroupPtr addGroupe(std::string name);
 
     /* Rechercher */
     MultimediaPtr findMultimedia(std::string name);
 
     /* Afficher */
-    std::string showMultimedia(std::string name);
+    void showMultimedia(std::string name);
 
     /* Jouer */
-    std::string playMultimedia(std::string name);
+    void playMultimedia(std::string name);
 
     /* Supprimer */
     void removeMultimedia(std::string name);
