@@ -4,11 +4,7 @@
     Élève : Alaf do Nascimento Santos
 */
 
-#include "Multimedia.h"
-#include "Photo.h"
-#include "Video.h"
-#include "Film.h"
-#include "Group.h"
+#include "Manager.h"
 
 // #define VERSION_ETAPES_1_5 // pour le code de traitement uniforme (en utilisant le polymorphisme)
 #define VERSION_ETAPES_6_8 // pour le code de création des groupes

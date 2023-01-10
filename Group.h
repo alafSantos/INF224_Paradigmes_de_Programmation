@@ -9,9 +9,6 @@
 
 #ifdef VERSION_ETAPES_9
 typedef std::shared_ptr<Multimedia> MultimediaPtr;
-#endif
-
-#ifdef VERSION_ETAPES_9
 class Group : public std::list<MultimediaPtr>
 #endif
 
