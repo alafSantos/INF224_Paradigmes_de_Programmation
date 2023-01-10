@@ -39,24 +39,35 @@ int main(int argc, const char *argv[])
 #endif
 
 #ifdef VERSION_ETAPES_6_8
+#ifdef VERSION_ETAPES_9
+    shared_ptr<Photo> myPhoto1(new Photo("media1/", "me1.jpg", 2, 2.5));
+    shared_ptr<Photo> myPhoto2(new Photo("media2/", "me2.jpg", 3, 3.5));
+    shared_ptr<Photo> myPhoto3(new Photo("media3/", "me3.jpg", 4, 4.5));
+    shared_ptr<Photo> photos[3] = {myPhoto1, myPhoto2, myPhoto3};
+#endif
+
+#ifndef VERSION_ETAPES_9
     Photo *myPhoto1 = new Photo("media1/", "me1.jpg", 2, 2.5);
     Photo *myPhoto2 = new Photo("media2/", "me2.jpg", 3, 3.5);
     Photo *myPhoto3 = new Photo("media3/", "me3.jpg", 4, 4.5);
+    Photo *photos[3] = {myPhoto1, myPhoto2, myPhoto3};
+#endif
 
     Group myPhotos1("My photos1");
     Group myPhotos2("My photos2");
 
-    Photo *photos[3] = {myPhoto1, myPhoto2, myPhoto3};
-
-    for (int i = 0; i < 3; i++){
+    for (int i = 0; i < 3; i++)
+    {
         myPhotos1.push_back(photos[i]);
-        myPhotos2.push_back(photos[i]);    
+        myPhotos2.push_back(photos[i]);
     }
+
     cout << "---------------\n";
     myPhotos1.showGroup(cout);
     cout << "---------------\n";
     myPhotos2.showGroup(cout);
     cout << "---------------\n";
 #endif
+
     return 0;
 }

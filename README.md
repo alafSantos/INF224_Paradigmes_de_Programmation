@@ -79,6 +79,9 @@ On est obligé de faire la liste avec de pointeurs d'objets car on ne veut détr
 
 ## 9e étape. Gestion automatique de la mémoire
 
+Dans la classe Group on a fait la définition **typedef std::shared_ptr<Multimedia> MultimediaPtr** et maintenant l'Objet Group hérite d'une liste d'objets **MultimediaPtr**. Pour qu'on puisse avoir le bon comportement dans le fichier main.cpp, on a changé les instanciations des objets Photo pour qu'ils soient smart pointers.
+Et pour compiler le programme avec les modifications qu'on a fait ici, il faut déclarer le **#define VERSION_ETAPES_9** dans le fichier Group.h, si non il s'agira de le même programme de la question précédente (8e étape).
+
 ## 10e étape. Gestion cohérente des données
 
 ## 11e étape. Client / serveur

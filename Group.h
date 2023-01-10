@@ -5,7 +5,19 @@
 #include <list>
 #include "Multimedia.h"
 
+#define VERSION_ETAPES_9 //Pour l'usage de smart pointers
+
+#ifdef VERSION_ETAPES_9
+typedef std::shared_ptr<Multimedia> MultimediaPtr;
+#endif
+
+#ifdef VERSION_ETAPES_9
+class Group : public std::list<MultimediaPtr>
+#endif
+
+#ifndef VERSION_ETAPES_9
 class Group : public std::list<Multimedia*>
+#endif
 {
 private:
     std::string name;
