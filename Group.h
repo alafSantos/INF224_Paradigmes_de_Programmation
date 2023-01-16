@@ -4,8 +4,7 @@
 #include <memory>
 #include <list>
 #include "Multimedia.h"
-
-#define VERSION_ETAPES_9 //Pour l'usage de smart pointers
+#include "version.h"
 
 #ifdef VERSION_ETAPES_9
 typedef std::shared_ptr<Multimedia> MultimediaPtr;
