@@ -39,6 +39,10 @@ MultimediaPtr Manager::findMultimedia(std::string name)
     return nullptr;
 }
 
+void Manager::showGroup(std::string name){
+    this->groupTable[name]->showGroup(std::cout);
+}
+
 void Manager::showMultimedia(std::string name)
 {
     this->multimediaTable[name]->showVariables(std::cout);

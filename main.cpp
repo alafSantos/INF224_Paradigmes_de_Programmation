@@ -107,10 +107,10 @@ string protocolDealer(string request, Manager &media)
     // find name
     string response = "";
     string command = request.substr(0, 4);
-    int stringSize = request.length() - 4;
+    int stringSize = request.length() - 5; // 5 à cause d'un space
     if (stringSize > 0)
     {
-        string name = request.substr(4, stringSize);
+        string name = request.substr(5, stringSize);
 
         if (command == "play")
         {

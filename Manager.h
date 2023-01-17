@@ -41,6 +41,7 @@ public:
 
     /* Afficher */
     void showMultimedia(std::string name);
+    void showGroup(std::string name);
 
     /* Jouer */
     void playMultimedia(std::string name);
