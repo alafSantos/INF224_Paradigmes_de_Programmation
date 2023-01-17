@@ -75,26 +75,8 @@ int main(int argc, const char *argv[])
         // the request sent by the client to the server
         std::cout << "request: " << request << std::endl;
 
-        shared_ptr<Photo> myPhoto1(new Photo("me1.jpg", "media1/", 2, 2.5));
-        shared_ptr<Photo> myPhoto2(new Photo("me2.jpg", "media2/", 3, 3.5));
-        shared_ptr<Photo> myPhoto3(new Photo("me3.jpg", "media3/", 4, 4.5));
-        shared_ptr<Photo> photos[3] = {myPhoto1, myPhoto2, myPhoto3};
-
-        Group myPhotos1("My photos1");
-        Group myPhotos2("My photos2");
-
         Manager media;
         media.addPhoto("me.jpg", "media/", 10, 10);
-
-        for (int i = 0; i < 3; i++)
-        {
-            myPhotos1.push_back(photos[i]);
-            myPhotos2.push_back(photos[i]);
-        }
-        
-        cout << "test: ----------------\n";
-        media.playMultimedia("me.jpg");
-        cout << "end: ----------------\n";
 
         // the response that the server sends back to the client
         response = protocolDealer(request, media);
