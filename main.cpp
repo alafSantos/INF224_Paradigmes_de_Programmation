@@ -6,8 +6,13 @@
 
 #include "Manager.h"
 #include "version.h"
+#include "tcpserver.h"
+
+const int PORT = 3331;
 
 using namespace std;
+
+string protocolDealer(string request);
 
 int main(int argc, const char *argv[])
 {
@@ -63,5 +68,56 @@ int main(int argc, const char *argv[])
     cout << "---------------\n";
 #endif
 
+#ifdef VERSION_ETAPES_11
+    // cree le TCPServer
+    auto *server = new TCPServer([&](std::string const &request, std::string &response)
+                                 {
+        // the request sent by the client to the server
+        std::cout << "request: " << request << std::endl;
+
+        // the response that the server sends back to the client
+        response = protocolDealer(request);
+
+        // return false would close the connecytion with the client
+        return true; });
+
+    // lance la boucle infinie du serveur
+    std::cout << "Starting Server on port " << PORT << std::endl;
+
+    int status = server->run(PORT);
+
+    // en cas d'erreur
+    if (status < 0)
+    {
+        std::cerr << "Could not start Server on port " << PORT << std::endl;
+        return 1;
+    }
+#endif
+
     return 0;
+}
+
+string protocolDealer(string request)
+{
+
+    // play name
+    // find name
+    string response = "";
+    string command = request.substr(0, 4);
+    int stringSize = request.length() - 4;
+    if (stringSize > 0)
+    {
+        string name = request.substr(4, stringSize);
+
+        if (command == "play")
+        {
+            cout << "play\n";
+        }
+        else if (command == "find")
+        {
+            cout << "find\n";
+        }
+    }else cerr << "Please, provide a name!\n";
+
+    return response;
 }
