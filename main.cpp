@@ -12,14 +12,14 @@ const int PORT = 3331;
 
 using namespace std;
 
-string protocolDealer(string request);
+string protocolDealer(string request, Manager &media);
 
 int main(int argc, const char *argv[])
 {
 
 #ifdef VERSION_ETAPES_1_5
-    Video *myVideo = new Video("media/", "me.mp4", 45);
-    Photo *myPhoto = new Photo("media/", "me.jpg", 2.2, 3.5);
+    Video *myVideo = new Video("me.mp4", "media/", 45);
+    Photo *myPhoto = new Photo("me.jpg", "media/", 2.2, 3.5);
 
     unsigned int size = 2;
     Multimedia *media[size];
@@ -39,16 +39,16 @@ int main(int argc, const char *argv[])
 
 #ifdef VERSION_ETAPES_6_8
 #ifdef VERSION_ETAPES_9
-    shared_ptr<Photo> myPhoto1(new Photo("media1/", "me1.jpg", 2, 2.5));
-    shared_ptr<Photo> myPhoto2(new Photo("media2/", "me2.jpg", 3, 3.5));
-    shared_ptr<Photo> myPhoto3(new Photo("media3/", "me3.jpg", 4, 4.5));
+    shared_ptr<Photo> myPhoto1(new Photo("me1.jpg", "media1/", 2, 2.5));
+    shared_ptr<Photo> myPhoto2(new Photo("me2.jpg", "media2/", 3, 3.5));
+    shared_ptr<Photo> myPhoto3(new Photo("me3.jpg", "media3/", 4, 4.5));
     shared_ptr<Photo> photos[3] = {myPhoto1, myPhoto2, myPhoto3};
 #endif
 
 #ifndef VERSION_ETAPES_9
-    Photo *myPhoto1 = new Photo("media1/", "me1.jpg", 2, 2.5);
-    Photo *myPhoto2 = new Photo("media2/", "me2.jpg", 3, 3.5);
-    Photo *myPhoto3 = new Photo("media3/", "me3.jpg", 4, 4.5);
+    Photo *myPhoto1 = new Photo("me1.jpg", "media1/", 2, 2.5);
+    Photo *myPhoto2 = new Photo("me2.jpg", "media2/", 3, 3.5);
+    Photo *myPhoto3 = new Photo("me3.jpg", "media3/", 4, 4.5);
     Photo *photos[3] = {myPhoto1, myPhoto2, myPhoto3};
 #endif
 
@@ -68,15 +68,36 @@ int main(int argc, const char *argv[])
     cout << "---------------\n";
 #endif
 
-#ifdef VERSION_ETAPES_11
+#ifdef VERSION_ETAPES_10_11
     // cree le TCPServer
     auto *server = new TCPServer([&](std::string const &request, std::string &response)
                                  {
         // the request sent by the client to the server
         std::cout << "request: " << request << std::endl;
 
+        shared_ptr<Photo> myPhoto1(new Photo("me1.jpg", "media1/", 2, 2.5));
+        shared_ptr<Photo> myPhoto2(new Photo("me2.jpg", "media2/", 3, 3.5));
+        shared_ptr<Photo> myPhoto3(new Photo("me3.jpg", "media3/", 4, 4.5));
+        shared_ptr<Photo> photos[3] = {myPhoto1, myPhoto2, myPhoto3};
+
+        Group myPhotos1("My photos1");
+        Group myPhotos2("My photos2");
+
+        Manager media;
+        media.addPhoto("me.jpg", "media/", 10, 10);
+
+        for (int i = 0; i < 3; i++)
+        {
+            myPhotos1.push_back(photos[i]);
+            myPhotos2.push_back(photos[i]);
+        }
+        
+        cout << "test: ----------------\n";
+        media.playMultimedia("me.jpg");
+        cout << "end: ----------------\n";
+
         // the response that the server sends back to the client
-        response = protocolDealer(request);
+        response = protocolDealer(request, media);
 
         // return false would close the connecytion with the client
         return true; });
@@ -97,7 +118,7 @@ int main(int argc, const char *argv[])
     return 0;
 }
 
-string protocolDealer(string request)
+string protocolDealer(string request, Manager &media)
 {
 
     // play name
@@ -111,13 +132,15 @@ string protocolDealer(string request)
 
         if (command == "play")
         {
-            cout << "play\n";
+            media.playMultimedia(name);
         }
         else if (command == "find")
         {
             cout << "find\n";
         }
-    }else cerr << "Please, provide a name!\n";
+    }
+    else
+        cerr << "Please, provide a name!\n";
 
     return response;
 }

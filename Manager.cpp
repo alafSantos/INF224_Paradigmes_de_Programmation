@@ -31,11 +31,11 @@ MultimediaPtr Manager::findMultimedia(std::string name)
 {
     if (multimediaTable.empty())
         return nullptr;
-    
+
     auto it = this->multimediaTable.find(name);
     if (it != multimediaTable.end())
         return it->second;
-    
+
     return nullptr;
 }
 
@@ -46,7 +46,12 @@ void Manager::showMultimedia(std::string name)
 
 void Manager::playMultimedia(std::string name)
 {
-    this->multimediaTable[name]->play();
+    if (multimediaTable.count(name))
+    {
+        multimediaTable[name]->play();
+        return;
+    }
+    std::cerr << name << " not found\n";
 }
 
 void Manager::removeMultimedia(std::string name)
