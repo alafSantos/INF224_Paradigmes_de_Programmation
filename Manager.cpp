@@ -46,6 +46,18 @@ std::string Manager::find(std::string name)
     return "showing information";
 }
 
+std::string Manager::sFind(std::string str){
+    // return "showing information";
+    return "implementation still missing";
+}
+
+std::string Manager::remove(std::string name)
+{
+    this->removeMultimedia(name);
+    this->removeGroup(name);
+    return "deleting data";
+}
+
 void Manager::showGroup(std::string name)
 {
     if (!groupTable[name])
@@ -82,10 +94,20 @@ std::string Manager::playMultimedia(std::string name)
 
 void Manager::removeMultimedia(std::string name)
 {
-    this->multimediaTable.erase(this->multimediaTable.find(name));
+    if (multimediaTable.count(name))
+    {
+        this->multimediaTable.erase(this->multimediaTable.find(name));
+        return;
+    }
+    std::cout << "No media named: " + name + " was found.";
 }
 
 void Manager::removeGroup(std::string name)
 {
-    this->groupTable.erase(this->groupTable.find(name));
+    if (groupTable.count(name))
+    {
+        this->groupTable.erase(this->groupTable.find(name));
+        return;
+    }
+    std::cout << "No group named: " + name + " was found.";
 }

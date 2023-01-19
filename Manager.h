@@ -43,6 +43,7 @@ public:
     void showMultimedia(std::string name);
     void showGroup(std::string name);
     std::string find(std::string name);
+    std::string sFind(std::string str);
 
     /* Jouer */
     std::string playMultimedia(std::string name);
@@ -50,6 +51,7 @@ public:
     /* Supprimer */
     void removeMultimedia(std::string name);
     void removeGroup(std::string name);
+    std::string remove(std::string name);
 };
 
 #endif

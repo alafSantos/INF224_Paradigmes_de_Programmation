@@ -4,18 +4,9 @@
     Élève : Alaf do Nascimento Santos
 */
 
-#include "Manager.h"
+#include "protocol.h"
 #include "version.h"
 #include "tcpserver.h"
-
-
-// FAIRE APRÈS FINIR
-/*
-Questions additionnelles (vous pouvez passer ces questions si vous êtes en retard) :
-
-Vous pouvez rajouter d'autres commandes, par exemple chercher tous les objets commencant par ou contenant une séquence de caractères, ou étant d'un certain type, ou encore afficher toute la base ou détruire un objet ou un groupe.
-Un véritable serveur aurait probablement de nombreuses commandes. Afin d'accélérer la recherche des commandes vous pouvez utiliser une std::map contenant des pointeurs de méthodes ou des lambdas (la clé est le nom de la commande, l'attribut est la méthode ou la lambda correspondante).
-*/
 
 const int PORT = 3331;
 
@@ -107,30 +98,4 @@ int main(int argc, const char *argv[])
 #endif
 
     return 0;
-}
-
-// play name (media) | find name (media or group)
-string protocolDealer(string request, Manager &media)
-{
-    string command = request.substr(0, 4);
-    int stringSize = request.length() - 5; // 5 à cause d'un space
-    if (stringSize > 0)
-    {
-        string name = request.substr(5, stringSize);
-
-        if (command == "play")
-        {
-            return media.playMultimedia(name);
-        }
-        else if (command == "find")
-        {
-            return media.find(name);
-        }
-        else
-        {
-            return "command not found";
-        }
-    }
-    else
-        return "Please, provide a name!";
 }
