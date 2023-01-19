@@ -39,23 +39,45 @@ MultimediaPtr Manager::findMultimedia(std::string name)
     return nullptr;
 }
 
-void Manager::showGroup(std::string name){
-    this->groupTable[name]->showGroup(std::cout);
+std::string Manager::find(std::string name)
+{
+    this->showMultimedia(name);
+    this->showGroup(name);
+    return "showing information";
+}
+
+void Manager::showGroup(std::string name)
+{
+    if (!groupTable[name])
+    {
+        std::cout << "No group named: " + name + " was found.";
+    }
+    else
+    {
+        this->groupTable[name]->showGroup(std::cout);
+    }
 }
 
 void Manager::showMultimedia(std::string name)
 {
-    this->multimediaTable[name]->showVariables(std::cout);
+    if (!multimediaTable[name])
+    {
+        std::cout << "No media named: " + name + " was found.";
+    }
+    else
+    {
+        this->multimediaTable[name]->showVariables(std::cout);
+    }
 }
 
-void Manager::playMultimedia(std::string name)
+std::string Manager::playMultimedia(std::string name)
 {
     if (multimediaTable.count(name))
     {
         multimediaTable[name]->play();
-        return;
+        return ("playing " + name);
     }
-    std::cerr << name << " not found\n";
+    return (name + " not found");
 }
 
 void Manager::removeMultimedia(std::string name)

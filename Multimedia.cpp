@@ -26,6 +26,5 @@ void Multimedia::setFileName(std::string name){
 }
 
 void Multimedia::showVariables(std::ostream &dst) const{
-    dst << "Path: " << this->getPath() << std::endl;
-    dst << "File Name: " << this->getFileName() << std::endl;
+    dst << "Path: " << this->getPath() << "File Name: " << this->getFileName();
 }

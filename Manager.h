@@ -42,9 +42,10 @@ public:
     /* Afficher */
     void showMultimedia(std::string name);
     void showGroup(std::string name);
+    std::string find(std::string name);
 
     /* Jouer */
-    void playMultimedia(std::string name);
+    std::string playMultimedia(std::string name);
 
     /* Supprimer */
     void removeMultimedia(std::string name);
