@@ -1,7 +1,9 @@
-*.o
-myprog
-depend-myprog
-client
-depend-client
-depend-server
-server
+Cpp/*.o
+Cpp/myprog
+Cpp/depend-myprog
+Cpp/client
+Cpp/depend-client
+Cpp/depend-server
+Cpp/server
+Cpp/tcpserver/server
+Cpp/tcpserver/client
