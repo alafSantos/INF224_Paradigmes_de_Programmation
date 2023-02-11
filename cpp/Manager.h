@@ -25,6 +25,7 @@ class Manager
 private:
     MultimediaMap multimediaTable;
     GroupMap groupTable;
+    const std::string codeEndLine = "ç;1";
 
 public:
     Manager(){};
@@ -52,6 +53,10 @@ public:
     void removeMultimedia(std::string name);
     void removeGroup(std::string name);
     std::string remove(std::string name);
+
+    /* List Files */
+    std::string listGroup();
+    std::string listMultimedia();
 };
 
 #endif

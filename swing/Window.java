@@ -62,9 +62,11 @@ public class Window extends JFrame implements ActionListener {
     menuBar = new JMenuBar();
     menuBar.add(menu);
     setJMenuBar(menuBar);
-    
+
     multimedia = new JMenuItem("List Multimedia");
     group = new JMenuItem("List Groups");
+    multimedia.addActionListener(this);
+    group.addActionListener(this);
     menu.add(multimedia);
     menu.add(group);
 
@@ -153,6 +155,14 @@ public class Window extends JFrame implements ActionListener {
   }
   // --------------------------------------------------------
 
+  private void printResponse(String text) {
+    String[] arrOfStr = text.split("ç;1", 100);
+    for (String name : arrOfStr) {
+      textArea.append(name);
+      textArea.append("\n");
+    }
+  }
+
   public void actionPerformed(ActionEvent e) {
 
     System.out.println("Client connected to " + host + ":" + port);
@@ -162,18 +172,15 @@ public class Window extends JFrame implements ActionListener {
       textField.setText("");
     } else if (e.getSource() == btnExit) {
       System.exit(0);
-    } 
-    else {
+    } else {
       String txt = textField.getText();
       String command = null;
 
-      if(e.getSource() == group){
+      if (e.getSource() == group) {
         command = "lGrp";
-      }
-      else if(e.getSource() == multimedia){
+      } else if (e.getSource() == multimedia) {
         command = "lMlt";
-      }
-      else if (e.getSource() == button1) {
+      } else if (e.getSource() == button1) {
         command = "play " + txt;
 
       } else if (e.getSource() == button2) {
@@ -183,7 +190,7 @@ public class Window extends JFrame implements ActionListener {
       try {
         String response = client.send(command);
         System.out.println("Response: " + response + "\n");
-        textArea.append(response+"\n");
+        printResponse(response);
       } catch (Exception excp) {
         System.err.println("Client: error");
         return;

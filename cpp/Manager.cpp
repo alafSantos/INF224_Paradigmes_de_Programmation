@@ -46,7 +46,8 @@ std::string Manager::find(std::string name)
     return "showing information";
 }
 
-std::string Manager::sFind(std::string str){
+std::string Manager::sFind(std::string str)
+{
     // return "showing information";
     return "implementation still missing";
 }
@@ -110,4 +111,20 @@ void Manager::removeGroup(std::string name)
         return;
     }
     std::cout << "No group named: " + name + " was found.";
+}
+
+std::string Manager::listGroup()
+{
+    std::string txt;
+    for (auto const &x : this->groupTable)
+        txt += x.first + this->codeEndLine;
+    return txt;
+}
+
+std::string Manager::listMultimedia()
+{
+    std::string txt;
+    for (auto const &x : this->multimediaTable)
+        txt += x.first + this->codeEndLine;
+    return txt;
 }
