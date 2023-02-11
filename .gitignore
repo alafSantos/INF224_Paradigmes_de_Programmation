@@ -7,3 +7,4 @@ Cpp/depend-server
 Cpp/server
 Cpp/tcpserver/server
 Cpp/tcpserver/client
+Java/*.class
