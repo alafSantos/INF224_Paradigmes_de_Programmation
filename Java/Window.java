@@ -8,65 +8,26 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JMenuBar;
 import java.awt.Color;
+import javax.swing.JToolBar;
+import javax.swing.JMenu;
+
 public class Window extends JFrame implements ActionListener {
   private static final long serialVersionUID = 1L;
   private JTextArea textArea;
-  private JButton button1, button2, btnExit;
-  private JMenuBar menu;
-
-  private void createMenuBar() {
-
-    this.btnExit = new JButton("Exit");
-    this.btnExit.setActionCommand("EXIT_BUTTON");
-    this.btnExit.addActionListener(this);
-
-    this.button1 = new JButton("Play");
-    this.button1.setActionCommand("BUTTON_1");
-    this.button1.addActionListener(this);
-
-    this.button2 = new JButton("Show");
-    this.button2.setActionCommand("BUTTON_2");
-    this.button2.addActionListener(this);
-
-    // this.textfield = new JTextField();
-
-    // this.toolbar = new JToolBar();
-    // this.toolbar.add(this.textfield);
-    // this.toolbar.add(this.b1);
-    // this.toolbar.add(this.b2);
-    // this.toolbar.add(this.exitBtn);
-
-    this.menu = new JMenuBar();
-    this.menu.setOpaque(true);
-    this.menu.setBackground(Color.WHITE);
-		// this.menu = new JMenu("Media");
-    
-    // this.listMenu = new JMenu("List");
-
-    // this.mediaMenu = new JMenuItem("Media");
-    // this.mediaMenu.setActionCommand("LIST_MEDIA");
-    // this.mediaMenu.addActionListener(this);
-    // this.groupMenu = new JMenuItem("Group");
-    // this.groupMenu.setActionCommand("LIST_GROUP");
-    // this.groupMenu.addActionListener(this);
-
-    // this.listMenu.add(this.mediaMenu);
-    // this.listMenu.add(this.groupMenu);
-    // this.menu.add(this.listMenu);
-
-    // this.menubar.add(this.menu);
-    // this.menubar.add(this.toolbar);
-	}
+  private JButton button1, button2, btnExit, btnClear;
+  private JMenuBar menuBar;
+  private JMenu menu;
+  private JToolBar toolBar;
 
   public Window() {
     setSize(300, 400);
-    setLayout(new FlowLayout());
-    
+    setLayout(new BorderLayout());
+
     textArea = new JTextArea(10, 20);
 
     JScrollPane scrollableTextArea = new JScrollPane(this.textArea);
-    scrollableTextArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);  
-    scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);  
+    scrollableTextArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+    scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
     add(scrollableTextArea, BorderLayout.CENTER);
 
@@ -82,11 +43,24 @@ public class Window extends JFrame implements ActionListener {
     btnExit.addActionListener(this);
     add(btnExit, BorderLayout.SOUTH);
 
+    btnClear = new JButton("Clear");
+    btnClear.addActionListener(this);
+    add(btnClear, BorderLayout.SOUTH);
+
+    menuBar = new JMenuBar();
+    menu = new JMenu("Menu");
+    menuBar.add(menu);
+    setJMenuBar(menuBar);
+
+    toolBar = new JToolBar();
+    toolBar.add(button1);
+    toolBar.add(button2);
+    toolBar.add(btnExit);
+    add(toolBar, BorderLayout.NORTH);
+
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     pack();
     setVisible(true);
-
-    createMenuBar();
   }
 
   public void actionPerformed(ActionEvent e) {
@@ -96,6 +70,9 @@ public class Window extends JFrame implements ActionListener {
       textArea.append("Ligne 2 ajoutée\n");
     } else if (e.getSource() == btnExit) {
       System.exit(0);
+    }
+    else if(e.getSource() == btnClear){
+      textArea.setText("");
     }
   }
 
