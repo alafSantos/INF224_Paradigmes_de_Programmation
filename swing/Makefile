@@ -14,7 +14,7 @@ PROG = Window
 #
 # Fichiers sources .java
 #
-SOURCES = Window.java  Client.java 
+SOURCES = Window.java
 
 #
 # Compilateur Java
