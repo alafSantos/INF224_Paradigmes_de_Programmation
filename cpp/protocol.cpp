@@ -22,6 +22,12 @@ std::string protocolDealer(std::string request, Manager &media)
         else if(command == "delt"){
             return media.remove(name);
         }
+        else if(command == "lGrp"){
+            return media.listGroup();
+        }
+        else if(command == "lMlt"){
+            return media.listMultimedia();
+        }
         else
         {
             return "command not found";

@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 
 import java.io.*;
 import java.net.*;
+import javax.swing.JMenuItem;
 
 public class Window extends JFrame implements ActionListener {
   private static final long serialVersionUID = 1L;
@@ -21,6 +22,13 @@ public class Window extends JFrame implements ActionListener {
   private JMenu menu;
   private JToolBar toolBar;
   private JTextField textField;
+  private JMenuItem multimedia, group;
+
+  static final String DEFAULT_HOST = "localhost";
+  static final int DEFAULT_PORT = 3331;
+  static String host = DEFAULT_HOST;
+  static int port = DEFAULT_PORT;
+  static Client client = null;
 
   public Window() {
     setLayout(new BorderLayout());
@@ -50,10 +58,15 @@ public class Window extends JFrame implements ActionListener {
 
     textField = new JTextField();
 
-    menu = new JMenu("Menu");
+    menu = new JMenu("File");
     menuBar = new JMenuBar();
     menuBar.add(menu);
     setJMenuBar(menuBar);
+    
+    multimedia = new JMenuItem("List Multimedia");
+    group = new JMenuItem("List Groups");
+    menu.add(multimedia);
+    menu.add(group);
 
     toolBar = new JToolBar();
     toolBar.add(textField);
@@ -67,14 +80,6 @@ public class Window extends JFrame implements ActionListener {
     pack();
     setVisible(true);
   }
-
-  static final String DEFAULT_HOST = "localhost";
-  static final int DEFAULT_PORT = 3331;
-
-  static String host = DEFAULT_HOST;
-  static int port = DEFAULT_PORT;
-
-  static Client client = null;
 
   public static void main(String argv[]) {
     if (argv.length >= 1)
@@ -92,7 +97,6 @@ public class Window extends JFrame implements ActionListener {
   }
 
   // -------------------------CLIENT.JAVA-------------------------
-
   private static class Client {
 
     private Socket sock;
@@ -158,10 +162,18 @@ public class Window extends JFrame implements ActionListener {
       textField.setText("");
     } else if (e.getSource() == btnExit) {
       System.exit(0);
-    } else {
+    } 
+    else {
       String txt = textField.getText();
       String command = null;
-      if (e.getSource() == button1) {
+
+      if(e.getSource() == group){
+        command = "lGrp";
+      }
+      else if(e.getSource() == multimedia){
+        command = "lMlt";
+      }
+      else if (e.getSource() == button1) {
         command = "play " + txt;
 
       } else if (e.getSource() == button2) {
