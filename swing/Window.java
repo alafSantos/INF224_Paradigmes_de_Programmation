@@ -1,4 +1,3 @@
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
@@ -7,9 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JMenuBar;
-import java.awt.Color;
 import javax.swing.JToolBar;
 import javax.swing.JMenu;
+import javax.swing.JTextField;
 
 public class Window extends JFrame implements ActionListener {
   private static final long serialVersionUID = 1L;
@@ -18,12 +17,11 @@ public class Window extends JFrame implements ActionListener {
   private JMenuBar menuBar;
   private JMenu menu;
   private JToolBar toolBar;
+  private JTextField textField;
 
   public Window() {
-    setSize(300, 400);
     setLayout(new BorderLayout());
-
-    textArea = new JTextArea(10, 20);
+    textArea = new JTextArea(10, 30);
 
     JScrollPane scrollableTextArea = new JScrollPane(this.textArea);
     scrollableTextArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -31,30 +29,34 @@ public class Window extends JFrame implements ActionListener {
 
     add(scrollableTextArea, BorderLayout.CENTER);
 
-    button1 = new JButton("Ajouter ligne 1");
+    button1 = new JButton("Play");
     button1.addActionListener(this);
     add(button1, BorderLayout.SOUTH);
 
-    button2 = new JButton("Ajouter ligne 2");
+    button2 = new JButton("Show");
     button2.addActionListener(this);
     add(button2, BorderLayout.SOUTH);
-
-    btnExit = new JButton("Quitter");
-    btnExit.addActionListener(this);
-    add(btnExit, BorderLayout.SOUTH);
 
     btnClear = new JButton("Clear");
     btnClear.addActionListener(this);
     add(btnClear, BorderLayout.SOUTH);
 
-    menuBar = new JMenuBar();
+    btnExit = new JButton("Exit");
+    btnExit.addActionListener(this);
+    add(btnExit, BorderLayout.SOUTH);
+
+    textField = new JTextField();
+
     menu = new JMenu("Menu");
+    menuBar = new JMenuBar();
     menuBar.add(menu);
     setJMenuBar(menuBar);
 
     toolBar = new JToolBar();
+    toolBar.add(textField);
     toolBar.add(button1);
     toolBar.add(button2);
+    toolBar.add(btnClear);
     toolBar.add(btnExit);
     add(toolBar, BorderLayout.NORTH);
 
@@ -64,16 +66,20 @@ public class Window extends JFrame implements ActionListener {
   }
 
   public void actionPerformed(ActionEvent e) {
-    if (e.getSource() == button1) {
-      textArea.append("Ligne 1 ajoutée\n");
-    } else if (e.getSource() == button2) {
-      textArea.append("Ligne 2 ajoutée\n");
+
+    if (e.getSource() == btnClear) {
+      textArea.setText("");
     } else if (e.getSource() == btnExit) {
       System.exit(0);
+    } else {
+      String txt = textField.getText();
+      if (e.getSource() == button1) {
+        textArea.append(txt + " play\n");
+      } else if (e.getSource() == button2) {
+        textArea.append(txt + " show\n");
+      }
     }
-    else if(e.getSource() == btnClear){
-      textArea.setText("");
-    }
+
   }
 
   public static void main(String[] args) {

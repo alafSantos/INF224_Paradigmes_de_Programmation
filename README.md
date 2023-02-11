@@ -1,5 +1,8 @@
 # INF224 - Paradigmes de Programmation
 
+## C++ (Backend)
+
+
 ## 1e Etape: Démarrage
 Dans cette première étape, il a été créer un répertoire pour les fichiers de travail. Dans ce dossier ont été placés les fichiers Makefile et main.cpp fournis dans la spécification du projet. Le principal role du Makefile s'agit de la compilation et l'exécution du programme. Du coup, le programme peut être exécuté juste en tapant la commande **make run**.
 
@@ -89,3 +92,15 @@ Et pour compiler le programme avec les modifications qu'on a fait ici, il faut d
 ## 12e étape. Sérialisation / désérialisation
 
 ## 13e étape. Traitement des erreurs
+
+
+
+## Java Swing (Frontend)
+
+### Run in a linux terminal
+
+* In order to install a Java Development Kit:
+    -   sudo apt-get install openjdk-8-jdk
+
+* In order to compile and run the program (client side of the application):
+    -   make run
