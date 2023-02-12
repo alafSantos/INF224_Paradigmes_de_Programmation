@@ -9,10 +9,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JToolBar;
 import javax.swing.JMenu;
 import javax.swing.JTextField;
-
+import javax.swing.JMenuItem;
 import java.io.*;
 import java.net.*;
-import javax.swing.JMenuItem;
 
 public class Window extends JFrame implements ActionListener {
   private static final long serialVersionUID = 1L;
@@ -58,13 +57,13 @@ public class Window extends JFrame implements ActionListener {
 
     textField = new JTextField();
 
-    menu = new JMenu("File");
+    menu = new JMenu("List");
     menuBar = new JMenuBar();
     menuBar.add(menu);
     setJMenuBar(menuBar);
 
-    multimedia = new JMenuItem("List Multimedia");
-    group = new JMenuItem("List Groups");
+    multimedia = new JMenuItem("Multimedia");
+    group = new JMenuItem("Groups");
     multimedia.addActionListener(this);
     group.addActionListener(this);
     menu.add(multimedia);

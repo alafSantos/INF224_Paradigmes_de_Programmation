@@ -5,8 +5,7 @@ std::string protocolDealer(std::string request, Manager &media)
 
     if (request == "lGrp")
     {
-        std::cout << media.listGroup();
-        return "\ndeu bom\n";
+        return media.listGroup();
     }
     else if (request == "lMlt")
     {
