@@ -8,6 +8,7 @@ class Photo : public Multimedia
 private:
     float latitude;
     float longitude;
+    const std::string codeEndLine = "ç;1";
 
 public:
     Photo();
@@ -19,6 +20,7 @@ public:
     float getLongitude() const;
     const void play();
     void showVariables(std::ostream &dst) const;
+    std::string showVariables() const;
 };
 
 #endif

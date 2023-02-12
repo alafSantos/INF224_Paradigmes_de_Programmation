@@ -40,3 +40,10 @@ void Photo::showVariables(std::ostream &dst) const{
     dst << "Photo latitude: " << this->getLatitude() << std::endl;
     dst << "Photo longitude: " << this->getLongitude() << std::endl;
 }
+
+std::string Photo::showVariables() const{
+    std::string txt = Multimedia::showVariables() + this->codeEndLine;
+    txt += "Photo latitude: " + std::to_string(this->getLatitude()) + this->codeEndLine;
+    txt += "Photo longitude: " + std::to_string(this->getLongitude()) + this->codeEndLine;
+    return txt;
+}

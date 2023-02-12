@@ -29,8 +29,8 @@ public:
     void setFileName(std::string name);
 
     /* Méthode d'affichage */
-    void showVariables(std::ostream &dst) const;
-    std::string showVariables() const;
+    virtual void showVariables(std::ostream &dst) const;
+    virtual std::string showVariables() const;
 
     /* Méthode virtuel qui permette de jouer l'objet multimédia.
     L'implementation n'est-elle disponible que dans les sous-classes */
