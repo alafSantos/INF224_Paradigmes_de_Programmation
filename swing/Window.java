@@ -91,6 +91,7 @@ public class Window extends JFrame implements ActionListener {
 
     try {
       client = new Client(host, port);
+      System.out.println("Client connected to " + host + ":" + port);
     } catch (Exception excp) {
       System.err.println("Client: Couldn't connect to " + host + ":" + port);
       System.exit(1);
@@ -155,18 +156,15 @@ public class Window extends JFrame implements ActionListener {
   }
   // --------------------------------------------------------
 
-  private void printResponse(String text) {
-    String[] arrOfStr = text.split("ç;1", 100);
-    for (String name : arrOfStr) {
-      textArea.append(name);
-      textArea.append("\n");
-    }
+  private String printResponse(String text) {
+    String output = "";
+    String[] txt = text.split("ç;1");
+    for (String txt_i : txt)
+      output += txt_i + "\n";
+    return output;
   }
 
   public void actionPerformed(ActionEvent e) {
-
-    System.out.println("Client connected to " + host + ":" + port);
-
     if (e.getSource() == btnClear) {
       textArea.setText("");
       textField.setText("");
@@ -182,15 +180,15 @@ public class Window extends JFrame implements ActionListener {
         command = "lMlt";
       } else if (e.getSource() == button1) {
         command = "play " + txt;
-
       } else if (e.getSource() == button2) {
         command = "find " + txt;
       }
       System.out.print("Request: " + command + "\n");
       try {
         String response = client.send(command);
-        System.out.println("Response: " + response + "\n");
-        printResponse(response);
+        response = printResponse(response);
+        System.out.println("Response:\n" + response);
+        textArea.append(response);
       } catch (Exception excp) {
         System.err.println("Client: error");
         return;

@@ -29,7 +29,7 @@ GroupPtr Manager::addGroupe(std::string name)
 
 MultimediaPtr Manager::findMultimedia(std::string name)
 {
-    if (multimediaTable.empty())
+    if (this->multimediaTable.empty())
         return nullptr;
 
     auto it = this->multimediaTable.find(name);
@@ -115,6 +115,9 @@ void Manager::removeGroup(std::string name)
 
 std::string Manager::listGroup()
 {
+    if (this->groupTable.empty())
+        return "No group found";
+
     std::string txt;
     for (auto const &x : this->groupTable)
         txt += x.first + this->codeEndLine;
@@ -123,6 +126,9 @@ std::string Manager::listGroup()
 
 std::string Manager::listMultimedia()
 {
+    if (this->multimediaTable.empty())
+        return "No media found";
+
     std::string txt;
     for (auto const &x : this->multimediaTable)
         txt += x.first + this->codeEndLine;

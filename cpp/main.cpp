@@ -97,5 +97,35 @@ int main(int argc, const char *argv[])
     }
 #endif
 
+#ifdef ETAPA_JAVA_SWING
+    // cree le TCPServer
+    auto *server = new TCPServer([&](std::string const &request, std::string &response)
+                                 {
+        // the request sent by the client to the server
+        std::cout << "request: " << request << std::endl;
+
+        Manager media;
+        media.addPhoto("me.jpg", "media/", 10, 10);
+        media.addVideo("me.mp4", "media/", 10);
+
+        // the response that the server sends back to the client
+        response = protocolDealer(request, media);
+
+        // return false would close the connecytion with the client
+        return true; });
+
+    // lance la boucle infinie du serveur
+    std::cout << "Starting Server on port " << PORT << std::endl;
+
+    int status = server->run(PORT);
+
+    // en cas d'erreur
+    if (status < 0)
+    {
+        std::cerr << "Could not start Server on port " << PORT << std::endl;
+        return 1;
+    }
+#endif
+
     return 0;
 }
