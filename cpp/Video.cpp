@@ -29,3 +29,11 @@ void Video::showVariables(std::ostream &dst) const{
     Multimedia::showVariables(dst);
     dst << "Video Length: " << this->getLength() << std::endl;
 }
+
+std::string Video::showVariables() const{
+    const std::string codeEndLine = "ç;1";
+    std::string txt = Multimedia::showVariables() + codeEndLine;
+    txt += "Video Length: " + std::to_string(this->getLength()) + codeEndLine;
+    return txt;
+
+}

@@ -19,6 +19,7 @@ public:
     const int getChapterSize(int i) const; //a single chapter (position)
     void setChapters(const int *chapters, int chapterSize);
     void showVariables(std::ostream &dst) const;
+    std::string showVariables() const;
 
     // On peut redéfinir les opérateurs de copie pour faire de la copie profonde
     Film(const Film& from);

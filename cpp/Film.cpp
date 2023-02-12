@@ -53,6 +53,18 @@ void Film::showVariables(std::ostream &dst) const
         dst << "Length of chapter " << i + 1 << ": " << this->getChapterSize(i) << std::endl;
 }
 
+std::string Film::showVariables() const
+{
+    const std::string codeEndLine = "ç;1";
+    std::string txt = Video::showVariables();
+    txt += "Number of chapters: " + std::to_string(this->getAllChaptersSize()) + codeEndLine;
+
+    for (int i = 0; i < this->getAllChaptersSize(); i++)
+        txt += "Length of chapter " + std::to_string(i + 1) + ": " + std::to_string(this->getChapterSize(i)) + codeEndLine;
+    
+    return txt;
+}
+
 Film::Film(const Film &from) : Video(from)
 {
     this->allChaptersSize = from.allChaptersSize;
