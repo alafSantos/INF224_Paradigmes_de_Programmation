@@ -10,6 +10,7 @@
 #include "Video.h"
 #include "Film.h"
 #include "Group.h"
+#include "version.h"
 
 typedef std::shared_ptr<Multimedia> MultimediaPtr;
 typedef std::shared_ptr<Photo> PhotoPtr;
@@ -41,8 +42,13 @@ public:
     MultimediaPtr findMultimedia(std::string name);
 
     /* Afficher */
-    void showMultimedia(std::string name);
-    void showGroup(std::string name);
+    #ifdef JAVA_SWING
+        std::string showMultimedia(std::string name);
+        std::string showGroup(std::string name);
+    #elif
+        void showMultimedia(std::string name);
+        void showGroup(std::string name);
+    #endif
     std::string find(std::string name);
     std::string sFind(std::string str);
 

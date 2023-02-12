@@ -5,7 +5,6 @@
 */
 
 #include "protocol.h"
-#include "version.h"
 #include "tcpserver.h"
 
 const int PORT = 3331;
@@ -97,7 +96,7 @@ int main(int argc, const char *argv[])
     }
 #endif
 
-#ifdef ETAPA_JAVA_SWING
+#ifdef JAVA_SWING
     // cree le TCPServer
     auto *server = new TCPServer([&](std::string const &request, std::string &response)
                                  {

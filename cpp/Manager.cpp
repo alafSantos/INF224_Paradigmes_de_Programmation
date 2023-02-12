@@ -41,14 +41,12 @@ MultimediaPtr Manager::findMultimedia(std::string name)
 
 std::string Manager::find(std::string name)
 {
-    this->showMultimedia(name);
-    this->showGroup(name);
-    return "showing information";
+    std::string txt = this->showMultimedia(name) + this->showGroup(name);
+    return txt;
 }
 
 std::string Manager::sFind(std::string str)
 {
-    // return "showing information";
     return "implementation still missing";
 }
 
@@ -59,29 +57,39 @@ std::string Manager::remove(std::string name)
     return "deleting data";
 }
 
-void Manager::showGroup(std::string name)
+#ifdef JAVA_SWING
+std::string Manager::showMultimedia(std::string name)
 {
-    if (!groupTable[name])
-    {
-        std::cout << "No group named: " + name + " was found.";
-    }
+    if (!multimediaTable[name])
+        return "No media named: " + name + " was found." + this->codeEndLine;
     else
-    {
-        this->groupTable[name]->showGroup(std::cout);
-    }
+        return this->multimediaTable[name]->showVariables() + this->codeEndLine;
 }
 
+std::string Manager::showGroup(std::string name)
+{
+    if (!groupTable[name])
+        return "No group named: " + name + " was found." + this->codeEndLine;
+    else
+        return this->groupTable[name]->showGroup() + this->codeEndLine;
+}
+#elif
 void Manager::showMultimedia(std::string name)
 {
     if (!multimediaTable[name])
-    {
-        std::cout << "No media named: " + name + " was found.";
-    }
+        std::cout << "No media named: " + name + " was found.\n";
     else
-    {
         this->multimediaTable[name]->showVariables(std::cout);
-    }
 }
+
+void Manager::showGroup(std::string name)
+{
+    if (!groupTable[name])
+        std::cout << "No group named: " + name + " was found.";
+    else
+        this->groupTable[name]->showGroup(std::cout);
+}
+#endif
 
 std::string Manager::playMultimedia(std::string name)
 {
