@@ -35,5 +35,4 @@ std::string Video::showVariables() const{
     std::string txt = Multimedia::showVariables() + codeEndLine;
     txt += "Video Length: " + std::to_string(this->getLength()) + codeEndLine;
     return txt;
-
 }
