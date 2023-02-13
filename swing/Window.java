@@ -187,6 +187,8 @@ public class Window extends JFrame implements ActionListener {
       textArea.setText("");
       textField.setText("");
       fileNameTextField.setText("");
+      pathTextField.setText("");
+      lengthTextField.setText("");
     } else if (e.getSource() == btnExit) {
       System.exit(0);
     } else {
