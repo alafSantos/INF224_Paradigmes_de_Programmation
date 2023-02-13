@@ -60,7 +60,7 @@ std::string Manager::remove(std::string name)
 #ifdef JAVA_SWING
 std::string Manager::showMultimedia(std::string name)
 {
-    if (!multimediaTable[name])
+    if (!multimediaTable.count(name))
         return "No media named: " + name + " was found." + this->codeEndLine;
     else
         return this->multimediaTable[name]->showVariables() + this->codeEndLine;
@@ -68,7 +68,7 @@ std::string Manager::showMultimedia(std::string name)
 
 std::string Manager::showGroup(std::string name)
 {
-    if (!groupTable[name])
+    if (!groupTable.count(name))
         return "No group named: " + name + " was found." + this->codeEndLine;
     else
         return this->groupTable[name]->showGroup() + this->codeEndLine;
@@ -106,9 +106,7 @@ std::string Manager::removeMultimedia(std::string name)
     std::string txt = "";
     if (multimediaTable.count(name))
     {
-        std::cout << "b4 " << multimediaTable.count(name);
         this->multimediaTable.erase(this->multimediaTable.find(name));
-        std::cout << "\nafter " << multimediaTable.count(name);
         txt = "Deleting media " + name + this->codeEndLine;
     }
     else
