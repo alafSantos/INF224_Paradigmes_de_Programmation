@@ -1,6 +1,8 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -20,7 +22,7 @@ public class Window extends JFrame implements ActionListener {
   private JMenuBar menuBar;
   private JMenu menu;
   private JToolBar toolBar, toolBar2, toolBar3;
-  private JTextField textField, fileNameTextField, pathTextField, lengthTextField;
+  private JTextField textField, fileNameTextField, pathTextField, field3, field4;
   private JMenuItem multimedia, group;
 
   static final String DEFAULT_HOST = "localhost";
@@ -55,7 +57,7 @@ public class Window extends JFrame implements ActionListener {
     btnExit.addActionListener(this);
     // add(btnExit, BorderLayout.SOUTH);
 
-    btnAddVideo = new JButton("Add Video");
+    btnAddVideo = new JButton("Add Media");
     btnAddVideo.addActionListener(this);
     // add(btnAddVideo, BorderLayout.SOUTH);
 
@@ -66,7 +68,8 @@ public class Window extends JFrame implements ActionListener {
     textField = new JTextField();
     fileNameTextField = new JTextField();
     pathTextField = new JTextField();
-    lengthTextField = new JTextField();
+    field3 = new JTextField();
+    field4 = new JTextField();
 
     menu = new JMenu("List");
     menuBar = new JMenuBar();
@@ -92,16 +95,10 @@ public class Window extends JFrame implements ActionListener {
     toolBar2 = new JToolBar();
     toolBar2.add(fileNameTextField);
     toolBar2.add(pathTextField);
-    toolBar2.add(lengthTextField);
+    toolBar2.add(field3);
+    toolBar2.add(field4);
     toolBar2.add(btnAddVideo);
     add(toolBar2, BorderLayout.SOUTH);
-
-    // toolBar3 = new JToolBar();
-    // toolBar3.add(fileNameTextField);
-    // toolBar3.add(pathTextField);
-    // toolBar3.add(lengthTextField);
-    // toolBar3.add(btnAddVideo);
-    // add(toolBar3, BorderLayout.SOUTH);
 
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     pack();
@@ -195,7 +192,8 @@ public class Window extends JFrame implements ActionListener {
       textField.setText("");
       fileNameTextField.setText("");
       pathTextField.setText("");
-      lengthTextField.setText("");
+      field3.setText("");
+      field4.setText("");
     } else if (e.getSource() == btnExit) {
       System.exit(0);
     } else {
@@ -213,7 +211,12 @@ public class Window extends JFrame implements ActionListener {
       } else if (e.getSource() == btnRemove) {
         command = "remv " + txt;
       } else if (e.getSource() == btnAddVideo) {
-        command = "addV " +  fileNameTextField.getText() + " " + pathTextField.getText() + " " + lengthTextField.getText();
+        String str = field4.getText();
+        if (str.length() > 0)
+          command = "addP " + fileNameTextField.getText() + " " + pathTextField.getText() + " " + field3.getText() + " "
+              + field4.getText();
+        else
+          command = "addV " + fileNameTextField.getText() + " " + pathTextField.getText() + " " + field3.getText();
       }
 
       System.out.print("Request: " + command + "\n");

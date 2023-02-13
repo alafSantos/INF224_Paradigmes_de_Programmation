@@ -1,7 +1,5 @@
 #include "protocol.h"
 
-const std::string codeEndLine = "ç;1";
-
 void getWords(std::string parameters[], std::string name)
 {
     std::string word;
@@ -13,6 +11,8 @@ void getWords(std::string parameters[], std::string name)
 
 std::string protocolDealer(std::string request, Manager &media)
 {
+    const std::string codeEndLine = "ç;1";
+
     if (request == "lGrp")
     {
         return media.listGroup();
