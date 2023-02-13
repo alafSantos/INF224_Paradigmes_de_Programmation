@@ -96,11 +96,17 @@ Et pour compiler le programme avec les modifications qu'on a fait ici, il faut d
 
 
 ## Java Swing (Frontend)
+# L'utilisation du logiciel 
 
-### Run in a linux terminal
+Dans le coin supérieur gauche, il y a un menu "Liste" qui donne des options pour afficher les groupes et les fichiers multimédias disponibles dans le programme, ceux-ci peuvent être modifiés via les méthodes "supprimer" et "ajouter" disponibles dans l'interface. Les groupes et multimédias disponibles peuvent être utilisés via les fonctions "Play" et "Show", la première joue le fichier et la seconde affiche les données du fichier ou du groupe. Pour cela, dans la partie supérieure de la fenêtre, il y a un champ de texte dans lequel vous devez entrer le nom du fichier ou du groupe pour lequel vous souhaitez effectuer une action, puis cliquer sur le bouton d'action souhaité ("Play" ou "Show"). Ainda nessa toolBar superior, existe uma opção para remover uma mídia ou grupo, o processo aqui é o mesmo, basta por o nome do alvo no campo de texto e então clicar sobre o botão "Remove". Le dernier bouton de cette barre d'outils est le bouton "Quitter", qui ferme l'application.
 
-* In order to install a Java Development Kit:
-    -   sudo apt-get install openjdk-8-jdk
+Au centre de la fenêtre, nous avons le champ de texte de sortie, où les informations qui doivent être vues par l'utilisateur sont affichées. Ainsi qu'un bouton "Clear" pour effacer tous les champs de texte de la fenêtre.
 
-* In order to compile and run the program (client side of the application):
-    -   make run
+Dans la partie inférieure de la fenêtre, il y a 4 champs de saisie de texte qui doivent être utilisés pour ajouter de nouveaux médias à la liste. Pour ajouter une vidéo, mettez le nom du fichier dans le premier champ, le chemin d'accès dans le second, sa durée dans le troisième et le quatrième champ ne doit pas être utilisé (sinon le logiciel considérera ce fichier comme une Photographie). Pour ajouter une photo, vous devez mettre le nom du fichier dans le premier champ de texte, le chemin d'accès au fichier dans le deuxième champ, votre latitude dans le troisième champ et la longitude dans le quatrième champ. Dans les deux cas, seulement après avoir rempli les champs de texte appropriés, l'utilisateur doit cliquer sur le bouton "Add Media".
+
+
+## Installation des dépendances
+
+* Java Development Kit: ***sudo apt-get install openjdk-8-jdk***
+
+* Compile and run the program (always first the server side and finally the client side): ***make run***
