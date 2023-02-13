@@ -13,7 +13,7 @@
 class Multimedia
 {
 private:
-    std::string path; // le chemin complet
+    std::string path;     // le chemin complet
     std::string fileName; // le nom du fichier
 
 public:
