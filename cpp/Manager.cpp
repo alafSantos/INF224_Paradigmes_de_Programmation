@@ -104,7 +104,7 @@ std::string Manager::playMultimedia(std::string name)
         multimediaTable[name]->play();
         return ("playing " + name);
     }
-    return (name + " not found");
+    return (name + " not found.");
 }
 
 std::string Manager::removeMultimedia(std::string name)
@@ -137,7 +137,7 @@ std::string Manager::removeGroup(std::string name)
 std::string Manager::listGroup()
 {
     if (this->groupTable.empty())
-        return "No group found";
+        return "No group found.";
 
     std::string txt;
     for (auto const &x : this->groupTable)
@@ -148,7 +148,7 @@ std::string Manager::listGroup()
 std::string Manager::listMultimedia()
 {
     if (this->multimediaTable.empty())
-        return "No media found";
+        return "No media found.";
 
     std::string txt;
     for (auto const &x : this->multimediaTable)

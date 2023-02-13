@@ -75,7 +75,7 @@ public class Window extends JFrame implements ActionListener {
 
     btnClear = new JButton("Clear");
     btnClear.addActionListener(this);
-    add(btnClear, BorderLayout.LINE_END);
+    add(btnClear, BorderLayout.EAST);
 
     // Champs de saisie de texte
     textField = new JTextField();

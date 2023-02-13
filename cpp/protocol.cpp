@@ -6,13 +6,17 @@
 
 #include "protocol.h"
 
-void getWords(std::string parameters[], std::string name)
+int getWords(std::string parameters[], std::string name)
 {
+    if (name.find("  ") != std::string::npos) // vérifie si un champ a été mal utilisé, double espace dans la chaîne
+        return 1;
+
     std::string word;
     std::stringstream iss(name);
     int i = 0;
     while (iss >> word)
         parameters[i++] = word;
+    return i;
 }
 
 std::string protocolDealer(std::string request, Manager &media)
@@ -42,7 +46,8 @@ std::string protocolDealer(std::string request, Manager &media)
                 width = 4;
 
             std::string parameters[width];
-            getWords(parameters, name);
+            if (getWords(parameters, name) < 3)
+                return "Make sure the form is complete before trying again." + codeEndLine;
 
             if (width == 3)
                 media.addVideo(parameters[0], parameters[1], stoi(parameters[2]));
