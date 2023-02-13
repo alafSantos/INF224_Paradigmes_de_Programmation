@@ -1,7 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,6 +11,7 @@ import javax.swing.JToolBar;
 import javax.swing.JMenu;
 import javax.swing.JTextField;
 import javax.swing.JMenuItem;
+
 import java.io.*;
 import java.net.*;
 
@@ -21,7 +21,7 @@ public class Window extends JFrame implements ActionListener {
   private JButton button1, button2, btnExit, btnClear, btnAddVideo, btnRemove;
   private JMenuBar menuBar;
   private JMenu menu;
-  private JToolBar toolBar, toolBar2, toolBar3;
+  private JToolBar toolBar, toolBar2;
   private JTextField textField, fileNameTextField, pathTextField, field3, field4;
   private JMenuItem multimedia, group;
 
@@ -49,10 +49,6 @@ public class Window extends JFrame implements ActionListener {
     button2.addActionListener(this);
     // add(button2, BorderLayout.SOUTH);
 
-    btnClear = new JButton("Clear");
-    btnClear.addActionListener(this);
-    add(btnClear, BorderLayout.LINE_END);
-
     btnExit = new JButton("Exit");
     btnExit.addActionListener(this);
     // add(btnExit, BorderLayout.SOUTH);
@@ -64,6 +60,10 @@ public class Window extends JFrame implements ActionListener {
     btnRemove = new JButton("Remove");
     btnRemove.addActionListener(this);
     // add(btnRemove, BorderLayout.SOUTH);
+
+    btnClear = new JButton("Clear");
+    btnClear.addActionListener(this);
+    add(btnClear, BorderLayout.LINE_END);
 
     textField = new JTextField();
     fileNameTextField = new JTextField();
@@ -87,7 +87,6 @@ public class Window extends JFrame implements ActionListener {
     toolBar.add(textField);
     toolBar.add(button1);
     toolBar.add(button2);
-    // toolBar.add(btnClear);
     toolBar.add(btnRemove);
     toolBar.add(btnExit);
     add(toolBar, BorderLayout.NORTH);
@@ -178,7 +177,7 @@ public class Window extends JFrame implements ActionListener {
   }
   // --------------------------------------------------------
 
-  private String printResponse(String text) {
+  private String getResponse(String text) {
     String output = "";
     String[] txt = text.split("ç;1");
     for (String txt_i : txt)
@@ -222,7 +221,7 @@ public class Window extends JFrame implements ActionListener {
       System.out.print("Request: " + command + "\n");
       try {
         String response = client.send(command);
-        response = printResponse(response);
+        response = getResponse(response);
         System.out.println("Response:\n" + response);
         textArea.append(response);
       } catch (Exception excp) {
