@@ -3,6 +3,7 @@
 
 #include "Manager.h"
 #include <string>
+#include <sstream>
 
 /*
     LIST OF COMMANDS
@@ -13,6 +14,7 @@
     lGrp - list all groups
     lMlt - list all multimedias
     addV - add a new video
+    addP - add a new video
 */
 
 std::string protocolDealer(std::string request, Manager &media);

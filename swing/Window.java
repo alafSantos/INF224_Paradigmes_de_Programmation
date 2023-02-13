@@ -206,7 +206,7 @@ public class Window extends JFrame implements ActionListener {
       } else if (e.getSource() == btnRemove) {
         command = "remv " + txt;
       } else if (e.getSource() == btnAddVideo) {
-        command = "addV " +  fileNameTextField.getText();
+        command = "addV " +  fileNameTextField.getText() + " " + pathTextField.getText() + " " + lengthTextField.getText();
       }
 
       System.out.print("Request: " + command + "\n");

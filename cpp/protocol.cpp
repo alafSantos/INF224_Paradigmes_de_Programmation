@@ -11,13 +11,22 @@ std::string protocolDealer(std::string request, Manager &media)
     {
         return media.listMultimedia();
     }
-    else if(request.substr(0, 4) == "addV"){
+    else if (request.substr(0, 4) == "addV")
+    {
+        int stringSize = request.length() - 5; // 5 à cause d'un space
+        std::string str = request.substr(5, stringSize);
+        std::string word;
+        std::stringstream iss(str);
+        std::string parameters[3];
+
+        int i = 0;
+        while (iss >> word)
+            parameters[i++] = word;
+
         const std::string codeEndLine = "ç;1";
-        std::string fileName = "me.mp4";
-        std::string path = "media/";
-        int length = 10;
-        media.addVideo(fileName, path, length);
-        return "adding " + fileName + codeEndLine;
+
+        media.addVideo(parameters[0], parameters[1], stoi(parameters[2]));
+        return "adding " + parameters[0] + codeEndLine;
     }
     else
     {

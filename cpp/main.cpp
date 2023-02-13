@@ -100,7 +100,9 @@ int main(int argc, const char *argv[])
     // Les multimedias par default - ici vous pouvez mettre des nouvelles medias et groups si vous avez besoin
     Manager media;
     media.addPhoto("me.jpg", "media/", 10, 10);
-    media.addVideo("me.mp4", "media/", 10);
+    media.addPhoto("telecom.jpg", "media/", 1050, 630);
+    media.addVideo("matrix.mp4", "media/", 10);
+    media.addVideo("rain.mp4", "media/", 44);
 
     // cree le TCPServer
     auto *server = new TCPServer([&](std::string const &request, std::string &response)
