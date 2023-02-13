@@ -16,7 +16,7 @@ import java.net.*;
 public class Window extends JFrame implements ActionListener {
   private static final long serialVersionUID = 1L;
   private JTextArea textArea;
-  private JButton button1, button2, btnExit, btnClear;
+  private JButton button1, button2, btnExit, btnClear, btnRemove;
   private JMenuBar menuBar;
   private JMenu menu;
   private JToolBar toolBar;
@@ -54,6 +54,10 @@ public class Window extends JFrame implements ActionListener {
     btnExit = new JButton("Exit");
     btnExit.addActionListener(this);
     add(btnExit, BorderLayout.SOUTH);
+
+    btnRemove = new JButton("Remove");
+    btnRemove.addActionListener(this);
+    add(btnRemove, BorderLayout.SOUTH);
 
     textField = new JTextField();
 
@@ -181,7 +185,10 @@ public class Window extends JFrame implements ActionListener {
         command = "play " + txt;
       } else if (e.getSource() == button2) {
         command = "find " + txt;
+      } else if(e.getSource() == btnRemove){
+        command = "remv " + txt;
       }
+
       System.out.print("Request: " + command + "\n");
       try {
         String response = client.send(command);

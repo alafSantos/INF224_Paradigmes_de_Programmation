@@ -56,8 +56,8 @@ public:
     std::string playMultimedia(std::string name);
 
     /* Supprimer */
-    void removeMultimedia(std::string name);
-    void removeGroup(std::string name);
+    std::string removeMultimedia(std::string name);
+    std::string removeGroup(std::string name);
     std::string remove(std::string name);
 
     /* List Files */

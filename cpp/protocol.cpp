@@ -32,7 +32,7 @@ std::string protocolDealer(std::string request, Manager &media)
             {
                 return media.sFind(name);
             }
-            else if (command == "delt")
+            else if (command == "remv")
             {
                 return media.remove(name);
             }

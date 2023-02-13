@@ -52,9 +52,9 @@ std::string Manager::sFind(std::string str)
 
 std::string Manager::remove(std::string name)
 {
-    this->removeMultimedia(name);
-    this->removeGroup(name);
-    return "deleting data";
+    std::string txt = this->removeMultimedia(name) + this->codeEndLine;
+    txt += this->removeGroup(name) + this->codeEndLine;
+    return txt;
 }
 
 #ifdef JAVA_SWING
@@ -101,24 +101,31 @@ std::string Manager::playMultimedia(std::string name)
     return (name + " not found");
 }
 
-void Manager::removeMultimedia(std::string name)
+std::string Manager::removeMultimedia(std::string name)
 {
+    std::string txt = "";
     if (multimediaTable.count(name))
     {
         this->multimediaTable.erase(this->multimediaTable.find(name));
-        return;
+        txt = "Deleting media " + name + this->codeEndLine;
     }
-    std::cout << "No media named: " + name + " was found.";
+    else
+        txt = "No media named \"" + name + "\" was found.";
+
+    return txt;
 }
 
-void Manager::removeGroup(std::string name)
+std::string Manager::removeGroup(std::string name)
 {
+    std::string txt = "";
     if (groupTable.count(name))
     {
         this->groupTable.erase(this->groupTable.find(name));
-        return;
+        txt = "Deleting group " + name + this->codeEndLine;
     }
-    std::cout << "No group named: " + name + " was found.";
+    else
+        txt = "No group named \"" + name + "\" was found.";
+    return txt;
 }
 
 std::string Manager::listGroup()
