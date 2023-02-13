@@ -1,3 +1,9 @@
+/*
+ * Développé par Alaf do Nascimento Santos
+ * INF224 Paradigmes de Programmation
+ * 2023
+ */
+
 #ifndef MANAGER_H
 #define MANAGER_H
 

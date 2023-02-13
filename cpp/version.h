@@ -1,3 +1,9 @@
+/*
+ * Développé par Alaf do Nascimento Santos
+ * INF224 Paradigmes de Programmation
+ * 2023
+ */
+
 #ifndef VERSION_H
 #define VERSION_H
 

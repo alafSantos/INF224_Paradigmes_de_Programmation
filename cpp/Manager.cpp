@@ -1,3 +1,9 @@
+/*
+ * Développé par Alaf do Nascimento Santos
+ * INF224 Paradigmes de Programmation
+ * 2023
+ */
+
 #include "Manager.h"
 
 PhotoPtr Manager::addPhoto(std::string fileName, std::string path, int latitude, int longitude)

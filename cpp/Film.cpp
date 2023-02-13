@@ -1,3 +1,9 @@
+/*
+ * Développé par Alaf do Nascimento Santos
+ * INF224 Paradigmes de Programmation
+ * 2023
+ */
+
 #include "Film.h"
 
 Film::Film(const int *chapters, int chapterSize) : Video()

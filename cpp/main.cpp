@@ -1,8 +1,8 @@
 /*
-    INF224 - Paradigmes de programmation, théorie et pratique
-    Travaux Pratiques C++/Objet
-    Élève : Alaf do Nascimento Santos
-*/
+ * Développé par Alaf do Nascimento Santos
+ * INF224 Paradigmes de Programmation
+ * 2023
+ */
 
 #include "protocol.h"
 #include "tcpserver.h"

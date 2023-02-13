@@ -1,7 +1,15 @@
+/*
+ * Développé par Alaf do Nascimento Santos
+ * INF224 Paradigmes de Programmation
+ * 2023
+ */
+
+// Classes d'Events et interfaces de Listeners pour la gestion des événements.
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
 
+// Java Swing Components
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -12,6 +20,7 @@ import javax.swing.JMenu;
 import javax.swing.JTextField;
 import javax.swing.JMenuItem;
 
+// Pour le Client TCP
 import java.io.*;
 import java.net.*;
 
