@@ -106,7 +106,9 @@ std::string Manager::removeMultimedia(std::string name)
     std::string txt = "";
     if (multimediaTable.count(name))
     {
+        std::cout << "b4 " << multimediaTable.count(name);
         this->multimediaTable.erase(this->multimediaTable.find(name));
+        std::cout << "\nafter " << multimediaTable.count(name);
         txt = "Deleting media " + name + this->codeEndLine;
     }
     else

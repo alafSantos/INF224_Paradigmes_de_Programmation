@@ -97,15 +97,16 @@ int main(int argc, const char *argv[])
 #endif
 
 #ifdef JAVA_SWING
+    // Les multimedias par default - ici vous pouvez mettre des nouvelles medias et groups si vous avez besoin
+    Manager media;
+    media.addPhoto("me.jpg", "media/", 10, 10);
+    media.addVideo("me.mp4", "media/", 10);
+
     // cree le TCPServer
     auto *server = new TCPServer([&](std::string const &request, std::string &response)
                                  {
         // the request sent by the client to the server
         std::cout << "request: " << request << std::endl;
-
-        Manager media;
-        media.addPhoto("me.jpg", "media/", 10, 10);
-        media.addVideo("me.mp4", "media/", 10);
 
         // the response that the server sends back to the client
         response = protocolDealer(request, media);
