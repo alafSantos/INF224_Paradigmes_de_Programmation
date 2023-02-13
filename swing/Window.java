@@ -25,7 +25,7 @@ import java.io.*;
 import java.net.*;
 
 public class Window extends JFrame implements ActionListener {
-  private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L; // Cette variable est réclamée par le compilateur pour préciser la version de la classe
   private JTextArea textArea;
   private JButton button1, button2, btnExit, btnClear, btnAddVideo, btnRemove;
   private JMenuBar menuBar;
@@ -44,12 +44,14 @@ public class Window extends JFrame implements ActionListener {
     setLayout(new BorderLayout());
     textArea = new JTextArea(10, 30);
 
+    // Ajouter des ascenseurs à un JTextArea
     JScrollPane scrollableTextArea = new JScrollPane(this.textArea);
     scrollableTextArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
     scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
     add(scrollableTextArea, BorderLayout.CENTER);
 
+    // Insertion des boutons dans l'interface
     button1 = new JButton("Play");
     button1.addActionListener(this);
     // add(button1, BorderLayout.SOUTH);
@@ -74,24 +76,28 @@ public class Window extends JFrame implements ActionListener {
     btnClear.addActionListener(this);
     add(btnClear, BorderLayout.LINE_END);
 
+    // Champs de saisie de texte
     textField = new JTextField();
     fileNameTextField = new JTextField();
     pathTextField = new JTextField();
     field3 = new JTextField();
     field4 = new JTextField();
 
+    // Menu liste en haut à gauche
     menu = new JMenu("List");
     menuBar = new JMenuBar();
     menuBar.add(menu);
     setJMenuBar(menuBar);
-
+    
     multimedia = new JMenuItem("Multimedia");
-    group = new JMenuItem("Groups");
     multimedia.addActionListener(this);
-    group.addActionListener(this);
     menu.add(multimedia);
+
+    group = new JMenuItem("Groups");
+    group.addActionListener(this);
     menu.add(group);
 
+    // Barre d'outils supérieure
     toolBar = new JToolBar();
     toolBar.add(textField);
     toolBar.add(button1);
@@ -100,6 +106,7 @@ public class Window extends JFrame implements ActionListener {
     toolBar.add(btnExit);
     add(toolBar, BorderLayout.NORTH);
 
+    // Barre d'outils inférieure
     toolBar2 = new JToolBar();
     toolBar2.add(fileNameTextField);
     toolBar2.add(pathTextField);
@@ -108,11 +115,14 @@ public class Window extends JFrame implements ActionListener {
     toolBar2.add(btnAddVideo);
     add(toolBar2, BorderLayout.SOUTH);
 
+    // Méthodes de JFrame
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     pack();
     setVisible(true);
   }
 
+  
+  // -------------------------CLIENT JAVA-------------------------
   public static void main(String argv[]) {
     if (argv.length >= 1)
       host = argv[0];
@@ -126,10 +136,8 @@ public class Window extends JFrame implements ActionListener {
       System.err.println("Client: Couldn't connect to " + host + ":" + port);
       System.exit(1);
     }
-    new Window();
+    new Window(); // créer la fenêtre
   }
-
-  // -------------------------CLIENT.JAVA-------------------------
   private static class Client {
 
     private Socket sock;
@@ -184,8 +192,8 @@ public class Window extends JFrame implements ActionListener {
       }
     }
   }
-  // --------------------------------------------------------
 
+  // Actions selon le protocole défini
   private String getResponse(String text) {
     String output = "";
     String[] txt = text.split("ç;1");
