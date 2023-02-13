@@ -25,7 +25,8 @@ import java.io.*;
 import java.net.*;
 
 public class Window extends JFrame implements ActionListener {
-  private static final long serialVersionUID = 1L; // Cette variable est réclamée par le compilateur pour préciser la version de la classe
+  private static final long serialVersionUID = 1L; // Cette variable est réclamée par le compilateur pour préciser la
+                                                   // version de la classe
   private JTextArea textArea;
   private JButton button1, button2, btnExit, btnClear, btnAddVideo, btnRemove;
   private JMenuBar menuBar;
@@ -84,11 +85,11 @@ public class Window extends JFrame implements ActionListener {
     field4 = new JTextField();
 
     // Menu liste en haut à gauche
-    menu = new JMenu("List");
     menuBar = new JMenuBar();
+    menu = new JMenu("List");
     menuBar.add(menu);
     setJMenuBar(menuBar);
-    
+
     multimedia = new JMenuItem("Multimedia");
     multimedia.addActionListener(this);
     menu.add(multimedia);
@@ -116,12 +117,12 @@ public class Window extends JFrame implements ActionListener {
     add(toolBar2, BorderLayout.SOUTH);
 
     // Méthodes de JFrame
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    pack();
-    setVisible(true);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    setTitle("STP Alaf"); // set-top box Alaf
+    pack(); // calcul récursif des positions et des tailles
+    setVisible(true); // fait apparaître la fenêtre
   }
 
-  
   // -------------------------CLIENT JAVA-------------------------
   public static void main(String argv[]) {
     if (argv.length >= 1)
@@ -138,6 +139,7 @@ public class Window extends JFrame implements ActionListener {
     }
     new Window(); // créer la fenêtre
   }
+
   private static class Client {
 
     private Socket sock;
