@@ -19,7 +19,7 @@ public class Window extends JFrame implements ActionListener {
   private JButton button1, button2, btnExit, btnClear, btnAddVideo, btnRemove;
   private JMenuBar menuBar;
   private JMenu menu;
-  private JToolBar toolBar, toolBar2;
+  private JToolBar toolBar, toolBar2, toolBar3;
   private JTextField textField, fileNameTextField, pathTextField, lengthTextField;
   private JMenuItem multimedia, group;
 
@@ -95,6 +95,13 @@ public class Window extends JFrame implements ActionListener {
     toolBar2.add(lengthTextField);
     toolBar2.add(btnAddVideo);
     add(toolBar2, BorderLayout.SOUTH);
+
+    // toolBar3 = new JToolBar();
+    // toolBar3.add(fileNameTextField);
+    // toolBar3.add(pathTextField);
+    // toolBar3.add(lengthTextField);
+    // toolBar3.add(btnAddVideo);
+    // add(toolBar3, BorderLayout.SOUTH);
 
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     pack();
