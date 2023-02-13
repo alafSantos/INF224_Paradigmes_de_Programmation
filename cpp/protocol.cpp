@@ -11,6 +11,14 @@ std::string protocolDealer(std::string request, Manager &media)
     {
         return media.listMultimedia();
     }
+    else if(request.substr(0, 4) == "addV"){
+        const std::string codeEndLine = "ç;1";
+        std::string fileName = "me.mp4";
+        std::string path = "media/";
+        int length = 10;
+        media.addVideo(fileName, path, length);
+        return "adding " + fileName + codeEndLine;
+    }
     else
     {
         std::string command = request.substr(0, 4);

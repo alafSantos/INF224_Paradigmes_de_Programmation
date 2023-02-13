@@ -16,11 +16,11 @@ import java.net.*;
 public class Window extends JFrame implements ActionListener {
   private static final long serialVersionUID = 1L;
   private JTextArea textArea;
-  private JButton button1, button2, btnExit, btnClear, btnRemove;
+  private JButton button1, button2, btnExit, btnClear, btnAddVideo, btnRemove;
   private JMenuBar menuBar;
   private JMenu menu;
-  private JToolBar toolBar;
-  private JTextField textField;
+  private JToolBar toolBar, toolBar2;
+  private JTextField textField, fileNameTextField, pathTextField, lengthTextField;
   private JMenuItem multimedia, group;
 
   static final String DEFAULT_HOST = "localhost";
@@ -41,25 +41,32 @@ public class Window extends JFrame implements ActionListener {
 
     button1 = new JButton("Play");
     button1.addActionListener(this);
-    add(button1, BorderLayout.SOUTH);
+    // add(button1, BorderLayout.SOUTH);
 
     button2 = new JButton("Show");
     button2.addActionListener(this);
-    add(button2, BorderLayout.SOUTH);
+    // add(button2, BorderLayout.SOUTH);
 
     btnClear = new JButton("Clear");
     btnClear.addActionListener(this);
-    add(btnClear, BorderLayout.SOUTH);
+    add(btnClear, BorderLayout.LINE_END);
 
     btnExit = new JButton("Exit");
     btnExit.addActionListener(this);
-    add(btnExit, BorderLayout.SOUTH);
+    // add(btnExit, BorderLayout.SOUTH);
+
+    btnAddVideo = new JButton("Add Video");
+    btnAddVideo.addActionListener(this);
+    // add(btnAddVideo, BorderLayout.SOUTH);
 
     btnRemove = new JButton("Remove");
     btnRemove.addActionListener(this);
-    add(btnRemove, BorderLayout.SOUTH);
+    // add(btnRemove, BorderLayout.SOUTH);
 
     textField = new JTextField();
+    fileNameTextField = new JTextField();
+    pathTextField = new JTextField();
+    lengthTextField = new JTextField();
 
     menu = new JMenu("List");
     menuBar = new JMenuBar();
@@ -77,9 +84,17 @@ public class Window extends JFrame implements ActionListener {
     toolBar.add(textField);
     toolBar.add(button1);
     toolBar.add(button2);
-    toolBar.add(btnClear);
+    // toolBar.add(btnClear);
+    toolBar.add(btnRemove);
     toolBar.add(btnExit);
     add(toolBar, BorderLayout.NORTH);
+
+    toolBar2 = new JToolBar();
+    toolBar2.add(fileNameTextField);
+    toolBar2.add(pathTextField);
+    toolBar2.add(lengthTextField);
+    toolBar2.add(btnAddVideo);
+    add(toolBar2, BorderLayout.SOUTH);
 
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     pack();
@@ -171,6 +186,7 @@ public class Window extends JFrame implements ActionListener {
     if (e.getSource() == btnClear) {
       textArea.setText("");
       textField.setText("");
+      fileNameTextField.setText("");
     } else if (e.getSource() == btnExit) {
       System.exit(0);
     } else {
@@ -185,8 +201,10 @@ public class Window extends JFrame implements ActionListener {
         command = "play " + txt;
       } else if (e.getSource() == button2) {
         command = "find " + txt;
-      } else if(e.getSource() == btnRemove){
+      } else if (e.getSource() == btnRemove) {
         command = "remv " + txt;
+      } else if (e.getSource() == btnAddVideo) {
+        command = "addV " +  fileNameTextField.getText();
       }
 
       System.out.print("Request: " + command + "\n");
