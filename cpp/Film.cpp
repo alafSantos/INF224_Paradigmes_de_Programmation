@@ -67,7 +67,7 @@ std::string Film::showVariables() const
 
     for (int i = 0; i < this->getAllChaptersSize(); i++)
         txt += "Length of chapter " + std::to_string(i + 1) + ": " + std::to_string(this->getChapterSize(i)) + codeEndLine;
-    
+
     return txt;
 }
 
