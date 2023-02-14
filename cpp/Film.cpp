@@ -14,19 +14,19 @@ Film::Film(const int *chapters, int chapterSize) : Video()
 Film::~Film()
 {
     std::cout << "Bye, Film..." << std::endl;
-    delete[] this->allChapters;
+    delete [] this->allChapters; // parce qu'il s'agit d'un tableau dynamique
 }
 
 void Film::setChapters(const int *chapters, int chapterSize)
 {
-    delete[] this->allChapters;
+    delete [] this->allChapters;
 
     this->allChaptersSize = 0;
     this->allChapters = nullptr;
 
     if (chapters && chapterSize > 0)
     {
-        this->allChapters = new int[chapterSize];
+        this->allChapters = new int[chapterSize]; // Tableau dynamique
         for (int i = 0; i < chapterSize; i++)
         {
             this->allChapters[i] = chapters[i];

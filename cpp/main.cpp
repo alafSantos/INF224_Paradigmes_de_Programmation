@@ -18,6 +18,7 @@ int main(int argc, const char *argv[])
     Video *myVideo = new Video("me.mp4", "media/", 45);
     Photo *myPhoto = new Photo("me.jpg", "media/", 2.2, 3.5);
 
+    // traitements uniformes
     unsigned int size = 2;
     Multimedia *media[size];
     media[0] = myVideo;
