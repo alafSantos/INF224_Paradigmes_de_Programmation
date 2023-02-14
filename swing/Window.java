@@ -8,6 +8,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 // Java Swing Components
 import javax.swing.JButton;
@@ -44,6 +45,7 @@ public class Window extends JFrame implements ActionListener {
   public Window() {
     setLayout(new BorderLayout());
     textArea = new JTextArea(10, 30);
+    textArea.setBackground(Color.YELLOW);
 
     // Ajouter des ascenseurs à un JTextArea
     JScrollPane scrollableTextArea = new JScrollPane(this.textArea);
@@ -56,33 +58,54 @@ public class Window extends JFrame implements ActionListener {
     button1 = new JButton("Play");
     button1.addActionListener(this);
     // add(button1, BorderLayout.SOUTH);
+    button1.setBackground(Color.YELLOW.darker());
+    button1.setForeground(Color.BLACK);
 
     button2 = new JButton("Show");
     button2.addActionListener(this);
     // add(button2, BorderLayout.SOUTH);
+    button2.setBackground(Color.YELLOW.darker());
+    button2.setForeground(Color.BLACK);
 
     btnExit = new JButton("Exit");
     btnExit.addActionListener(this);
     // add(btnExit, BorderLayout.SOUTH);
+    btnExit.setBackground(Color.YELLOW.darker());
+    btnExit.setForeground(Color.BLACK);
 
     btnAddVideo = new JButton("Add Media");
     btnAddVideo.addActionListener(this);
     // add(btnAddVideo, BorderLayout.SOUTH);
+    btnAddVideo.setBackground(Color.YELLOW.darker());
+    btnAddVideo.setForeground(Color.BLACK);
 
     btnRemove = new JButton("Remove");
     btnRemove.addActionListener(this);
     // add(btnRemove, BorderLayout.SOUTH);
+    btnRemove.setBackground(Color.YELLOW.darker());
+    btnRemove.setForeground(Color.BLACK);
 
     btnClear = new JButton("Clear");
     btnClear.addActionListener(this);
     add(btnClear, BorderLayout.EAST);
+    btnClear.setBackground(Color.YELLOW.darker());
+    btnClear.setForeground(Color.BLACK);
 
     // Champs de saisie de texte
     textField = new JTextField();
+    textField.setBackground(Color.ORANGE);
+
     fileNameTextField = new JTextField();
+    fileNameTextField.setBackground(Color.ORANGE);
+
     pathTextField = new JTextField();
+    pathTextField.setBackground(Color.ORANGE);
+
     field3 = new JTextField();
+    field3.setBackground(Color.ORANGE);
+
     field4 = new JTextField();
+    field4.setBackground(Color.ORANGE);
 
     // Menu liste en haut à gauche
     menuBar = new JMenuBar();
@@ -115,7 +138,7 @@ public class Window extends JFrame implements ActionListener {
     toolBar2.add(field4);
     toolBar2.add(btnAddVideo);
     add(toolBar2, BorderLayout.SOUTH);
-
+    
     // Méthodes de JFrame
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setTitle("STP Alaf"); // set-top box Alaf
