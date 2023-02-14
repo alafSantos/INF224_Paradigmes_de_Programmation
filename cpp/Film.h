@@ -16,16 +16,16 @@ private:
     int *allChapters = nullptr;
 
 public:
-    Film() : Video(){};
-    Film(const int *allChapters, int allChaptersSize);
-    ~Film();
+    Film() : Video(){};                                // constructeur simple, sans paramètres
+    Film(const int *allChapters, int allChaptersSize); // Constructeur qui fait l'Initialisation du tableau allChapters
+    ~Film();                                           // Destructeur qui libère la mémoire du pointé *allChapters
 
-    const int getAllChaptersSize() const; // all array
-    const int *getChapters() const;
-    const int getChapterSize(int i) const; // a single chapter (position)
-    void setChapters(const int *chapters, int chapterSize);
-    void showVariables(std::ostream &dst) const;
-    std::string showVariables() const;
+    const int getAllChaptersSize() const;                   // tous les éléments
+    const int *getChapters() const;                         // obtenir le pointeur allChapters
+    const int getChapterSize(int i) const;                  // un seul chapitre (position)
+    void setChapters(const int *chapters, int chapterSize); // définir le tableau de chapitres
+    void showVariables(std::ostream &dst) const;            // Afficher les attributs via le terminal
+    std::string showVariables() const;                      // envoyer les attributs au client TCP sous forme de chaîne de caractères
 
     // On peut redéfinir les opérateurs de copie pour faire de la copie profonde
     Film(const Film &from);
