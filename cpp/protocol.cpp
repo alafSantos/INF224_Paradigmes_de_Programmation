@@ -49,10 +49,21 @@ std::string protocolDealer(std::string request, Manager &media)
             if (getWords(parameters, name) < 3)
                 return "Make sure the form is complete before trying again." + codeEndLine;
 
-            if (width == 3)
-                media.addVideo(parameters[0], parameters[1], stoi(parameters[2]));
-            else
-                media.addPhoto(parameters[0], parameters[1], stoi(parameters[2]), stoi(parameters[3]));
+            try
+            {
+                if (width == 3)
+                    media.addVideo(parameters[0], parameters[1], stoi(parameters[2]));
+                else
+                    media.addPhoto(parameters[0], parameters[1], stoi(parameters[2]), stoi(parameters[3]));
+            }
+            catch (std::invalid_argument const &e)
+            {
+                return "Bad input: invalid argument" + codeEndLine;
+            }
+            catch (std::out_of_range const &e)
+            {
+                return "Integer overflow: out of range" + codeEndLine;
+            }
 
             return "adding " + parameters[0] + codeEndLine;
         }
