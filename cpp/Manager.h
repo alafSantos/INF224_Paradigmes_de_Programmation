@@ -32,7 +32,7 @@ class Manager
 private:
     MultimediaMap multimediaTable;
     GroupMap groupTable;
-    const std::string codeEndLine = "ç;1";
+    const std::string codeEndLine = "ç;1"; // symbole de fin de ligne défini pour le protocole propre
 
 public:
     Manager(){};
@@ -56,7 +56,6 @@ public:
         void showGroup(std::string name);
     #endif
     std::string find(std::string name);
-    std::string sFind(std::string str);
 
     /* Jouer */
     std::string playMultimedia(std::string name);

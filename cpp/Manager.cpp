@@ -51,11 +51,6 @@ std::string Manager::find(std::string name)
     return txt;
 }
 
-std::string Manager::sFind(std::string str)
-{
-    return "implementation still missing";
-}
-
 std::string Manager::remove(std::string name)
 {
     std::string txt = this->removeMultimedia(name) + this->codeEndLine;
@@ -91,7 +86,7 @@ void Manager::showMultimedia(std::string name)
 void Manager::showGroup(std::string name)
 {
     if (!groupTable[name])
-        std::cout << "No group named: " + name + " was found.";
+        std::cout << "No group named: " + name + " was found.\n";
     else
         this->groupTable[name]->showGroup(std::cout);
 }

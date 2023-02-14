@@ -68,10 +68,6 @@ std::string protocolDealer(std::string request, Manager &media)
                 {
                     return media.find(name);
                 }
-                else if (command == "sFnd")
-                {
-                    return media.sFind(name);
-                }
                 else if (command == "remv")
                 {
                     return media.remove(name);

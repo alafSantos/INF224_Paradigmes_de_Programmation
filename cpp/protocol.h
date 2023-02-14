@@ -12,15 +12,14 @@
 #include <sstream>
 
 /*
-    LIST OF COMMANDS
-    play  - plays a multimedia file. Example: 'play me.jpg'
-    find  - seeks a multimedia file or group. Example: 'find me.jpg'
-    sFnd* - uses a string argument in order to search a multimedia file or group of same name
-    remv - remove a group or multimedia
-    lGrp - list all groups
-    lMlt - list all multimedias
-    addV - add a new video
-    addP - add a new video
+    LISTE DE COMMANDES
+    play - joue un fichier multimédia. Exemple : "play me.jpg".
+    find - recherche un fichier ou un groupe multimédia. Exemple : "find me.jpg".
+    remv - retire un groupe ou un multimédia. Exemple : "remv me.jpg".
+    lGrp - envoye la liste de tous les groupes. Exemple : "lGrp".
+    lMlt - envoye la liste de tous les multimedias. Exemple : "lMlt".
+    addV - ajoute une nouvelle vidéo. Exemple : "addV fileName path length".
+    addP - ajoute une nouvelle photo. Exemple : "addP fileName path latitude longitude".
 */
 
 std::string protocolDealer(std::string request, Manager &media);
