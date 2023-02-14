@@ -23,13 +23,13 @@ class Group : public std::list<MultimediaPtr>
 {
 private:
     std::string name;
-    const std::string codeEndLine = "ç;1";
+    const std::string codeEndLine = "ç;1"; // symbole de fin de ligne défini pour le protocole propre
 
 public:
     Group(std::string name);                 // constructeur
     std::string getName() const;             // accesseur
-    std::string showGroup() const;           // méthode d'affichage
-    void showGroup(std::ostream &dst) const; // méthode d'affichage
+    std::string showGroup() const;           // méthode d'affichage pour le client TCP
+    void showGroup(std::ostream &dst) const; // méthode d'affichage pour le terminal
 };
 
 #endif
