@@ -7,11 +7,9 @@
 #include "protocol.h"
 #include "tcpserver.h"
 
-const int PORT = 3331;
+const int PORT = 3331; // port pour le serveur tcp
 
 using namespace std;
-
-string protocolDealer(string request, Manager &media);
 
 int main(int argc, const char *argv[])
 {
@@ -71,16 +69,16 @@ int main(int argc, const char *argv[])
     // cree le TCPServer
     auto *server = new TCPServer([&](std::string const &request, std::string &response)
                                  {
-        // the request sent by the client to the server
+        // la demande envoyée par le client au serveur
         std::cout << "request: " << request << std::endl;
 
         Manager media;
         media.addPhoto("me.jpg", "media/", 10, 10);
 
-        // the response that the server sends back to the client
+        // la réponse que le serveur renvoie au client
         response = protocolDealer(request, media);
 
-        // return false would close the connecytion with the client
+        // retourner false fermerait la connexion avec le client
         return true; });
 
     // lance la boucle infinie du serveur
@@ -107,13 +105,13 @@ int main(int argc, const char *argv[])
     // cree le TCPServer
     auto *server = new TCPServer([&](std::string const &request, std::string &response)
                                  {
-        // the request sent by the client to the server
+        // la demande envoyée par le client au serveur
         std::cout << "request: " << request << std::endl;
 
-        // the response that the server sends back to the client
+        // la réponse que le serveur renvoie au client
         response = protocolDealer(request, media);
 
-        // return false would close the connecytion with the client
+        // retourner false fermerait la connexion avec le client
         return true; });
 
     // lance la boucle infinie du serveur
