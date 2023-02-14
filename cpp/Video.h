@@ -21,8 +21,8 @@ public:
     void setLength(unsigned int length);
     unsigned int getLength() const;
     const void play();
-    void showVariables(std::ostream &dst) const;
-    std::string showVariables() const;
+    void showVariables(std::ostream &dst) const override;
+    std::string showVariables() const override;
 };
 
 #endif

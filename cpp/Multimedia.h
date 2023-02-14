@@ -35,6 +35,7 @@ public:
     void setFileName(std::string name);
 
     /* Méthode d'affichage */
+    // avec virtual on a liaison dynamique / tardive -> méthode du pointé est appellé
     virtual void showVariables(std::ostream &dst) const; // méthode d'affichage pour le terminal
     virtual std::string showVariables() const;           // méthode d'affichage pour le client TCP
 

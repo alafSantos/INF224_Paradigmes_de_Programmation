@@ -8,6 +8,7 @@
 
 Multimedia::Multimedia(){
     this->path = "path undefined";
+    this->fileName = "file name undefined";
 }
 
 Multimedia::Multimedia(std::string name, std::string path){
