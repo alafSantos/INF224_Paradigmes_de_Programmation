@@ -17,12 +17,12 @@ private:
 public:
     Video(std::string fileName, std::string path, unsigned int length);
     Video();
-    ~Video();
+    virtual ~Video();
     void setLength(unsigned int length);
     unsigned int getLength() const;
-    const void play();
-    void showVariables(std::ostream &dst) const override;
-    std::string showVariables() const override;
+    const void play() override;
+    virtual void showVariables(std::ostream &dst) const override;
+    virtual std::string showVariables() const override;
 };
 
 #endif

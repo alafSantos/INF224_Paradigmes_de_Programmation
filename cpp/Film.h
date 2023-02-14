@@ -24,8 +24,8 @@ public:
     const int *getChapters() const;                         // obtenir le pointeur allChapters
     const int getChapterSize(int i) const;                  // un seul chapitre (position)
     void setChapters(const int *chapters, int chapterSize); // définir le tableau de chapitres
-    void showVariables(std::ostream &dst) const;            // Afficher les attributs via le terminal
-    std::string showVariables() const;                      // envoyer les attributs au client TCP sous forme de chaîne de caractères
+    void showVariables(std::ostream &dst) const override;            // Afficher les attributs via le terminal
+    std::string showVariables() const override;                      // envoyer les attributs au client TCP sous forme de chaîne de caractères
 
     // On peut redéfinir les opérateurs de copie pour faire de la copie profonde
     Film(const Film &from);

@@ -24,7 +24,7 @@ public:
     void setLongitude(float longitude);
     float getLatitude() const;
     float getLongitude() const;
-    const void play();
+    const void play() override;
     void showVariables(std::ostream &dst) const override;
     std::string showVariables() const override;
 };
