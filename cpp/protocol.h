@@ -22,6 +22,7 @@
     addP - ajoute une nouvelle photo. Exemple : "addP fileName path latitude longitude".
 */
 
-std::string protocolDealer(std::string request, Manager &media);
+int getWords(std::string parameters[], std::string name); // sépare la chaîne de paramètres en sous-chaînes pour la gestion des requêtes tcp.
+std::string protocolDealer(std::string request, Manager &media); // Méthode principale qui traite les demandes des clients pour le protocole propre
 
 #endif

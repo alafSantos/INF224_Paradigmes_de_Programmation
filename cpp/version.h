@@ -4,6 +4,13 @@
  * 2023
  */
 
+/*
+Dans ce fichier header il est défini des identifiants pour chaque version du projet afin qu'il soit possible 
+de comprendre le déroulement et l'avancement du projet. Il est important de ne garder qu'une seule version
+active pour une bonne compilation et un bon comportement (sauf pour les versions qui sont dépendantes, mais
+le traitement est déjà fait ici via ifdef et ifndef). 
+*/
+
 #ifndef VERSION_H
 #define VERSION_H
 
@@ -11,7 +18,7 @@
 // #define VERSION_ETAPES_6_8 // pour le code de création des groupes
 // #define VERSION_ETAPES_9 // Pour l'usage de smart pointers
 // #define VERSION_ETAPES_10_11 // Manager and Client / serveur
-#define JAVA_SWING
+#define JAVA_SWING // La version finale du logiciel est donnée par l'identifiant JAVA_SWING.
 
 #ifdef VERSION_ETAPES_9
     #define VERSION_ETAPES_6_8
