@@ -35,8 +35,8 @@ public:
     void setFileName(std::string name);
 
     /* Méthode d'affichage */
-    virtual void showVariables(std::ostream &dst) const;
-    virtual std::string showVariables() const;
+    virtual void showVariables(std::ostream &dst) const; // méthode d'affichage pour le terminal
+    virtual std::string showVariables() const;           // méthode d'affichage pour le client TCP
 
     /* Méthode virtuel qui permette de jouer l'objet multimédia.
     L'implementation n'est-elle disponible que dans les sous-classes */

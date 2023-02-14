@@ -36,6 +36,6 @@ void Multimedia::showVariables(std::ostream &dst) const{
 }
 
 std::string Multimedia::showVariables() const{
-    const std::string codeEndLine = "ç;1";
+    const std::string codeEndLine = "ç;1"; // symbole de fin de ligne défini pour le protocole propre
     return "Path: " + this->getPath() + codeEndLine + "File Name: " + this->getFileName();
 }
