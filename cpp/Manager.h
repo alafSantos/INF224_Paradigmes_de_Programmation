@@ -18,14 +18,15 @@
 #include "Group.h"
 #include "version.h"
 
-typedef std::shared_ptr<Multimedia> MultimediaPtr;
-typedef std::shared_ptr<Photo> PhotoPtr;
-typedef std::shared_ptr<Video> VideoPtr;
-typedef std::shared_ptr<Film> FilmPtr;
-typedef std::shared_ptr<Group> GroupPtr;
+// création de nouveaux types
+using MultimediaPtr = std::shared_ptr<Multimedia>;
+using PhotoPtr = std::shared_ptr<Photo>;
+using VideoPtr = std::shared_ptr<Video>;
+using FilmPtr = std::shared_ptr<Film>;
+using GroupPtr = std::shared_ptr<Group>;
 
-typedef std::map<std::string, MultimediaPtr> MultimediaMap;
-typedef std::map<std::string, GroupPtr> GroupMap;
+using MultimediaMap = std::map<std::string, MultimediaPtr>;
+using GroupMap = std::map<std::string, GroupPtr>;
 
 class Manager
 {
