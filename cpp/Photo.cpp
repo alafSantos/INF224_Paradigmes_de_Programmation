@@ -56,8 +56,9 @@ void Photo::showVariables(std::ostream &dst) const
 
 std::string Photo::showVariables() const
 {
-    std::string txt = Multimedia::showVariables() + this->codeEndLine;
-    txt += "Photo latitude: " + std::to_string(this->getLatitude()) + this->codeEndLine;
-    txt += "Photo longitude: " + std::to_string(this->getLongitude()) + this->codeEndLine;
+    const std::string codeEndLine = "ç;1"; // symbole de fin de ligne défini pour le protocole propre
+    std::string txt = Multimedia::showVariables() + codeEndLine;
+    txt += "Photo latitude: " + std::to_string(this->getLatitude()) + codeEndLine;
+    txt += "Photo longitude: " + std::to_string(this->getLongitude()) + codeEndLine;
     return txt;
 }

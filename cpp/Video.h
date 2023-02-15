@@ -17,12 +17,14 @@ private:
 public:
     Video(std::string fileName, std::string path, unsigned int length);
     Video();
-    virtual ~Video();
-    void setLength(unsigned int length);
-    unsigned int getLength() const;
-    const void play() override;
-    virtual void showVariables(std::ostream &dst) const override;
-    virtual std::string showVariables() const override;
+    virtual ~Video(); // Destructeur virtual à cause de la classe fille Film.h
+
+    void setLength(unsigned int length); // Modifieur de length
+    unsigned int getLength() const;      // Accesseur de length
+
+    const void play() override;                                   // Joue la vidéo
+    virtual void showVariables(std::ostream &dst) const override; // Affiche la valeur des variables de l'objet via terminal
+    virtual std::string showVariables() const override;           // Affiche la valeur des variables de l'objet via TCP (retourne une string)
 };
 
 #endif

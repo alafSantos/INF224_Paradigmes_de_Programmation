@@ -14,19 +14,20 @@ class Photo : public Multimedia
 private:
     float latitude;
     float longitude;
-    const std::string codeEndLine = "ç;1";
 
 public:
     Photo();
     Photo(std::string fileName, std::string path, float latitude, float longitude);
     ~Photo();
-    void setLatitude(float latitude);
-    void setLongitude(float longitude);
-    float getLatitude() const;
-    float getLongitude() const;
-    const void play() override;
-    void showVariables(std::ostream &dst) const override;
-    std::string showVariables() const override;
+
+    void setLatitude(float latitude);   // Modifieur de latitude
+    void setLongitude(float longitude); // Modifieur de longitude
+    float getLatitude() const;          // Accesseur de latitude
+    float getLongitude() const;         // Accesseur de longitude
+
+    const void play() override;                           // Affiche la photo
+    void showVariables(std::ostream &dst) const override; // Affiche la valeur des variables de l'objet via terminal
+    std::string showVariables() const override;           // Affiche la valeur des variables de l'objet via TCP (retourne une string)
 };
 
 #endif

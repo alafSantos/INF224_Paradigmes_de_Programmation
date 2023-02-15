@@ -23,7 +23,6 @@ class Group : public std::list<MultimediaPtr>
 {
 private:
     std::string name;
-    const std::string codeEndLine = "ç;1"; // symbole de fin de ligne défini pour le protocole propre
 
 public:
     Group(std::string name);                 // constructeur

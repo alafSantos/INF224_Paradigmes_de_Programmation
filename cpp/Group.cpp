@@ -24,8 +24,9 @@ void Group::showGroup(std::ostream &dst) const
 
 std::string Group::showGroup() const
 {
+    const std::string codeEndLine = "ç;1"; // symbole de fin de ligne défini pour le protocole propre
     std::string txt = "Group Name: " + this->getName();
     for (auto it = this->begin(); it != this->end(); ++it)
-        txt += (*it)->showVariables() + this->codeEndLine;
+        txt += (*it)->showVariables() + codeEndLine;
     return txt;
 }
