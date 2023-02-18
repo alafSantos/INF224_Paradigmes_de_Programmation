@@ -4,21 +4,21 @@
 
 ### **C++ (Backend)**
 
-### 1e Etape: Démarrage
+### 1e étape. Démarrage
 
 Dans cette première étape, il a été créer un répertoire pour les fichiers de travail. Dans ce dossier ont été placés les fichiers Makefile et **main.cpp** fournis dans la spécification du projet. Le principal role du Makefile s'agit de la compilation et l'exécution du programme. Du coup, le programme peut être exécuté juste en tapant la commande **make run**.
 
-### 2e Etape: Classe de base
+### 2e étape. Classe de base
 
 Por la deuxième étape, il a été ecrire la déclaration (fichier source **Multimedia.h**) et l'implémentation (fichier source **Multimedia.cpp**) de la classe de base de l'arbre d'héritage des classes d'objets multimédia. Cette classe de base contient ce qui est commun à tous les objets multimédia.
 
 En bref, on a déclaré et implémenté deux constructeurs (un sans argument, un avec arguments), le destructeur, ainsi que les accesseurs ("getters") et modifieurs ("setters") pour pouvoir lire ou modifier les variables d'instance. En plus d'une méthode d'affichage permettant d'afficher la valeur des variables de l'objet.
 
-### 3e Etape: Programme de test
+### 3e étape. Programme de test
 
 La troisième étape est dediée à l'écriture d'un programme de test. Pour le faire, on a créé quelques instances de la classe de base (en utilisant new) dans main() et on a vérifié que la fonction d'affichage affiche correctement la valeur des attributs dans le Terminal.
 
-### 4e Etape: Photos et videos
+### 4e étape. Photos et videos
 
 Ensuite, dans la quatrième partie on a implementé deux sous-classes de la classe de base, l'une correspondant à des objets photo, l'autre à objets vidéo.
 
@@ -36,7 +36,7 @@ Il est demandé :
 - Si vous avez fait ce qui précède comme demandé, il ne sera plus possible d'instancer des objets de la classe de base. Pourquoi ?
   - Parce qu'on a maintenant une méthode abstraite (**play**) dans cette classe, donc elle s'agit d'une classe abstraite.
 
-### 5e Etape: Traitement uniforme (en utilisant le polymorphisme)
+### 5e étape. Traitement uniforme (en utilisant le polymorphisme)
 
 Le but de la cinquième étapa est de pouvoir traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type. On a fait ça dans le fichier **main.cpp** et le morceau de code dédié à cette partie peut être trouvé dans la directive de pré-compilation **#ifdef VERSION_ETAPES_1_5**.
 
@@ -118,7 +118,7 @@ Dans la dérnière partie, le Java Swing, on a crée une interface graphique Jav
 
 ## L'utilisation du logiciel
 
-Dans le coin supérieur gauche, il y a un menu "List" qui donne des options pour afficher les groupes et les fichiers multimédias disponibles dans le programme, ceux-ci peuvent être modifiés via les méthodes "supprimer" et "ajouter" disponibles dans l'interface. Les groupes et multimédias disponibles peuvent être utilisés via les fonctions "Play" et "Show", la première joue le fichier et la seconde affiche les données du fichier ou du groupe. Pour cela, dans la partie supérieure de la fenêtre, il y a un champ de texte dans lequel vous devez entrer le nom du fichier ou du groupe pour lequel vous souhaitez effectuer une action, puis cliquer sur le bouton d'action souhaité ("Play" ou "Show"). Ainda nessa toolBar superior, existe uma opção para remover uma mídia ou grupo, o processo aqui é o mesmo, basta por o nome do alvo no campo de texto e então clicar sobre o botão "Remove". Le dernier bouton de cette barre d'outils est le bouton "Quitter", qui ferme l'application.
+Dans le coin supérieur gauche, il y a un menu "List" qui donne des options pour afficher les groupes et les fichiers multimédias disponibles dans le programme, ceux-ci peuvent être modifiés via les méthodes "supprimer" et "ajouter" disponibles dans l'interface. Les groupes et multimédias disponibles peuvent être utilisés via les fonctions "Play" et "Show", la première joue le fichier et la seconde affiche les données du fichier ou du groupe. Pour cela, dans la partie supérieure de la fenêtre, il y a un champ de texte dans lequel vous devez entrer le nom du fichier ou du groupe pour lequel vous souhaitez effectuer une action, puis cliquer sur le bouton d'action souhaité ("Play" ou "Show"). Toujours dans cette barre d'outils supérieure, il y a une option pour supprimer un média ou un groupe, le processus ici est le même, il suffit de mettre le nom de la cible dans le champ de texte, puis de cliquer sur le bouton "Remove". Le dernier bouton de cette barre d'outils est le bouton "Exit", qui ferme l'application.
 
 ![plot](./swing/screenshots/01_home_screen.png)
 
@@ -132,4 +132,4 @@ Dans la partie inférieure de la fenêtre, il y a 4 champs de saisie de texte qu
 
 - Java Development Kit: **_sudo apt-get install openjdk-8-jdk_**
 
-- Compile and run the program (always first the server side and finally the client side): **_make run_**
+- Compiler et exécuter le programme (toujours d'abord le côté serveur et enfin le côté client): **_make run_**
