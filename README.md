@@ -87,16 +87,26 @@ Dans la classe Group on a fait la définition **typedef std::shared_ptr<Multimed
 Et pour compiler le programme avec les modifications qu'on a fait ici, il faut déclarer le **#define VERSION_ETAPES_9** dans le fichier Group.h, si non il s'agira de le même programme de la question précédente (8e étape).
 
 ### 10e étape. Gestion cohérente des données
+On a créé la classe **Manager.h** qui sert à fabriquer et manipuler tous les objets de manière cohérente.
 
 ### 11e étape. Client / serveur
-
-### 12e étape. Sérialisation / désérialisation
-
-### 13e étape. Traitement des erreurs
-
+Ici on a transformé le programme C++ en un serveur qui communiquera avec un client qui fera office de télécommande. On a défini un protocole de communication simple dans la bibliothèque **protocol.h**.
+* LISTE DE COMMANDES
+    - play - joue un fichier multimédia. Exemple : "play me.jpg".
+    - find - recherche un fichier ou un groupe multimédia. Exemple : "find me.jpg".
+    - remv - retire un groupe ou un multimédia. Exemple : "remv me.jpg".
+    - lGrp - envoye la liste de tous les groupes. Exemple : "lGrp".
+    - lMlt - envoye la liste de tous les multimedias. Exemple : "lMlt".
+    - addV - ajoute une nouvelle vidéo. Exemple : "addV fileName path length".
+    - addP - ajoute une nouvelle photo. Exemple : "addP fileName path latitude longitude".
 
 
 ### Java Swing (Frontend)
+
+Dans la dérnière partie, le Java Swing, on a crée une interface graphique Java/Swing qui permet d'interagir avec le logiciel déjà créé lors du programme C++. Tout ce qui est communication est réalisé en utilisant du protocole qu'on a défini avant (**protocol.h**).
+
+
+
 ## L'utilisation du logiciel 
 
 Dans le coin supérieur gauche, il y a un menu "Liste" qui donne des options pour afficher les groupes et les fichiers multimédias disponibles dans le programme, ceux-ci peuvent être modifiés via les méthodes "supprimer" et "ajouter" disponibles dans l'interface. Les groupes et multimédias disponibles peuvent être utilisés via les fonctions "Play" et "Show", la première joue le fichier et la seconde affiche les données du fichier ou du groupe. Pour cela, dans la partie supérieure de la fenêtre, il y a un champ de texte dans lequel vous devez entrer le nom du fichier ou du groupe pour lequel vous souhaitez effectuer une action, puis cliquer sur le bouton d'action souhaité ("Play" ou "Show"). Ainda nessa toolBar superior, existe uma opção para remover uma mídia ou grupo, o processo aqui é o mesmo, basta por o nome do alvo no campo de texto e então clicar sobre o botão "Remove". Le dernier bouton de cette barre d'outils est le bouton "Quitter", qui ferme l'application.
@@ -104,7 +114,6 @@ Dans le coin supérieur gauche, il y a un menu "Liste" qui donne des options pou
 Au centre de la fenêtre, nous avons le champ de texte de sortie, où les informations qui doivent être vues par l'utilisateur sont affichées. Ainsi qu'un bouton "Clear" pour effacer tous les champs de texte de la fenêtre.
 
 Dans la partie inférieure de la fenêtre, il y a 4 champs de saisie de texte qui doivent être utilisés pour ajouter de nouveaux médias à la liste. Pour ajouter une vidéo, mettez le nom du fichier dans le premier champ, le chemin d'accès dans le second, sa durée dans le troisième et le quatrième champ ne doit pas être utilisé (sinon le logiciel considérera ce fichier comme une Photographie). Pour ajouter une photo, vous devez mettre le nom du fichier dans le premier champ de texte, le chemin d'accès au fichier dans le deuxième champ, votre latitude dans le troisième champ et la longitude dans le quatrième champ. Dans les deux cas, seulement après avoir rempli les champs de texte appropriés, l'utilisateur doit cliquer sur le bouton "Add Media".
-
 
 ### Installation des dépendances
 

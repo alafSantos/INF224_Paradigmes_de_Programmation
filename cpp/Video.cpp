@@ -1,7 +1,12 @@
-/*
- * Développé par Alaf do Nascimento Santos
- * INF224 Paradigmes de Programmation
- * 2023
+/**
+ * @file Video.cpp
+ * @author Alaf do Nascimento Santos
+ * @brief INF224 Paradigmes de Programmation
+ * @version 0.1
+ * @date 2023-02-18
+ * 
+ * @copyright Copyright (c) 2023
+ * 
  */
 
 #include "Video.h"

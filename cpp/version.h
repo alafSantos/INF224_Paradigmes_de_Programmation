@@ -1,15 +1,21 @@
-/*
- * Développé par Alaf do Nascimento Santos
- * INF224 Paradigmes de Programmation
- * 2023
+/**
+ * @file version
+ * @author Alaf do Nascimento Santos
+ * @brief INF224 Paradigmes de Programmation
+ * @version 0.1
+ * @date 2023-02-18
+ * 
+ * @copyright Copyright (c) 2023
+ * 
  */
 
-/*
-Dans ce fichier header il est défini des identifiants pour chaque version du projet afin qu'il soit possible 
-de comprendre le déroulement et l'avancement du projet. Il est important de ne garder qu'une seule version
-active pour une bonne compilation et un bon comportement (sauf pour les versions qui sont dépendantes, mais
-le traitement est déjà fait ici via ifdef et ifndef). 
-*/
+/**
+ * @brief Dans ce fichier header il est défini des identifiants pour chaque version du projet afin qu'il soit possible 
+ * de comprendre le déroulement et l'avancement du projet. Il est important de ne garder qu'une seule version
+ * active pour une bonne compilation et un bon comportement (sauf pour les versions qui sont dépendantes, mais
+ * le traitement est déjà fait ici via ifdef et ifndef). 
+ * 
+ */
 
 #ifndef VERSION_H
 #define VERSION_H

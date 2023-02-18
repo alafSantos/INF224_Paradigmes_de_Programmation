@@ -1,7 +1,12 @@
-/*
- * Développé par Alaf do Nascimento Santos
- * INF224 Paradigmes de Programmation
- * 2023
+/**
+ * @file Manager.h
+ * @author Alaf do Nascimento Santos
+ * @brief INF224 Paradigmes de Programmation
+ * @version 0.1
+ * @date 2023-02-18
+ * 
+ * @copyright Copyright (c) 2023
+ * 
  */
 
 #ifndef MANAGER_H
@@ -17,7 +22,9 @@
 #include "Film.h"
 #include "Group.h"
 
-// création de nouveaux types
+///
+/// création de nouveaux types
+///
 using MultimediaPtr = std::shared_ptr<Multimedia>;
 using PhotoPtr = std::shared_ptr<Photo>;
 using VideoPtr = std::shared_ptr<Video>;
