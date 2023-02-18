@@ -1,0 +1,74 @@
+\hypertarget{Manager_8h}{}\doxysection{Référence du fichier /home/alaf/\+Desktop/\+P2/\+I\+N\+F224/\+I\+N\+F224\+\_\+\+Paradigmes\+\_\+de\+\_\+\+Programmation/cpp/\+Manager.h}
+\label{Manager_8h}\index{/home/alaf/Desktop/P2/INF224/INF224\_Paradigmes\_de\_Programmation/cpp/Manager.h@{/home/alaf/Desktop/P2/INF224/INF224\_Paradigmes\_de\_Programmation/cpp/Manager.h}}
+
+
+I\+N\+F224 Paradigmes de Programmation.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Multimedia.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Photo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Film.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Group.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de Manager.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classManager}{Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{Manager_8h_a05d41e4e110e20f6ae397be147ab1980}{Multimedia\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimedia}{Multimedia}} $>$
+\item 
+\mbox{\Hypertarget{Manager_8h_af7b580c4f07b0bcbed28edff0cd65659}\label{Manager_8h_af7b580c4f07b0bcbed28edff0cd65659}} 
+using {\bfseries Photo\+Ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPhoto}{Photo}} $>$
+\item 
+\mbox{\Hypertarget{Manager_8h_a6b30147e1a61917fc566f24d19b34049}\label{Manager_8h_a6b30147e1a61917fc566f24d19b34049}} 
+using {\bfseries Video\+Ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classVideo}{Video}} $>$
+\item 
+\mbox{\Hypertarget{Manager_8h_acd416dd4e2edfcd96191c1958103b6ec}\label{Manager_8h_acd416dd4e2edfcd96191c1958103b6ec}} 
+using {\bfseries Film\+Ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classFilm}{Film}} $>$
+\item 
+\mbox{\Hypertarget{Manager_8h_a39c11e38578c734765a185f82eb65d45}\label{Manager_8h_a39c11e38578c734765a185f82eb65d45}} 
+using {\bfseries Group\+Ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGroup}{Group}} $>$
+\item 
+\mbox{\Hypertarget{Manager_8h_ac37cef772a9d938288c0a8205508ee9a}\label{Manager_8h_ac37cef772a9d938288c0a8205508ee9a}} 
+using {\bfseries Multimedia\+Map} = std\+::map$<$ std\+::string, \mbox{\hyperlink{Manager_8h_a05d41e4e110e20f6ae397be147ab1980}{Multimedia\+Ptr}} $>$
+\item 
+\mbox{\Hypertarget{Manager_8h_afcd26e1e6da93581da164b0eca864354}\label{Manager_8h_afcd26e1e6da93581da164b0eca864354}} 
+using {\bfseries Group\+Map} = std\+::map$<$ std\+::string, Group\+Ptr $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+I\+N\+F224 Paradigmes de Programmation. 
+
+\begin{DoxyAuthor}{Auteur}
+Alaf do Nascimento Santos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/02-\/18
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{Manager_8h_a05d41e4e110e20f6ae397be147ab1980}\label{Manager_8h_a05d41e4e110e20f6ae397be147ab1980}} 
+\index{Manager.h@{Manager.h}!MultimediaPtr@{MultimediaPtr}}
+\index{MultimediaPtr@{MultimediaPtr}!Manager.h@{Manager.h}}
+\doxysubsubsection{\texorpdfstring{MultimediaPtr}{MultimediaPtr}}
+{\footnotesize\ttfamily using Multimedia\+Ptr =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classMultimedia}{Multimedia}}$>$}
+
+création de nouveaux types 

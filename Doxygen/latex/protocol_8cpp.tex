@@ -1,0 +1,54 @@
+\hypertarget{protocol_8cpp}{}\doxysection{Référence du fichier /home/alaf/\+Desktop/\+P2/\+I\+N\+F224/\+I\+N\+F224\+\_\+\+Paradigmes\+\_\+de\+\_\+\+Programmation/cpp/protocol.cpp}
+\label{protocol_8cpp}\index{/home/alaf/Desktop/P2/INF224/INF224\_Paradigmes\_de\_Programmation/cpp/protocol.cpp@{/home/alaf/Desktop/P2/INF224/INF224\_Paradigmes\_de\_Programmation/cpp/protocol.cpp}}
+
+
+I\+N\+F224 Paradigmes de Programmation.  
+
+
+{\ttfamily \#include \char`\"{}protocol.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de protocol.\+cpp\+:
+% FIG 0
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{protocol_8cpp_a644fb8c032a979edf9d16d2ea5fc787c}{get\+Words}} (std\+::string parameters\mbox{[}$\,$\mbox{]}, std\+::string name)
+\begin{DoxyCompactList}\small\item\em L\+I\+S\+TE DE C\+O\+M\+M\+A\+N\+D\+ES play -\/ joue un fichier multimédia. Exemple \+: \char`\"{}play me.\+jpg\char`\"{}. find -\/ recherche un fichier ou un groupe multimédia. Exemple \+: \char`\"{}find me.\+jpg\char`\"{}. remv -\/ retire un groupe ou un multimédia. Exemple \+: \char`\"{}remv me.\+jpg\char`\"{}. l\+Grp -\/ envoye la liste de tous les groupes. Exemple \+: \char`\"{}l\+Grp\char`\"{}. l\+Mlt -\/ envoye la liste de tous les multimedias. Exemple \+: \char`\"{}l\+Mlt\char`\"{}. addV -\/ ajoute une nouvelle vidéo. Exemple \+: \char`\"{}add\+V file\+Name path length\char`\"{}. addP -\/ ajoute une nouvelle photo. Exemple \+: \char`\"{}add\+P file\+Name path latitude longitude\char`\"{}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{protocol_8cpp_aa42f142506556f4f8f78922a88731bdf}{protocol\+Dealer}} (std\+::string request, \mbox{\hyperlink{classManager}{Manager}} \&media)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+I\+N\+F224 Paradigmes de Programmation. 
+
+\begin{DoxyAuthor}{Auteur}
+Alaf do Nascimento Santos 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/02-\/18
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{protocol_8cpp_a644fb8c032a979edf9d16d2ea5fc787c}\label{protocol_8cpp_a644fb8c032a979edf9d16d2ea5fc787c}} 
+\index{protocol.cpp@{protocol.cpp}!getWords@{getWords}}
+\index{getWords@{getWords}!protocol.cpp@{protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{getWords()}{getWords()}}
+{\footnotesize\ttfamily int get\+Words (\begin{DoxyParamCaption}\item[{std\+::string}]{parameters\mbox{[}$\,$\mbox{]},  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+L\+I\+S\+TE DE C\+O\+M\+M\+A\+N\+D\+ES play -\/ joue un fichier multimédia. Exemple \+: \char`\"{}play me.\+jpg\char`\"{}. find -\/ recherche un fichier ou un groupe multimédia. Exemple \+: \char`\"{}find me.\+jpg\char`\"{}. remv -\/ retire un groupe ou un multimédia. Exemple \+: \char`\"{}remv me.\+jpg\char`\"{}. l\+Grp -\/ envoye la liste de tous les groupes. Exemple \+: \char`\"{}l\+Grp\char`\"{}. l\+Mlt -\/ envoye la liste de tous les multimedias. Exemple \+: \char`\"{}l\+Mlt\char`\"{}. addV -\/ ajoute une nouvelle vidéo. Exemple \+: \char`\"{}add\+V file\+Name path length\char`\"{}. addP -\/ ajoute une nouvelle photo. Exemple \+: \char`\"{}add\+P file\+Name path latitude longitude\char`\"{}. 
+
+vérifie si un champ a été mal utilisé, double espace dans la chaîne\mbox{\Hypertarget{protocol_8cpp_aa42f142506556f4f8f78922a88731bdf}\label{protocol_8cpp_aa42f142506556f4f8f78922a88731bdf}} 
+\index{protocol.cpp@{protocol.cpp}!protocolDealer@{protocolDealer}}
+\index{protocolDealer@{protocolDealer}!protocol.cpp@{protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{protocolDealer()}{protocolDealer()}}
+{\footnotesize\ttfamily std\+::string protocol\+Dealer (\begin{DoxyParamCaption}\item[{std\+::string}]{request,  }\item[{\mbox{\hyperlink{classManager}{Manager}} \&}]{media }\end{DoxyParamCaption})}
+
+sépare la chaîne de paramètres en sous-\/chaînes pour la gestion des requêtes tcp. 

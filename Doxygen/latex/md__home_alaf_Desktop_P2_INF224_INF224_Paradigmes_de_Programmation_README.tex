@@ -1,0 +1,112 @@
+\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md1}{}\doxysection{Alaf do Nascimento Santos}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md1}
+\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md2}{}\doxysubsection{$<$strong$>$\+C++ (\+Backend)$<$/strong$>$}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md2}
+\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md3}{}\doxysubsection{1e Etape\+: Démarrage}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md3}
+Dans cette première étape, il a été créer un répertoire pour les fichiers de travail. Dans ce dossier ont été placés les fichiers Makefile et \mbox{\hyperlink{main_8cpp}{main.\+cpp}} fournis dans la spécification du projet. Le principal role du Makefile s\textquotesingle{}agit de la compilation et l\textquotesingle{}exécution du programme. Du coup, le programme peut être exécuté juste en tapant la commande {\bfseries{make run}}.\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md4}{}\doxysubsection{2e Etape\+: Classe de base}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md4}
+Por la deuxième étape, il a été ecrire la déclaration (fichier source \mbox{\hyperlink{Multimedia_8h}{Multimedia.\+h}}) et l\textquotesingle{}implémentation (fichier source \mbox{\hyperlink{Multimedia_8cpp}{Multimedia.\+cpp}}) de la classe de base de l\textquotesingle{}arbre d\textquotesingle{}héritage des classes d\textquotesingle{}objets multimédia. Cette classe de base contient ce qui est commun à tous les objets multimédia.
+
+En bref, on a déclaré et implémenté deux constructeurs (un sans argument, un avec arguments), le destructeur, ainsi que les accesseurs (\char`\"{}getters\char`\"{}) et modifieurs (\char`\"{}setters\char`\"{}) pour pouvoir lire ou modifier les variables d\textquotesingle{}instance. En plus d\textquotesingle{}une méthode d\textquotesingle{}affichage permettant d\textquotesingle{}afficher la valeur des variables de l\textquotesingle{}objet.\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md5}{}\doxysubsection{3e Etape\+: Programme de test}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md5}
+La troisième étape est dediée à l\textquotesingle{}écriture d\textquotesingle{}un programme de test. Pour le faire, on a créé quelques instances de la classe de base (en utilisant new) dans main() et on a vérifié que la fonction d\textquotesingle{}affichage affiche correctement la valeur des attributs dans le Terminal.\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md6}{}\doxysubsection{4e Etape\+: Photos et videos}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md6}
+Ensuite, dans la quatrième partie on a implementé deux sous-\/classes de la classe de base, l\textquotesingle{}une correspondant à des objets photo, l\textquotesingle{}autre à objets vidéo.
+
+Les principales fichiers pour cette étape sont \+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{Video_8h}{Video.\+h}}
+\item \mbox{\hyperlink{Video_8cpp}{Video.\+cpp}}
+\item \mbox{\hyperlink{Photo_8h}{Photo.\+h}}
+\item \mbox{\hyperlink{Photo_8cpp}{Photo.\+cpp}}
+\end{DoxyItemize}
+
+Mais aussi on a modifié le Makefile pour qu\textquotesingle{}on puisse compiler le programme.
+
+Il est demandé \+:
+
+
+\begin{DoxyItemize}
+\item Si vous avez fait ce qui précède comme demandé, il ne sera plus possible d\textquotesingle{}instancer des objets de la classe de base. Pourquoi ?
+\begin{DoxyItemize}
+\item Parce qu\textquotesingle{}on a maintenant une méthode abstraite ({\bfseries{play}}) dans cette classe, donc elle s\textquotesingle{}agit d\textquotesingle{}une classe abstraite.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md7}{}\doxysubsection{5e Etape\+: Traitement uniforme (en utilisant le polymorphisme)}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md7}
+Le but de la cinquième étapa est de pouvoir traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type. On a fait ça dans le fichier \mbox{\hyperlink{main_8cpp}{main.\+cpp}} et le morceau de code dédié à cette partie peut être trouvé dans la directive de pré-\/compilation $\ast$$\ast$\#ifdef V\+E\+R\+S\+I\+O\+N\+\_\+\+E\+T\+A\+P\+E\+S\+\_\+1\+\_\+5$\ast$$\ast$.
+
+
+\begin{DoxyItemize}
+\item Quelle est la propriété caractéristique de l\textquotesingle{}orienté objet qui permet de faire cela ?
+\begin{DoxyItemize}
+\item Ici le polymorphisme nous a permis de traiter des classes différentes de manière uniforme même sans connaître leur implémentation à la base.
+\end{DoxyItemize}
+\item Qu\textquotesingle{}est-\/il spécifiquement nécessaire de faire dans le cas du C++ ?
+\begin{DoxyItemize}
+\item Pour démontrer le polymorphisme, j\textquotesingle{}ai créé un tableau à 2 positions contenant une vidéo et une photo. Les fichiers utilisés dans l\textquotesingle{}exemple se trouvent dans le dossier media.
+\end{DoxyItemize}
+\item Quel est le type des éléments du tableau \+: le tableau doit-\/il contenir des objets ou des pointeurs vers ces objets ? Pourquoi ? Comparer à Java.
+\begin{DoxyItemize}
+\item En bref, le tableau contient des pointeurs vers les objets. J\textquotesingle{}ai utilisé ça parce qu\textquotesingle{}il n\textquotesingle{}est pas possible de mélanger le polymorphisme et les arrays.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md8}{}\doxysubsection{6e étape. Films et tableaux}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md8}
+Ensuite, la sixième étape est dediée à la definition d\textquotesingle{}une sous-\/classe \mbox{\hyperlink{classFilm}{Film}} dérivant de la classe \mbox{\hyperlink{classVideo}{Video}}. La principale différence est que les Films comportent des chapitres permettant d\textquotesingle{}accéder rapidement à une partie du film. Pour ce faire on a utilisé un tableau d\textquotesingle{}entiers contenant la durée de chaque chapitre.
+
+Les principales fichiers pour cette étape sont \+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{Film_8h}{Film.\+h}}
+\item \mbox{\hyperlink{Film_8cpp}{Film.\+cpp}}
+\end{DoxyItemize}\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md9}{}\doxysubsection{7e étape. Destruction et copie des objets}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md9}
+Pour l\textquotesingle{}étape 7, on a modifié quelques classes précédentes afin qu\textquotesingle{}il n\textquotesingle{}y ait pas de fuite mémoire quand on détruit les objets. La raison pour cet étape s\textquotesingle{}explique par le fait que, contrairement à Java, C++ ne gère pas la mémoire dynamique automatiquement \+: comme il n\textquotesingle{}y a pas de {\bfseries{ramasse miettes}}, ce qui est créé avec new occupe de la mémoire jusqu\textquotesingle{}à la terminaison du programme, sauf si on le detruit avec delete.
+
+Il est demandé \+:
+
+
+\begin{DoxyItemize}
+\item Parmi les classes précédemment écrites quelles sont celles qu\textquotesingle{}il faut modifier afin qu\textquotesingle{}il n\textquotesingle{}y ait pas de fuite mémoire quand on détruit les objets ?
+\begin{DoxyItemize}
+\item Il a été necessaire de changer la classe \mbox{\hyperlink{classFilm}{Film}} pour qu\textquotesingle{}on puisse bien utiliser la memoire alloué pour le tableau d\textquotesingle{}entiers contenant la durée de chaque chapitre. Pour cela, en utilisant {\bfseries{new}}, pour allouer la memoire, dans la fonction {\bfseries{set\+Chapters}}, le tableau donné en argument a été initialisé dans le tableau dynamique {\bfseries{all\+Chapters}}. Pour désallouer, il existe un {\bfseries{delete \mbox{[}\mbox{]}}} dans le destructeur de la classe et aussi au début de la fonction {\bfseries{set\+Chapters}}, parce que sans delete l\textquotesingle{}objet existe jusqu’à la fin du programme.
+\end{DoxyItemize}
+\item La copie d\textquotesingle{}objet peut également poser problème quand ils ont des variables d\textquotesingle{}instance qui sont des pointeurs. Quel est le problème et quelles sont les solutions ?
+\begin{DoxyItemize}
+\item Il s\textquotesingle{}agit d\textquotesingle{}un problème qui se pose quand on fait une copie superficielle (shallow). Alors, les pointeurs pointent sur le même adresse et de plus l\textquotesingle{}objet peux être détruit plusieurs fois. Une bonne solution pour ce type de problème est la redéfinition des opérateurs de copie pour faire de la copie profonde (deep). Telle solution a été implémentée au sein de la classe \mbox{\hyperlink{classFilm}{Film}}. Il serait également possible de les interdire.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md10}{}\doxysubsection{8e étape. Créer des groupes}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md10}
+On a créé une nouvelle classe servant à contenir un groupe d\textquotesingle{}objets dérivant de la classe de base. Un groupe peut contenir un ensemble d\textquotesingle{}objets similaires (e.\+g. un groupe pour toutes les photos et un autre pour toutes les vidéos) ou pas (e.\+g. un groupe pour les photos et vidéos de vacances).
+
+La classe groupe hérite d\textquotesingle{}une liste d\textquotesingle{}objets de la classe parente. On a défini les méthodes suivantes\+: un constructeur, un accesseur qui renvoie le nom du groupe et une méthode d\textquotesingle{}affichage qui affiche les attributs de tous les objets de la liste.
+
+Les principales fichiers pour cette étape sont \+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{Group_8h_source}{Group.\+h}}
+\item \mbox{\hyperlink{Group_8cpp}{Group.\+cpp}}
+\end{DoxyItemize}
+
+Il est demandé \+:
+
+
+\begin{DoxyItemize}
+\item Le groupe ne doit pas détruire les objets quand il est détruit car un objet peut appartenir à plusieurs groupes. On rappelle aussi que la liste d\textquotesingle{}objets doit en fait être une liste de pointeurs d\textquotesingle{}objets. Pourquoi ? Comparer à Java.
+\end{DoxyItemize}
+
+On est obligé de faire la liste avec de pointeurs d\textquotesingle{}objets car on ne veut détruit que les pointeurs lors de l\textquotesingle{}appel du destructeur. Il est nécessaire de conserver les pointés, ou les objets, parce qu\textquotesingle{}ils peuvent appartenir à des différents groupes. Dans le cas du Java, il existe la ramasse-\/miettes, ainsi les objets ne sont détruits qu\textquotesingle{}au cas où il n\textquotesingle{}y aurait plus de références à eux.\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md11}{}\doxysubsection{9e étape. Gestion automatique de la mémoire}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md11}
+Dans la classe \mbox{\hyperlink{classGroup}{Group}} on a fait la définition {\bfseries{typedef std\+::shared\+\_\+ptr$<$\+Multimedia$>$ Multimedia\+Ptr}} et maintenant l\textquotesingle{}Objet \mbox{\hyperlink{classGroup}{Group}} hérite d\textquotesingle{}une liste d\textquotesingle{}objets {\bfseries{Multimedia\+Ptr}}. Pour qu\textquotesingle{}on puisse avoir le bon comportement dans le fichier \mbox{\hyperlink{main_8cpp}{main.\+cpp}}, on a changé les instanciations des objets \mbox{\hyperlink{classPhoto}{Photo}} pour qu\textquotesingle{}ils soient smart pointers. Et pour compiler le programme avec les modifications qu\textquotesingle{}on a fait ici, il faut déclarer le $\ast$$\ast$\#define V\+E\+R\+S\+I\+O\+N\+\_\+\+E\+T\+A\+P\+E\+S\+\_\+9$\ast$$\ast$ dans le fichier \mbox{\hyperlink{Group_8h_source}{Group.\+h}}, si non il s\textquotesingle{}agira de le même programme de la question précédente (8e étape).\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md12}{}\doxysubsection{10e étape. Gestion cohérente des données}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md12}
+On a créé la classe {\bfseries{\mbox{\hyperlink{Manager_8h}{Manager.\+h}}}} qui sert à fabriquer et manipuler tous les objets de manière cohérente.\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md13}{}\doxysubsection{11e étape. Client / serveur}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md13}
+Ici on a transformé le programme C++ en un serveur qui communiquera avec un client qui fera office de télécommande. On a défini un protocole de communication simple dans la bibliothèque {\bfseries{\mbox{\hyperlink{protocol_8h}{protocol.\+h}}}}.
+\begin{DoxyItemize}
+\item L\+I\+S\+TE DE C\+O\+M\+M\+A\+N\+D\+ES
+\begin{DoxyItemize}
+\item play -\/ joue un fichier multimédia. Exemple \+: \char`\"{}play me.\+jpg\char`\"{}.
+\item find -\/ recherche un fichier ou un groupe multimédia. Exemple \+: \char`\"{}find me.\+jpg\char`\"{}.
+\item remv -\/ retire un groupe ou un multimédia. Exemple \+: \char`\"{}remv me.\+jpg\char`\"{}.
+\item l\+Grp -\/ envoye la liste de tous les groupes. Exemple \+: \char`\"{}l\+Grp\char`\"{}.
+\item l\+Mlt -\/ envoye la liste de tous les multimedias. Exemple \+: \char`\"{}l\+Mlt\char`\"{}.
+\item addV -\/ ajoute une nouvelle vidéo. Exemple \+: \char`\"{}add\+V file\+Name path length\char`\"{}.
+\item addP -\/ ajoute une nouvelle photo. Exemple \+: \char`\"{}add\+P file\+Name path latitude longitude\char`\"{}.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md14}{}\doxysubsection{Java Swing (\+Frontend)}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md14}
+Dans la dérnière partie, le Java Swing, on a crée une interface graphique Java/\+Swing qui permet d\textquotesingle{}interagir avec le logiciel déjà créé lors du programme C++. Tout ce qui est communication est réalisé en utilisant du protocole qu\textquotesingle{}on a défini avant ({\bfseries{\mbox{\hyperlink{protocol_8h}{protocol.\+h}}}}).\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md15}{}\doxysection{L\textquotesingle{}utilisation du logiciel}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md15}
+Dans le coin supérieur gauche, il y a un menu \char`\"{}\+Liste\char`\"{} qui donne des options pour afficher les groupes et les fichiers multimédias disponibles dans le programme, ceux-\/ci peuvent être modifiés via les méthodes \char`\"{}supprimer\char`\"{} et \char`\"{}ajouter\char`\"{} disponibles dans l\textquotesingle{}interface. Les groupes et multimédias disponibles peuvent être utilisés via les fonctions \char`\"{}\+Play\char`\"{} et \char`\"{}\+Show\char`\"{}, la première joue le fichier et la seconde affiche les données du fichier ou du groupe. Pour cela, dans la partie supérieure de la fenêtre, il y a un champ de texte dans lequel vous devez entrer le nom du fichier ou du groupe pour lequel vous souhaitez effectuer une action, puis cliquer sur le bouton d\textquotesingle{}action souhaité (\char`\"{}\+Play\char`\"{} ou \char`\"{}\+Show\char`\"{}). Ainda nessa tool\+Bar superior, existe uma opção para remover uma mídia ou grupo, o processo aqui é o mesmo, basta por o nome do alvo no campo de texto e então clicar sobre o botão \char`\"{}\+Remove\char`\"{}. Le dernier bouton de cette barre d\textquotesingle{}outils est le bouton \char`\"{}\+Quitter\char`\"{}, qui ferme l\textquotesingle{}application.
+
+Au centre de la fenêtre, nous avons le champ de texte de sortie, où les informations qui doivent être vues par l\textquotesingle{}utilisateur sont affichées. Ainsi qu\textquotesingle{}un bouton \char`\"{}\+Clear\char`\"{} pour effacer tous les champs de texte de la fenêtre.
+
+Dans la partie inférieure de la fenêtre, il y a 4 champs de saisie de texte qui doivent être utilisés pour ajouter de nouveaux médias à la liste. Pour ajouter une vidéo, mettez le nom du fichier dans le premier champ, le chemin d\textquotesingle{}accès dans le second, sa durée dans le troisième et le quatrième champ ne doit pas être utilisé (sinon le logiciel considérera ce fichier comme une Photographie). Pour ajouter une photo, vous devez mettre le nom du fichier dans le premier champ de texte, le chemin d\textquotesingle{}accès au fichier dans le deuxième champ, votre latitude dans le troisième champ et la longitude dans le quatrième champ. Dans les deux cas, seulement après avoir rempli les champs de texte appropriés, l\textquotesingle{}utilisateur doit cliquer sur le bouton \char`\"{}\+Add Media\char`\"{}.\hypertarget{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md16}{}\doxysubsection{Installation des dépendances}\label{md__home_alaf_Desktop_P2_INF224_INF224_Paradigmes_de_Programmation_README_autotoc_md16}
+
+\begin{DoxyItemize}
+\item Java Development Kit\+: {\itshape {\bfseries{sudo apt-\/get install openjdk-\/8-\/jdk}}}
+\item Compile and run the program (always first the server side and finally the client side)\+: {\itshape {\bfseries{make run}}} 
+\end{DoxyItemize}
