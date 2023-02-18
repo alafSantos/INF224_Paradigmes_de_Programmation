@@ -16,7 +16,6 @@
 #include "Video.h"
 #include "Film.h"
 #include "Group.h"
-#include "version.h"
 
 // création de nouveaux types
 using MultimediaPtr = std::shared_ptr<Multimedia>;
@@ -49,13 +48,8 @@ public:
     MultimediaPtr findMultimedia(std::string name);
 
     /* Afficher */
-    #ifdef JAVA_SWING
-        std::string showMultimedia(std::string name);
-        std::string showGroup(std::string name);
-    #elif
-        void showMultimedia(std::string name);
-        void showGroup(std::string name);
-    #endif
+    std::string showMultimedia(std::string name);
+    std::string showGroup(std::string name);
     std::string find(std::string name);
 
     /* Jouer */

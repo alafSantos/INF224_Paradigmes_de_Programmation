@@ -58,7 +58,6 @@ std::string Manager::remove(std::string name)
     return txt;
 }
 
-#ifdef JAVA_SWING
 std::string Manager::showMultimedia(std::string name)
 {
     if (!multimediaTable.count(name))
@@ -74,23 +73,6 @@ std::string Manager::showGroup(std::string name)
     else
         return this->groupTable[name]->showGroup() + this->codeEndLine;
 }
-#elif
-void Manager::showMultimedia(std::string name)
-{
-    if (!multimediaTable[name])
-        std::cout << "No media named: " + name + " was found.\n";
-    else
-        this->multimediaTable[name]->showVariables(std::cout);
-}
-
-void Manager::showGroup(std::string name)
-{
-    if (!groupTable[name])
-        std::cout << "No group named: " + name + " was found.\n";
-    else
-        this->groupTable[name]->showGroup(std::cout);
-}
-#endif
 
 std::string Manager::playMultimedia(std::string name)
 {

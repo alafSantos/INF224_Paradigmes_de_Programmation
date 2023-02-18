@@ -15,7 +15,7 @@ int main(int argc, const char *argv[])
 {
 
 #ifdef VERSION_ETAPES_1_5
-    Video *myVideo = new Video("me.mp4", "media/", 45);
+    Video *myVideo = new Video("matrix.mp4", "media/", 45);
     Photo *myPhoto = new Photo("me.jpg", "media/", 2.2, 3.5);
 
     // traitements uniformes
@@ -64,6 +64,12 @@ int main(int argc, const char *argv[])
     cout << "---------------\n";
     myPhotos2.showGroup(cout);
     cout << "---------------\n";
+
+    #ifndef VERSION_ETAPES_9
+        delete myPhoto1;
+        delete myPhoto2;
+        delete myPhoto3;
+    #endif
 #endif
 
 #ifdef VERSION_ETAPES_10_11
