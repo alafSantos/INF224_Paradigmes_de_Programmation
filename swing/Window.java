@@ -1,21 +1,21 @@
 /**
  * @file Window.java
  * @author Alaf do Nascimento Santos
- * @brief INF224 Paradigmes de Programmation
- * @version 0.1
+ * @brief Front-end de l'application
+ * @version 1.0.0
  * @date 2023-02-18
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-// Classes d'Events et interfaces de Listeners pour la gestion des événements.
+/**Classes d'Events et interfaces de Listeners pour la gestion des événements*/
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
-// Java Swing Components
+/**Java Swing Components*/
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -26,13 +26,12 @@ import javax.swing.JMenu;
 import javax.swing.JTextField;
 import javax.swing.JMenuItem;
 
-// Pour le Client TCP
+/**Pour le Client TCP*/
 import java.io.*;
 import java.net.*;
 
 public class Window extends JFrame implements ActionListener {
-  private static final long serialVersionUID = 1L; // Cette variable est réclamée par le compilateur pour préciser la
-                                                   // version de la classe
+  private static final long serialVersionUID = 1L; /**Cette variable est réclamée par le compilateur pour préciser la version de la classe*/
   private JTextArea textArea;
   private JButton button1, button2, btnExit, btnClear, btnAddVideo, btnRemove;
   private JMenuBar menuBar;
@@ -52,14 +51,14 @@ public class Window extends JFrame implements ActionListener {
     textArea = new JTextArea(10, 30);
     textArea.setBackground(Color.YELLOW);
 
-    // Ajouter des ascenseurs à un JTextArea
+    /**Ajouter des ascenseurs à un JTextArea*/
     JScrollPane scrollableTextArea = new JScrollPane(this.textArea);
     scrollableTextArea.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
     scrollableTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
     add(scrollableTextArea, BorderLayout.CENTER);
 
-    // Insertion des boutons dans l'interface
+    /**Insertion des boutons dans l'interface*/
     button1 = new JButton("Play");
     button1.addActionListener(this);
     // add(button1, BorderLayout.SOUTH);
@@ -96,7 +95,7 @@ public class Window extends JFrame implements ActionListener {
     btnClear.setBackground(Color.YELLOW.darker());
     btnClear.setForeground(Color.BLACK);
 
-    // Champs de saisie de texte
+    /**Champs de saisie de texte*/
     textField = new JTextField();
     textField.setBackground(Color.ORANGE);
 
@@ -112,7 +111,7 @@ public class Window extends JFrame implements ActionListener {
     field4 = new JTextField();
     field4.setBackground(Color.ORANGE);
 
-    // Menu liste en haut à gauche
+    /**Menu liste en haut à gauche*/
     menuBar = new JMenuBar();
     menu = new JMenu("List");
     menuBar.add(menu);
@@ -126,7 +125,7 @@ public class Window extends JFrame implements ActionListener {
     group.addActionListener(this);
     menu.add(group);
 
-    // Barre d'outils supérieure
+    /**Barre d'outils supérieure*/
     toolBar = new JToolBar();
     toolBar.add(textField);
     toolBar.add(button1);
@@ -135,7 +134,7 @@ public class Window extends JFrame implements ActionListener {
     toolBar.add(btnExit);
     add(toolBar, BorderLayout.NORTH);
 
-    // Barre d'outils inférieure
+    /**Barre d'outils inférieure*/
     toolBar2 = new JToolBar();
     toolBar2.add(fileNameTextField);
     toolBar2.add(pathTextField);
@@ -144,7 +143,7 @@ public class Window extends JFrame implements ActionListener {
     toolBar2.add(btnAddVideo);
     add(toolBar2, BorderLayout.SOUTH);
     
-    // Méthodes de JFrame
+    /**Méthodes de JFrame*/
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setTitle("STP Alaf"); // set-top box Alaf
     pack(); // calcul récursif des positions et des tailles
@@ -165,7 +164,7 @@ public class Window extends JFrame implements ActionListener {
       System.err.println("Client: Couldn't connect to " + host + ":" + port);
       System.exit(1);
     }
-    new Window(); // créer la fenêtre
+    new Window(); /**Créer la fenêtre*/
   }
 
   private static class Client {
@@ -203,7 +202,7 @@ public class Window extends JFrame implements ActionListener {
     /// Noter que la methode bloque si le serveur ne repond pas.
     ///
     public String send(String request) {
-      // Envoyer la requete au serveur
+      /**Envoyer la requete au serveur*/
       try {
         request += "\n"; // ajouter le separateur de lignes
         output.write(request, 0, request.length());
@@ -213,7 +212,7 @@ public class Window extends JFrame implements ActionListener {
         return null;
       }
 
-      // Recuperer le resultat envoye par le serveur
+      /**Recuperer le resultat envoye par le serveur*/
       try {
         return input.readLine();
       } catch (java.io.IOException e) {
@@ -223,7 +222,7 @@ public class Window extends JFrame implements ActionListener {
     }
   }
 
-  // Actions selon le protocole défini
+  /**Actions selon le protocole défini*/
   private String getResponse(String text) {
     String output = "";
     String[] txt = text.split("ç;1");
