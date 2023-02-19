@@ -1,20 +1,13 @@
 /**
  * @file protocol.h
  * @author Alaf do Nascimento Santos
- * @brief INF224 Paradigmes de Programmation
- * @version 0.1
+ * @brief Fichier d'en-tête de la bibliothèque protocol
+ * @version 1.0.0
  * @date 2023-02-18
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
-
-#ifndef PROTOCOL_H
-#define PROTOCOL_H
-
-#include "Manager.h"
-#include <string>
-#include <sstream>
 
 /**
  * @brief LISTE DE COMMANDES
@@ -27,7 +20,14 @@
  * addP - ajoute une nouvelle photo. Exemple : "addP fileName path latitude longitude".
  */
 
-int getWords(std::string parameters[], std::string name); /** sépare la chaîne de paramètres en sous-chaînes pour la gestion des requêtes tcp.*/ 
+#ifndef PROTOCOL_H
+#define PROTOCOL_H
+
+#include "Manager.h"
+#include <string>
+#include <sstream>
+
+int getWords(std::string parameters[], std::string name);        /** sépare la chaîne de paramètres en sous-chaînes pour la gestion des requêtes tcp.*/
 std::string protocolDealer(std::string request, Manager &media); /** Méthode principale qui traite les demandes des clients pour le protocole propre. */
 
 #endif

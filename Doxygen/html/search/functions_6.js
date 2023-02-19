@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['protocoldealer_107',['protocolDealer',['../protocol_8cpp.html#aa42f142506556f4f8f78922a88731bdf',1,'protocolDealer(std::string request, Manager &amp;media):&#160;protocol.cpp'],['../protocol_8h.html#aa42f142506556f4f8f78922a88731bdf',1,'protocolDealer(std::string request, Manager &amp;media):&#160;protocol.cpp']]]
+  ['isclosed_138',['isClosed',['../classSocket.html#af82b21921f44a5c210f8aaedc26ca1c3',1,'Socket::isClosed()'],['../classServerSocket.html#aa1c00353c8f50697c8a4a8882e520286',1,'ServerSocket::isClosed()']]]
 ];

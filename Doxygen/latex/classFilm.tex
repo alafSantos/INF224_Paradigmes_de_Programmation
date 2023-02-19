@@ -2,6 +2,15 @@
 \label{classFilm}\index{Film@{Film}}
 
 
+sous-\/classe \mbox{\hyperlink{classFilm}{Film}} dérivant de la classe \mbox{\hyperlink{classVideo}{Video}}. La principale différence est que les Films comporteront des chapitres permettant d\textquotesingle{}accéder rapidement à une partie du film  
+
+
+
+
+{\ttfamily \#include $<$Film.\+h$>$}
+
+
+
 Graphe d\textquotesingle{}héritage de Film\+:
 % FIG 0
 
@@ -11,33 +20,100 @@ Graphe de collaboration de Film\+:
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classFilm_af09331eb86494da84b9272c23f2f04ec}\label{classFilm_af09331eb86494da84b9272c23f2f04ec}} 
-{\bfseries Film} (const int $\ast$all\+Chapters, int all\+Chapters\+Size)
+\mbox{\hyperlink{classFilm_af09331eb86494da84b9272c23f2f04ec}{Film}} (const int $\ast$all\+Chapters, int all\+Chapters\+Size)
 \item 
-\mbox{\Hypertarget{classFilm_a0a797c555423373377d59fb8c379d717}\label{classFilm_a0a797c555423373377d59fb8c379d717}} 
-const int {\bfseries get\+All\+Chapters\+Size} () const
+\mbox{\hyperlink{classFilm_a8dab653f8a6c0635ca5ddbe0bbdd9a25}{$\sim$\+Film}} ()
 \item 
-\mbox{\Hypertarget{classFilm_a7bdcc9cb81df92862f98b3b6b286ab4a}\label{classFilm_a7bdcc9cb81df92862f98b3b6b286ab4a}} 
-const int $\ast$ {\bfseries get\+Chapters} () const
+const int \mbox{\hyperlink{classFilm_a0a797c555423373377d59fb8c379d717}{get\+All\+Chapters\+Size}} () const
 \item 
-\mbox{\Hypertarget{classFilm_a85641c799f8a5be85886513f949837e6}\label{classFilm_a85641c799f8a5be85886513f949837e6}} 
-const int {\bfseries get\+Chapter\+Size} (int i) const
+const int $\ast$ \mbox{\hyperlink{classFilm_a7bdcc9cb81df92862f98b3b6b286ab4a}{get\+Chapters}} () const
 \item 
-\mbox{\Hypertarget{classFilm_a0708cb1a2c9b22dc3fcb997de2c51519}\label{classFilm_a0708cb1a2c9b22dc3fcb997de2c51519}} 
-void {\bfseries set\+Chapters} (const int $\ast$chapters, int chapter\+Size)
+const int \mbox{\hyperlink{classFilm_a85641c799f8a5be85886513f949837e6}{get\+Chapter\+Size}} (int i) const
 \item 
-\mbox{\Hypertarget{classFilm_a22d056a4c3a0921aabba813d15f03990}\label{classFilm_a22d056a4c3a0921aabba813d15f03990}} 
-void {\bfseries show\+Variables} (std\+::ostream \&dst) const override
+void \mbox{\hyperlink{classFilm_a0708cb1a2c9b22dc3fcb997de2c51519}{set\+Chapters}} (const int $\ast$chapters, int chapter\+Size)
 \item 
-\mbox{\Hypertarget{classFilm_a734c1eeb42f491ded4d5f937a6091ac2}\label{classFilm_a734c1eeb42f491ded4d5f937a6091ac2}} 
-std\+::string {\bfseries show\+Variables} () const override
+void \mbox{\hyperlink{classFilm_a22d056a4c3a0921aabba813d15f03990}{show\+Variables}} (std\+::ostream \&dst) const override
 \item 
-\mbox{\Hypertarget{classFilm_a68f781851622ec80878c9a6e7ccb925e}\label{classFilm_a68f781851622ec80878c9a6e7ccb925e}} 
-{\bfseries Film} (const \mbox{\hyperlink{classFilm}{Film}} \&from)
+std\+::string \mbox{\hyperlink{classFilm_a734c1eeb42f491ded4d5f937a6091ac2}{show\+Variables}} () const override
+\item 
+\mbox{\hyperlink{classFilm_a68f781851622ec80878c9a6e7ccb925e}{Film}} (const \mbox{\hyperlink{classFilm}{Film}} \&from)
 \item 
 \mbox{\Hypertarget{classFilm_ac0b358393c6e1d293141c5c96cd9a3be}\label{classFilm_ac0b358393c6e1d293141c5c96cd9a3be}} 
 \mbox{\hyperlink{classFilm}{Film}} \& {\bfseries operator=} (const \mbox{\hyperlink{classFilm}{Film}} \&from)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+sous-\/classe \mbox{\hyperlink{classFilm}{Film}} dérivant de la classe \mbox{\hyperlink{classVideo}{Video}}. La principale différence est que les Films comporteront des chapitres permettant d\textquotesingle{}accéder rapidement à une partie du film 
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classFilm_af09331eb86494da84b9272c23f2f04ec}\label{classFilm_af09331eb86494da84b9272c23f2f04ec}} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}\item[{const int $\ast$}]{all\+Chapters,  }\item[{int}]{all\+Chapters\+Size }\end{DoxyParamCaption})}
+
+Constructeur simple, sans paramètres \mbox{\Hypertarget{classFilm_a8dab653f8a6c0635ca5ddbe0bbdd9a25}\label{classFilm_a8dab653f8a6c0635ca5ddbe0bbdd9a25}} 
+\index{Film@{Film}!````~Film@{$\sim$Film}}
+\index{````~Film@{$\sim$Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{$\sim$Film()}{~Film()}}
+{\footnotesize\ttfamily Film\+::$\sim$\+Film (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructeur qui fait l\textquotesingle{}Initialisation du tableau all\+Chapters \mbox{\Hypertarget{classFilm_a68f781851622ec80878c9a6e7ccb925e}\label{classFilm_a68f781851622ec80878c9a6e7ccb925e}} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFilm}{Film}} \&}]{from }\end{DoxyParamCaption})}
+
+Envoyer les attributs au client T\+CP sous forme de chaîne de caractères On peut redéfinir les opérateurs de copie pour faire de la copie profonde 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classFilm_a0a797c555423373377d59fb8c379d717}\label{classFilm_a0a797c555423373377d59fb8c379d717}} 
+\index{Film@{Film}!getAllChaptersSize@{getAllChaptersSize}}
+\index{getAllChaptersSize@{getAllChaptersSize}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getAllChaptersSize()}{getAllChaptersSize()}}
+{\footnotesize\ttfamily const int Film\+::get\+All\+Chapters\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Destructeur qui libère la mémoire du pointé $\ast$all\+Chapters \mbox{\Hypertarget{classFilm_a7bdcc9cb81df92862f98b3b6b286ab4a}\label{classFilm_a7bdcc9cb81df92862f98b3b6b286ab4a}} 
+\index{Film@{Film}!getChapters@{getChapters}}
+\index{getChapters@{getChapters}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getChapters()}{getChapters()}}
+{\footnotesize\ttfamily const int $\ast$ Film\+::get\+Chapters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Tous les éléments \mbox{\Hypertarget{classFilm_a85641c799f8a5be85886513f949837e6}\label{classFilm_a85641c799f8a5be85886513f949837e6}} 
+\index{Film@{Film}!getChapterSize@{getChapterSize}}
+\index{getChapterSize@{getChapterSize}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getChapterSize()}{getChapterSize()}}
+{\footnotesize\ttfamily const int Film\+::get\+Chapter\+Size (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+Obtenir le pointeur all\+Chapters \mbox{\Hypertarget{classFilm_a0708cb1a2c9b22dc3fcb997de2c51519}\label{classFilm_a0708cb1a2c9b22dc3fcb997de2c51519}} 
+\index{Film@{Film}!setChapters@{setChapters}}
+\index{setChapters@{setChapters}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{setChapters()}{setChapters()}}
+{\footnotesize\ttfamily void Film\+::set\+Chapters (\begin{DoxyParamCaption}\item[{const int $\ast$}]{chapters,  }\item[{int}]{chapter\+Size }\end{DoxyParamCaption})}
+
+Un seul chapitre (position) \mbox{\Hypertarget{classFilm_a734c1eeb42f491ded4d5f937a6091ac2}\label{classFilm_a734c1eeb42f491ded4d5f937a6091ac2}} 
+\index{Film@{Film}!showVariables@{showVariables}}
+\index{showVariables@{showVariables}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{showVariables()}{showVariables()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Film\+::show\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Afficher les attributs via le terminal 
+
+Réimplémentée à partir de \mbox{\hyperlink{classVideo_accb22f6d616d3fd4ba5d529b8392afeb}{Video}}.
+
+\mbox{\Hypertarget{classFilm_a22d056a4c3a0921aabba813d15f03990}\label{classFilm_a22d056a4c3a0921aabba813d15f03990}} 
+\index{Film@{Film}!showVariables@{showVariables}}
+\index{showVariables@{showVariables}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{showVariables()}{showVariables()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Film\+::show\+Variables (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{dst }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Définir le tableau de chapitres 
+
+Réimplémentée à partir de \mbox{\hyperlink{classVideo_af317b047705c8414effbe2839cafb9d4}{Video}}.
+
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}

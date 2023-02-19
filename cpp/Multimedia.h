@@ -1,12 +1,18 @@
 /**
  * @file Multimedia.h
  * @author Alaf do Nascimento Santos
- * @brief INF224 Paradigmes de Programmation
- * @version 0.1
+ * @brief Fichier d'en-tête de la classe Multimedia
+ * @version 1.0.0
  * @date 2023-02-18
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
+ */
+
+/**
+ * @brief  Cette classe de base contient ce qui est commun à tous les objets multimédia.
+ * Ensuite elle est utilisé pour définir des sous-classes spécifiques à chaque type de donnée (par exemple une classe photo, vidéo, film, etc.)
+ *
  */
 
 #ifndef MULTIMEDIA_H

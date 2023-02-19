@@ -1,8 +1,8 @@
 /**
  * @file version
  * @author Alaf do Nascimento Santos
- * @brief INF224 Paradigmes de Programmation
- * @version 0.1
+ * @brief Fichier d'en-tête contenant des macros pour la gestion des versions du projet
+ * @version 1.0.0
  * @date 2023-02-18
  * 
  * @copyright Copyright (c) 2023

@@ -2,7 +2,7 @@
 \label{Manager_8h}\index{/home/alaf/Desktop/P2/INF224/INF224\_Paradigmes\_de\_Programmation/cpp/Manager.h@{/home/alaf/Desktop/P2/INF224/INF224\_Paradigmes\_de\_Programmation/cpp/Manager.h}}
 
 
-I\+N\+F224 Paradigmes de Programmation.  
+Fichier d\textquotesingle{}en-\/tête de la classe \mbox{\hyperlink{classManager}{Manager}}.  
 
 
 {\ttfamily \#include $<$memory$>$}\newline
@@ -26,7 +26,7 @@ class \mbox{\hyperlink{classManager}{Manager}}
 \begin{DoxyCompactItemize}
 \item 
 using \mbox{\hyperlink{Manager_8h_a05d41e4e110e20f6ae397be147ab1980}{Multimedia\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimedia}{Multimedia}} $>$
-\item 
+\begin{DoxyCompactList}\small\item\em Cette classe qui sert à fabriquer et manipuler tous les objets de manière cohérente. Elle contient deux variables d\textquotesingle{}instance \+: une table de tous les objets multimédia et une table de tous les groupes. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{Manager_8h_af7b580c4f07b0bcbed28edff0cd65659}\label{Manager_8h_af7b580c4f07b0bcbed28edff0cd65659}} 
 using {\bfseries Photo\+Ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPhoto}{Photo}} $>$
 \item 
@@ -40,7 +40,7 @@ using {\bfseries Film\+Ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classFi
 using {\bfseries Group\+Ptr} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classGroup}{Group}} $>$
 \item 
 \mbox{\Hypertarget{Manager_8h_ac37cef772a9d938288c0a8205508ee9a}\label{Manager_8h_ac37cef772a9d938288c0a8205508ee9a}} 
-using {\bfseries Multimedia\+Map} = std\+::map$<$ std\+::string, \mbox{\hyperlink{Manager_8h_a05d41e4e110e20f6ae397be147ab1980}{Multimedia\+Ptr}} $>$
+using {\bfseries Multimedia\+Map} = std\+::map$<$ std\+::string, \mbox{\hyperlink{Group_8h_a2bbb5d053db7f814e422ace79a889ca1}{Multimedia\+Ptr}} $>$
 \item 
 \mbox{\Hypertarget{Manager_8h_afcd26e1e6da93581da164b0eca864354}\label{Manager_8h_afcd26e1e6da93581da164b0eca864354}} 
 using {\bfseries Group\+Map} = std\+::map$<$ std\+::string, Group\+Ptr $>$
@@ -48,13 +48,13 @@ using {\bfseries Group\+Map} = std\+::map$<$ std\+::string, Group\+Ptr $>$
 
 
 \doxysubsection{Description détaillée}
-I\+N\+F224 Paradigmes de Programmation. 
+Fichier d\textquotesingle{}en-\/tête de la classe \mbox{\hyperlink{classManager}{Manager}}. 
 
 \begin{DoxyAuthor}{Auteur}
 Alaf do Nascimento Santos 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-0.\+1 
+1.\+0.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 2023-\/02-\/18
@@ -69,6 +69,10 @@ Copyright (c) 2023
 \index{Manager.h@{Manager.h}!MultimediaPtr@{MultimediaPtr}}
 \index{MultimediaPtr@{MultimediaPtr}!Manager.h@{Manager.h}}
 \doxysubsubsection{\texorpdfstring{MultimediaPtr}{MultimediaPtr}}
-{\footnotesize\ttfamily using Multimedia\+Ptr =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classMultimedia}{Multimedia}}$>$}
+{\footnotesize\ttfamily using \mbox{\hyperlink{Group_8h_a2bbb5d053db7f814e422ace79a889ca1}{Multimedia\+Ptr}} =  std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classMultimedia}{Multimedia}}$>$}
+
+
+
+Cette classe qui sert à fabriquer et manipuler tous les objets de manière cohérente. Elle contient deux variables d\textquotesingle{}instance \+: une table de tous les objets multimédia et une table de tous les groupes. 
 
 création de nouveaux types 

@@ -2,6 +2,15 @@
 \label{classVideo}\index{Video@{Video}}
 
 
+Une sous-\/classe de la classe de base \mbox{\hyperlink{classMultimedia}{Multimedia}} correspondant à une vidéo. Une vidéo a une durée, c\textquotesingle{}est-\/à-\/dire une valeur numérique intégrale.  
+
+
+
+
+{\ttfamily \#include $<$Video.\+h$>$}
+
+
+
 Graphe d\textquotesingle{}héritage de Video\+:
 % FIG 0
 
@@ -11,24 +20,85 @@ Graphe de collaboration de Video\+:
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classVideo_a800a4017a351bbb49203ee1848f20d32}\label{classVideo_a800a4017a351bbb49203ee1848f20d32}} 
-{\bfseries Video} (std\+::string file\+Name, std\+::string path, unsigned int length)
+\mbox{\hyperlink{classVideo_a800a4017a351bbb49203ee1848f20d32}{Video}} (std\+::string file\+Name, std\+::string path, unsigned int length)
 \item 
-\mbox{\Hypertarget{classVideo_a83536b4fa081c9d332a043b24c94f958}\label{classVideo_a83536b4fa081c9d332a043b24c94f958}} 
-void {\bfseries set\+Length} (unsigned int length)
+void \mbox{\hyperlink{classVideo_a83536b4fa081c9d332a043b24c94f958}{set\+Length}} (unsigned int length)
 \item 
-\mbox{\Hypertarget{classVideo_a4c93ec6d11ad39e5d323eef633f4ef18}\label{classVideo_a4c93ec6d11ad39e5d323eef633f4ef18}} 
-unsigned int {\bfseries get\+Length} () const
+unsigned int \mbox{\hyperlink{classVideo_a4c93ec6d11ad39e5d323eef633f4ef18}{get\+Length}} () const
 \item 
-\mbox{\Hypertarget{classVideo_aa59df584d1c1cbef763a7eca12986d80}\label{classVideo_aa59df584d1c1cbef763a7eca12986d80}} 
-const void {\bfseries play} () override
+const void \mbox{\hyperlink{classVideo_aa59df584d1c1cbef763a7eca12986d80}{play}} () override
 \item 
-\mbox{\Hypertarget{classVideo_af317b047705c8414effbe2839cafb9d4}\label{classVideo_af317b047705c8414effbe2839cafb9d4}} 
-virtual void {\bfseries show\+Variables} (std\+::ostream \&dst) const override
+virtual void \mbox{\hyperlink{classVideo_af317b047705c8414effbe2839cafb9d4}{show\+Variables}} (std\+::ostream \&dst) const override
 \item 
-\mbox{\Hypertarget{classVideo_accb22f6d616d3fd4ba5d529b8392afeb}\label{classVideo_accb22f6d616d3fd4ba5d529b8392afeb}} 
-virtual std\+::string {\bfseries show\+Variables} () const override
+virtual std\+::string \mbox{\hyperlink{classVideo_accb22f6d616d3fd4ba5d529b8392afeb}{show\+Variables}} () const override
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Une sous-\/classe de la classe de base \mbox{\hyperlink{classMultimedia}{Multimedia}} correspondant à une vidéo. Une vidéo a une durée, c\textquotesingle{}est-\/à-\/dire une valeur numérique intégrale. 
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classVideo_a800a4017a351bbb49203ee1848f20d32}\label{classVideo_a800a4017a351bbb49203ee1848f20d32}} 
+\index{Video@{Video}!Video@{Video}}
+\index{Video@{Video}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{Video()}{Video()}}
+{\footnotesize\ttfamily Video\+::\+Video (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name,  }\item[{std\+::string}]{path,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})}
+
+Durée 
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classVideo_a4c93ec6d11ad39e5d323eef633f4ef18}\label{classVideo_a4c93ec6d11ad39e5d323eef633f4ef18}} 
+\index{Video@{Video}!getLength@{getLength}}
+\index{getLength@{getLength}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily unsigned int Video\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Modifieur de length \mbox{\Hypertarget{classVideo_aa59df584d1c1cbef763a7eca12986d80}\label{classVideo_aa59df584d1c1cbef763a7eca12986d80}} 
+\index{Video@{Video}!play@{play}}
+\index{play@{play}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily const void Video\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Accesseur de length 
+
+Implémente \mbox{\hyperlink{classMultimedia}{Multimedia}}.
+
+\mbox{\Hypertarget{classVideo_a83536b4fa081c9d332a043b24c94f958}\label{classVideo_a83536b4fa081c9d332a043b24c94f958}} 
+\index{Video@{Video}!setLength@{setLength}}
+\index{setLength@{setLength}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{setLength()}{setLength()}}
+{\footnotesize\ttfamily void Video\+::set\+Length (\begin{DoxyParamCaption}\item[{unsigned int}]{length }\end{DoxyParamCaption})}
+
+Destructeur virtual à cause de la classe fille \mbox{\hyperlink{Film_8h}{Film.\+h}} \mbox{\Hypertarget{classVideo_accb22f6d616d3fd4ba5d529b8392afeb}\label{classVideo_accb22f6d616d3fd4ba5d529b8392afeb}} 
+\index{Video@{Video}!showVariables@{showVariables}}
+\index{showVariables@{showVariables}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{showVariables()}{showVariables()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Video\+::show\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Affiche la valeur des variables de l\textquotesingle{}objet via terminal 
+
+Réimplémentée à partir de \mbox{\hyperlink{classMultimedia}{Multimedia}}.
+
+
+
+Réimplémentée dans \mbox{\hyperlink{classFilm_a734c1eeb42f491ded4d5f937a6091ac2}{Film}}.
+
+\mbox{\Hypertarget{classVideo_af317b047705c8414effbe2839cafb9d4}\label{classVideo_af317b047705c8414effbe2839cafb9d4}} 
+\index{Video@{Video}!showVariables@{showVariables}}
+\index{showVariables@{showVariables}!Video@{Video}}
+\doxysubsubsection{\texorpdfstring{showVariables()}{showVariables()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Video\+::show\+Variables (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{dst }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Joue la vidéo 
+
+Réimplémentée à partir de \mbox{\hyperlink{classMultimedia}{Multimedia}}.
+
+
+
+Réimplémentée dans \mbox{\hyperlink{classFilm_a22d056a4c3a0921aabba813d15f03990}{Film}}.
+
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}

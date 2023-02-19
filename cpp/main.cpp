@@ -1,18 +1,18 @@
 /**
  * @file main.cpp
  * @author Alaf do Nascimento Santos
- * @brief INF224 Paradigmes de Programmation
- * @version 0.1
+ * @brief Fichier principal du backend du projet
+ * @version 1.0.0
  * @date 2023-02-18
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
-#include "protocol.h"
-#include "tcpserver.h"
+#include "protocol.h" /**Bibliothèque du protocole défini pour la communication tcp avec le client*/
+#include "tcpserver.h" /**Classe de serveur TCP fournie par le professeur*/
 
-const int PORT = 3331; // port pour le serveur tcp
+const int PORT = 3331; /**Port pour le serveur tcp*/
 
 using namespace std;
 
@@ -70,11 +70,11 @@ int main(int argc, const char *argv[])
     myPhotos2.showGroup(cout);
     cout << "---------------\n";
 
-    #ifndef VERSION_ETAPES_9
-        delete myPhoto1;
-        delete myPhoto2;
-        delete myPhoto3;
-    #endif
+#ifndef VERSION_ETAPES_9
+    delete myPhoto1;
+    delete myPhoto2;
+    delete myPhoto3;
+#endif
 #endif
 
 #ifdef VERSION_ETAPES_10_11

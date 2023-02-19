@@ -72,39 +72,42 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="Film_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef FILM_H</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define FILM_H</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Video_8h.html">Video.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classFilm.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFilm.html">Film</a> : <span class="keyword">public</span> <a class="code" href="classVideo.html">Video</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> allChaptersSize = 0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> *allChapters = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef FILM_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define FILM_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Video_8h.html">Video.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classFilm.html">Film</a>() : <a class="code" href="classVideo.html">Video</a>(){};                                <span class="comment">// constructeur simple, sans paramètres</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classFilm.html">Film</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> *allChapters, <span class="keywordtype">int</span> allChaptersSize); <span class="comment">// Constructeur qui fait l&#39;Initialisation du tableau allChapters</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ~<a class="code" href="classFilm.html">Film</a>();                                           <span class="comment">// Destructeur qui libère la mémoire du pointé *allChapters</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> getAllChaptersSize() <span class="keyword">const</span>;                   <span class="comment">// tous les éléments</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> *getChapters() <span class="keyword">const</span>;                         <span class="comment">// obtenir le pointeur allChapters</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> getChapterSize(<span class="keywordtype">int</span> i) <span class="keyword">const</span>;                  <span class="comment">// un seul chapitre (position)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> setChapters(<span class="keyword">const</span> <span class="keywordtype">int</span> *chapters, <span class="keywordtype">int</span> chapterSize); <span class="comment">// définir le tableau de chapitres</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> showVariables(std::ostream &amp;dst) <span class="keyword">const override</span>;            <span class="comment">// Afficher les attributs via le terminal</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string showVariables() <span class="keyword">const override</span>;                      <span class="comment">// envoyer les attributs au client TCP sous forme de chaîne de caractères</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// On peut redéfinir les opérateurs de copie pour faire de la copie profonde</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classFilm.html">Film</a>(<span class="keyword">const</span> <a class="code" href="classFilm.html">Film</a> &amp;from);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classFilm.html">Film</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classFilm.html">Film</a> &amp;from);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classFilm.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFilm.html">Film</a> : <span class="keyword">public</span> <a class="code" href="classVideo.html">Video</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> allChaptersSize = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> *allChapters = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classFilm.html">Film</a>() : <a class="code" href="classVideo.html">Video</a>(){};                                </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classFilm.html">Film</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> *allChapters, <span class="keywordtype">int</span> allChaptersSize); </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classFilm.html#a8dab653f8a6c0635ca5ddbe0bbdd9a25">~Film</a>();                                           </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classFilm.html#a0a797c555423373377d59fb8c379d717">getAllChaptersSize</a>() <span class="keyword">const</span>;                   </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> *<a class="code" href="classFilm.html#a7bdcc9cb81df92862f98b3b6b286ab4a">getChapters</a>() <span class="keyword">const</span>;                         </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classFilm.html#a85641c799f8a5be85886513f949837e6">getChapterSize</a>(<span class="keywordtype">int</span> i) <span class="keyword">const</span>;                  </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classFilm.html#a0708cb1a2c9b22dc3fcb997de2c51519">setChapters</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> *chapters, <span class="keywordtype">int</span> chapterSize); </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classFilm.html#a734c1eeb42f491ded4d5f937a6091ac2">showVariables</a>(std::ostream &amp;dst) <span class="keyword">const override</span>;   </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string <a class="code" href="classFilm.html#a734c1eeb42f491ded4d5f937a6091ac2">showVariables</a>() <span class="keyword">const override</span>;             </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classFilm.html">Film</a>(<span class="keyword">const</span> <a class="code" href="classFilm.html">Film</a> &amp;from);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classFilm.html">Film</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classFilm.html">Film</a> &amp;from);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVideo_html"><div class="ttname"><a href="classVideo.html">Video</a></div><div class="ttdef"><b>Definition:</b> Video.h:17</div></div>
-<div class="ttc" id="aVideo_8h_html"><div class="ttname"><a href="Video_8h.html">Video.h</a></div><div class="ttdoc">INF224 Paradigmes de Programmation.</div></div>
-<div class="ttc" id="aclassFilm_html"><div class="ttname"><a href="classFilm.html">Film</a></div><div class="ttdef"><b>Definition:</b> Film.h:17</div></div>
+<div class="ttc" id="aclassVideo_html"><div class="ttname"><a href="classVideo.html">Video</a></div><div class="ttdoc">Une sous-classe de la classe de base Multimedia correspondant à une vidéo. Une vidéo a une durée,...</div><div class="ttdef"><b>Definition:</b> Video.h:23</div></div>
+<div class="ttc" id="aVideo_8h_html"><div class="ttname"><a href="Video_8h.html">Video.h</a></div><div class="ttdoc">Fichier d'en-tête de la classe Video.</div></div>
+<div class="ttc" id="aclassFilm_html"><div class="ttname"><a href="classFilm.html">Film</a></div><div class="ttdoc">sous-classe Film dérivant de la classe Video. La principale différence est que les Films comporteront...</div><div class="ttdef"><b>Definition:</b> Film.h:23</div></div>
+<div class="ttc" id="aclassFilm_html_a7bdcc9cb81df92862f98b3b6b286ab4a"><div class="ttname"><a href="classFilm.html#a7bdcc9cb81df92862f98b3b6b286ab4a">Film::getChapters</a></div><div class="ttdeci">const int * getChapters() const</div><div class="ttdef"><b>Definition:</b> Film.cpp:48</div></div>
+<div class="ttc" id="aclassFilm_html_a0708cb1a2c9b22dc3fcb997de2c51519"><div class="ttname"><a href="classFilm.html#a0708cb1a2c9b22dc3fcb997de2c51519">Film::setChapters</a></div><div class="ttdeci">void setChapters(const int *chapters, int chapterSize)</div><div class="ttdef"><b>Definition:</b> Film.cpp:25</div></div>
+<div class="ttc" id="aclassFilm_html_a85641c799f8a5be85886513f949837e6"><div class="ttname"><a href="classFilm.html#a85641c799f8a5be85886513f949837e6">Film::getChapterSize</a></div><div class="ttdeci">const int getChapterSize(int i) const</div><div class="ttdef"><b>Definition:</b> Film.cpp:53</div></div>
+<div class="ttc" id="aclassFilm_html_a734c1eeb42f491ded4d5f937a6091ac2"><div class="ttname"><a href="classFilm.html#a734c1eeb42f491ded4d5f937a6091ac2">Film::showVariables</a></div><div class="ttdeci">std::string showVariables() const override</div><div class="ttdef"><b>Definition:</b> Film.cpp:67</div></div>
+<div class="ttc" id="aclassFilm_html_a8dab653f8a6c0635ca5ddbe0bbdd9a25"><div class="ttname"><a href="classFilm.html#a8dab653f8a6c0635ca5ddbe0bbdd9a25">Film::~Film</a></div><div class="ttdeci">~Film()</div><div class="ttdef"><b>Definition:</b> Film.cpp:19</div></div>
+<div class="ttc" id="aclassFilm_html_a0a797c555423373377d59fb8c379d717"><div class="ttname"><a href="classFilm.html#a0a797c555423373377d59fb8c379d717">Film::getAllChaptersSize</a></div><div class="ttdeci">const int getAllChaptersSize() const</div><div class="ttdef"><b>Definition:</b> Film.cpp:43</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">

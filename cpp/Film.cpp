@@ -1,12 +1,12 @@
 /**
  * @file Film.cpp
  * @author Alaf do Nascimento Santos
- * @brief INF224 Paradigmes de Programmation
- * @version 0.1
+ * @brief Fichier d'implémentation de la classe Film
+ * @version 1.0.0
  * @date 2023-02-18
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #include "Film.h"
@@ -19,12 +19,12 @@ Film::Film(const int *chapters, int chapterSize) : Video()
 Film::~Film()
 {
     std::cout << "Bye, Film..." << std::endl;
-    delete [] this->allChapters; // parce qu'il s'agit d'un tableau dynamique
+    delete[] this->allChapters; // parce qu'il s'agit d'un tableau dynamique
 }
 
 void Film::setChapters(const int *chapters, int chapterSize)
 {
-    delete [] this->allChapters;
+    delete[] this->allChapters;
 
     this->allChaptersSize = 0;
     this->allChapters = nullptr;

@@ -1,12 +1,18 @@
 /**
  * @file Manager.h
  * @author Alaf do Nascimento Santos
- * @brief INF224 Paradigmes de Programmation
- * @version 0.1
+ * @brief Fichier d'en-tête de la classe Manager
+ * @version 1.0.0
  * @date 2023-02-18
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
+ */
+
+/**
+ * @brief Cette classe qui sert à fabriquer et manipuler tous les objets de manière cohérente.
+ * Elle contient deux variables d'instance : une table de tous les objets multimédia et une table de tous les groupes
+ *
  */
 
 #ifndef MANAGER_H
@@ -39,35 +45,35 @@ class Manager
 private:
     MultimediaMap multimediaTable;
     GroupMap groupTable;
-    const std::string codeEndLine = "ç;1"; // symbole de fin de ligne défini pour le protocole propre
+    const std::string codeEndLine = "ç;1"; /**symbole de fin de ligne défini pour le protocole propre*/
 
 public:
     Manager(){};
     ~Manager(){};
 
-    /* Créér */
+    /**Créér*/
     PhotoPtr addPhoto(std::string fileName, std::string path, int latitude, int longitude);
     VideoPtr addVideo(std::string fileName, std::string path, int length);
     FilmPtr addFilm(std::string fileName, const int *allChapters, int allChaptersSize);
     GroupPtr addGroupe(std::string name);
 
-    /* Rechercher */
+    /**Rechercher*/
     MultimediaPtr findMultimedia(std::string name);
 
-    /* Afficher */
+    /**Afficher*/
     std::string showMultimedia(std::string name);
     std::string showGroup(std::string name);
     std::string find(std::string name);
 
-    /* Jouer */
+    /**Jouer*/
     std::string playMultimedia(std::string name);
 
-    /* Supprimer */
+    /**Supprimer*/
     std::string removeMultimedia(std::string name);
     std::string removeGroup(std::string name);
     std::string remove(std::string name);
 
-    /* List Files */
+    /**List Files*/
     std::string listGroup();
     std::string listMultimedia();
 };

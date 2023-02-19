@@ -72,23 +72,24 @@ Alaf do Nascimento Santos</h1>
 <h2><a class="anchor" id="autotoc_md2"></a>
 &lt;strong&gt;C++ (Backend)&lt;/strong&gt;</h2>
 <h2><a class="anchor" id="autotoc_md3"></a>
-1e Etape: Démarrage</h2>
-<p>Dans cette première étape, il a été créer un répertoire pour les fichiers de travail. Dans ce dossier ont été placés les fichiers Makefile et <a class="el" href="main_8cpp.html" title="INF224 Paradigmes de Programmation.">main.cpp</a> fournis dans la spécification du projet. Le principal role du Makefile s'agit de la compilation et l'exécution du programme. Du coup, le programme peut être exécuté juste en tapant la commande <b>make run</b>.</p>
+1e étape. Démarrage</h2>
+<p>Dans cette première étape, il a été créer un répertoire pour les fichiers de travail. Dans ce dossier ont été placés les fichiers Makefile et <b><a class="el" href="main_8cpp.html" title="Fichier principal du backend du projet.">main.cpp</a></b> fournis dans la spécification du projet. Le principal role du Makefile s'agit de la compilation et l'exécution du programme. Du coup, le programme peut être exécuté juste en tapant la commande <b>make run</b>.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
-2e Etape: Classe de base</h2>
-<p>Por la deuxième étape, il a été ecrire la déclaration (fichier source <a class="el" href="Multimedia_8h.html" title="INF224 Paradigmes de Programmation.">Multimedia.h</a>) et l'implémentation (fichier source <a class="el" href="Multimedia_8cpp.html" title="INF224 Paradigmes de Programmation.">Multimedia.cpp</a>) de la classe de base de l'arbre d'héritage des classes d'objets multimédia. Cette classe de base contient ce qui est commun à tous les objets multimédia.</p>
+2e étape. Classe de base</h2>
+<p>Por la deuxième étape, il a été ecrire la déclaration (fichier source <b><a class="el" href="Multimedia_8h.html" title="Fichier d&#39;en-tête de la classe Multimedia.">Multimedia.h</a></b>) et l'implémentation (fichier source <b><a class="el" href="Multimedia_8cpp.html" title="Fichier d&#39;implémentation de la classe Multimedia.">Multimedia.cpp</a></b>) de la classe de base de l'arbre d'héritage des classes d'objets multimédia. Cette classe de base contient ce qui est commun à tous les objets multimédia.</p>
 <p>En bref, on a déclaré et implémenté deux constructeurs (un sans argument, un avec arguments), le destructeur, ainsi que les accesseurs ("getters") et modifieurs ("setters") pour pouvoir lire ou modifier les variables d'instance. En plus d'une méthode d'affichage permettant d'afficher la valeur des variables de l'objet.</p>
 <h2><a class="anchor" id="autotoc_md5"></a>
-3e Etape: Programme de test</h2>
+3e étape. Programme de test</h2>
 <p>La troisième étape est dediée à l'écriture d'un programme de test. Pour le faire, on a créé quelques instances de la classe de base (en utilisant new) dans main() et on a vérifié que la fonction d'affichage affiche correctement la valeur des attributs dans le Terminal.</p>
 <h2><a class="anchor" id="autotoc_md6"></a>
-4e Etape: Photos et videos</h2>
+4e étape. Photos et videos</h2>
 <p>Ensuite, dans la quatrième partie on a implementé deux sous-classes de la classe de base, l'une correspondant à des objets photo, l'autre à objets vidéo.</p>
-<p>Les principales fichiers pour cette étape sont :</p><ul>
-<li><a class="el" href="Video_8h.html" title="INF224 Paradigmes de Programmation.">Video.h</a></li>
-<li><a class="el" href="Video_8cpp.html" title="INF224 Paradigmes de Programmation.">Video.cpp</a></li>
-<li><a class="el" href="Photo_8h.html" title="INF224 Paradigmes de Programmation.">Photo.h</a></li>
-<li><a class="el" href="Photo_8cpp.html" title="INF224 Paradigmes de Programmation.">Photo.cpp</a></li>
+<p>Les principales fichiers pour cette étape sont :</p>
+<ul>
+<li><a class="el" href="Video_8h.html" title="Fichier d&#39;en-tête de la classe Video.">Video.h</a></li>
+<li><a class="el" href="Video_8cpp.html" title="Fichier d&#39;implémentation de la classe Video.">Video.cpp</a></li>
+<li><a class="el" href="Photo_8h.html" title="Fichier d&#39;en-tête de la classe Photo.">Photo.h</a></li>
+<li><a class="el" href="Photo_8cpp.html" title="Fichier d&#39;implémentation de la classe Photo.">Photo.cpp</a></li>
 </ul>
 <p>Mais aussi on a modifié le Makefile pour qu'on puisse compiler le programme.</p>
 <p>Il est demandé :</p>
@@ -99,8 +100,8 @@ Alaf do Nascimento Santos</h1>
 </li>
 </ul>
 <h2><a class="anchor" id="autotoc_md7"></a>
-5e Etape: Traitement uniforme (en utilisant le polymorphisme)</h2>
-<p>Le but de la cinquième étapa est de pouvoir traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type. On a fait ça dans le fichier <a class="el" href="main_8cpp.html" title="INF224 Paradigmes de Programmation.">main.cpp</a> et le morceau de code dédié à cette partie peut être trouvé dans la directive de pré-compilation **#ifdef VERSION_ETAPES_1_5**.</p>
+5e étape. Traitement uniforme (en utilisant le polymorphisme)</h2>
+<p>Le but de la cinquième étapa est de pouvoir traiter de manière uniforme une liste comprenant à la fois des photos et des vidéos sans avoir à se préoccuper de leur type. On a fait ça dans le fichier <b><a class="el" href="main_8cpp.html" title="Fichier principal du backend du projet.">main.cpp</a></b> et le morceau de code dédié à cette partie peut être trouvé dans la directive de pré-compilation **#ifdef VERSION_ETAPES_1_5**.</p>
 <ul>
 <li>Quelle est la propriété caractéristique de l'orienté objet qui permet de faire cela ?<ul>
 <li>Ici le polymorphisme nous a permis de traiter des classes différentes de manière uniforme même sans connaître leur implémentation à la base.</li>
@@ -117,10 +118,11 @@ Alaf do Nascimento Santos</h1>
 </ul>
 <h2><a class="anchor" id="autotoc_md8"></a>
 6e étape. Films et tableaux</h2>
-<p>Ensuite, la sixième étape est dediée à la definition d'une sous-classe <a class="el" href="classFilm.html">Film</a> dérivant de la classe <a class="el" href="classVideo.html">Video</a>. La principale différence est que les Films comportent des chapitres permettant d'accéder rapidement à une partie du film. Pour ce faire on a utilisé un tableau d'entiers contenant la durée de chaque chapitre.</p>
-<p>Les principales fichiers pour cette étape sont :</p><ul>
-<li><a class="el" href="Film_8h.html" title="INF224 Paradigmes de Programmation.">Film.h</a></li>
-<li><a class="el" href="Film_8cpp.html" title="INF224 Paradigmes de Programmation.">Film.cpp</a></li>
+<p>Ensuite, la sixième étape est dediée à la definition d'une sous-classe <a class="el" href="classFilm.html" title="sous-classe Film dérivant de la classe Video. La principale différence est que les Films comporteront...">Film</a> dérivant de la classe <a class="el" href="classVideo.html" title="Une sous-classe de la classe de base Multimedia correspondant à une vidéo. Une vidéo a une durée,...">Video</a>. La principale différence est que les Films comportent des chapitres permettant d'accéder rapidement à une partie du film. Pour ce faire on a utilisé un tableau d'entiers contenant la durée de chaque chapitre.</p>
+<p>Les principales fichiers pour cette étape sont :</p>
+<ul>
+<li><a class="el" href="Film_8h.html" title="Fichier d&#39;en-tête de la classe Film.">Film.h</a></li>
+<li><a class="el" href="Film_8cpp.html" title="Fichier d&#39;implémentation de la classe Film.">Film.cpp</a></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md9"></a>
 7e étape. Destruction et copie des objets</h2>
@@ -128,11 +130,11 @@ Alaf do Nascimento Santos</h1>
 <p>Il est demandé :</p>
 <ul>
 <li>Parmi les classes précédemment écrites quelles sont celles qu'il faut modifier afin qu'il n'y ait pas de fuite mémoire quand on détruit les objets ?<ul>
-<li>Il a été necessaire de changer la classe <a class="el" href="classFilm.html">Film</a> pour qu'on puisse bien utiliser la memoire alloué pour le tableau d'entiers contenant la durée de chaque chapitre. Pour cela, en utilisant <b>new</b>, pour allouer la memoire, dans la fonction <b>setChapters</b>, le tableau donné en argument a été initialisé dans le tableau dynamique <b>allChapters</b>. Pour désallouer, il existe un <b>delete []</b> dans le destructeur de la classe et aussi au début de la fonction <b>setChapters</b>, parce que sans delete l'objet existe jusqu’à la fin du programme.</li>
+<li>Il a été necessaire de changer la classe <a class="el" href="classFilm.html" title="sous-classe Film dérivant de la classe Video. La principale différence est que les Films comporteront...">Film</a> pour qu'on puisse bien utiliser la memoire alloué pour le tableau d'entiers contenant la durée de chaque chapitre. Pour cela, en utilisant <b>new</b>, pour allouer la memoire, dans la fonction <b>setChapters</b>, le tableau donné en argument a été initialisé dans le tableau dynamique <b>allChapters</b>. Pour désallouer, il existe un <b>delete []</b> dans le destructeur de la classe et aussi au début de la fonction <b>setChapters</b>, parce que sans delete l'objet existe jusqu’à la fin du programme.</li>
 </ul>
 </li>
 <li>La copie d'objet peut également poser problème quand ils ont des variables d'instance qui sont des pointeurs. Quel est le problème et quelles sont les solutions ?<ul>
-<li>Il s'agit d'un problème qui se pose quand on fait une copie superficielle (shallow). Alors, les pointeurs pointent sur le même adresse et de plus l'objet peux être détruit plusieurs fois. Une bonne solution pour ce type de problème est la redéfinition des opérateurs de copie pour faire de la copie profonde (deep). Telle solution a été implémentée au sein de la classe <a class="el" href="classFilm.html">Film</a>. Il serait également possible de les interdire.</li>
+<li>Il s'agit d'un problème qui se pose quand on fait une copie superficielle (shallow). Alors, les pointeurs pointent sur le même adresse et de plus l'objet peux être détruit plusieurs fois. Une bonne solution pour ce type de problème est la redéfinition des opérateurs de copie pour faire de la copie profonde (deep). Telle solution a été implémentée au sein de la classe <a class="el" href="classFilm.html" title="sous-classe Film dérivant de la classe Video. La principale différence est que les Films comporteront...">Film</a>. Il serait également possible de les interdire.</li>
 </ul>
 </li>
 </ul>
@@ -140,9 +142,10 @@ Alaf do Nascimento Santos</h1>
 8e étape. Créer des groupes</h2>
 <p>On a créé une nouvelle classe servant à contenir un groupe d'objets dérivant de la classe de base. Un groupe peut contenir un ensemble d'objets similaires (e.g. un groupe pour toutes les photos et un autre pour toutes les vidéos) ou pas (e.g. un groupe pour les photos et vidéos de vacances).</p>
 <p>La classe groupe hérite d'une liste d'objets de la classe parente. On a défini les méthodes suivantes: un constructeur, un accesseur qui renvoie le nom du groupe et une méthode d'affichage qui affiche les attributs de tous les objets de la liste.</p>
-<p>Les principales fichiers pour cette étape sont :</p><ul>
-<li><a class="el" href="Group_8h_source.html">Group.h</a></li>
-<li><a class="el" href="Group_8cpp.html" title="INF224 Paradigmes de Programmation.">Group.cpp</a></li>
+<p>Les principales fichiers pour cette étape sont :</p>
+<ul>
+<li><a class="el" href="Group_8h.html" title="Fichier d&#39;en-tête de la classe Group.">Group.h</a></li>
+<li><a class="el" href="Group_8cpp.html" title="Fichier d&#39;implémentation de la classe Group.">Group.cpp</a></li>
 </ul>
 <p>Il est demandé :</p>
 <ul>
@@ -151,13 +154,14 @@ Alaf do Nascimento Santos</h1>
 <p>On est obligé de faire la liste avec de pointeurs d'objets car on ne veut détruit que les pointeurs lors de l'appel du destructeur. Il est nécessaire de conserver les pointés, ou les objets, parce qu'ils peuvent appartenir à des différents groupes. Dans le cas du Java, il existe la ramasse-miettes, ainsi les objets ne sont détruits qu'au cas où il n'y aurait plus de références à eux.</p>
 <h2><a class="anchor" id="autotoc_md11"></a>
 9e étape. Gestion automatique de la mémoire</h2>
-<p>Dans la classe <a class="el" href="classGroup.html">Group</a> on a fait la définition <b>typedef std::shared_ptr&lt;Multimedia&gt; MultimediaPtr</b> et maintenant l'Objet <a class="el" href="classGroup.html">Group</a> hérite d'une liste d'objets <b>MultimediaPtr</b>. Pour qu'on puisse avoir le bon comportement dans le fichier <a class="el" href="main_8cpp.html" title="INF224 Paradigmes de Programmation.">main.cpp</a>, on a changé les instanciations des objets <a class="el" href="classPhoto.html">Photo</a> pour qu'ils soient smart pointers. Et pour compiler le programme avec les modifications qu'on a fait ici, il faut déclarer le **#define VERSION_ETAPES_9** dans le fichier <a class="el" href="Group_8h_source.html">Group.h</a>, si non il s'agira de le même programme de la question précédente (8e étape).</p>
+<p>Dans la classe <a class="el" href="classGroup.html">Group</a> on a fait la définition <b>typedef std::shared_ptr&lt;Multimedia&gt; MultimediaPtr</b> et maintenant l'Objet <a class="el" href="classGroup.html">Group</a> hérite d'une liste d'objets <b>MultimediaPtr</b>. Pour qu'on puisse avoir le bon comportement dans le fichier <b><a class="el" href="main_8cpp.html" title="Fichier principal du backend du projet.">main.cpp</a></b>, on a changé les instanciations des objets <a class="el" href="classPhoto.html" title="Une sous-classe de la classe de base Multimedia correspondant à une photo. Une photo peut être caract...">Photo</a> pour qu'ils soient smart pointers. Et pour compiler le programme avec les modifications qu'on a fait ici, il faut déclarer le **#define VERSION_ETAPES_9** dans le fichier <b><a class="el" href="Group_8h.html" title="Fichier d&#39;en-tête de la classe Group.">Group.h</a></b>, si non il s'agira de le même programme de la question précédente (8e étape).</p>
 <h2><a class="anchor" id="autotoc_md12"></a>
 10e étape. Gestion cohérente des données</h2>
-<p>On a créé la classe <b><a class="el" href="Manager_8h.html" title="INF224 Paradigmes de Programmation.">Manager.h</a></b> qui sert à fabriquer et manipuler tous les objets de manière cohérente.</p>
+<p>On a créé la classe <b><a class="el" href="Manager_8h.html" title="Fichier d&#39;en-tête de la classe Manager.">Manager.h</a></b> qui sert à fabriquer et manipuler tous les objets de manière cohérente.</p>
 <h2><a class="anchor" id="autotoc_md13"></a>
 11e étape. Client / serveur</h2>
-<p>Ici on a transformé le programme C++ en un serveur qui communiquera avec un client qui fera office de télécommande. On a défini un protocole de communication simple dans la bibliothèque <b><a class="el" href="protocol_8h.html" title="INF224 Paradigmes de Programmation.">protocol.h</a></b>.</p><ul>
+<p>Ici on a transformé le programme C++ en un serveur qui communiquera avec un client qui fera office de télécommande. On a défini un protocole de communication simple dans la bibliothèque <b><a class="el" href="protocol_8h.html" title="Fichier d&#39;en-tête de la bibliothèque protocol.">protocol.h</a></b>.</p>
+<ul>
 <li>LISTE DE COMMANDES<ul>
 <li>play - joue un fichier multimédia. Exemple : "play me.jpg".</li>
 <li>find - recherche un fichier ou un groupe multimédia. Exemple : "find me.jpg".</li>
@@ -171,17 +175,19 @@ Alaf do Nascimento Santos</h1>
 </ul>
 <h2><a class="anchor" id="autotoc_md14"></a>
 Java Swing (Frontend)</h2>
-<p>Dans la dérnière partie, le Java Swing, on a crée une interface graphique Java/Swing qui permet d'interagir avec le logiciel déjà créé lors du programme C++. Tout ce qui est communication est réalisé en utilisant du protocole qu'on a défini avant (<b><a class="el" href="protocol_8h.html" title="INF224 Paradigmes de Programmation.">protocol.h</a></b>).</p>
+<p>Dans la dérnière partie, le Java Swing, on a crée une interface graphique Java/Swing (<b><a class="el" href="Window_8java.html" title="INF224 Paradigmes de Programmation.">Window.java</a></b>) qui permet d'interagir avec le logiciel déjà créé lors du programme C++. Tout ce qui est communication est réalisé en utilisant du protocole qu'on a défini avant (<b><a class="el" href="protocol_8h.html" title="Fichier d&#39;en-tête de la bibliothèque protocol.">protocol.h</a></b>).</p>
 <h1><a class="anchor" id="autotoc_md15"></a>
 L'utilisation du logiciel</h1>
-<p>Dans le coin supérieur gauche, il y a un menu "Liste" qui donne des options pour afficher les groupes et les fichiers multimédias disponibles dans le programme, ceux-ci peuvent être modifiés via les méthodes "supprimer" et "ajouter" disponibles dans l'interface. Les groupes et multimédias disponibles peuvent être utilisés via les fonctions "Play" et "Show", la première joue le fichier et la seconde affiche les données du fichier ou du groupe. Pour cela, dans la partie supérieure de la fenêtre, il y a un champ de texte dans lequel vous devez entrer le nom du fichier ou du groupe pour lequel vous souhaitez effectuer une action, puis cliquer sur le bouton d'action souhaité ("Play" ou "Show"). Ainda nessa toolBar superior, existe uma opção para remover uma mídia ou grupo, o processo aqui é o mesmo, basta por o nome do alvo no campo de texto e então clicar sobre o botão "Remove". Le dernier bouton de cette barre d'outils est le bouton "Quitter", qui ferme l'application.</p>
+<p>Dans le coin supérieur gauche, il y a un menu "List" qui donne des options pour afficher les groupes et les fichiers multimédias disponibles dans le programme, ceux-ci peuvent être modifiés via les méthodes "supprimer" et "ajouter" disponibles dans l'interface. Les groupes et multimédias disponibles peuvent être utilisés via les fonctions "Play" et "Show", la première joue le fichier et la seconde affiche les données du fichier ou du groupe. Pour cela, dans la partie supérieure de la fenêtre, il y a un champ de texte dans lequel vous devez entrer le nom du fichier ou du groupe pour lequel vous souhaitez effectuer une action, puis cliquer sur le bouton d'action souhaité ("Play" ou "Show"). Toujours dans cette barre d'outils supérieure, il y a une option pour supprimer un média ou un groupe, le processus ici est le même, il suffit de mettre le nom de la cible dans le champ de texte, puis de cliquer sur le bouton "Remove". Le dernier bouton de cette barre d'outils est le bouton "Exit", qui ferme l'application.</p>
+<p><img src="./swing/screenshots/01_home_screen.png" alt="plot" class="inline"/></p>
 <p>Au centre de la fenêtre, nous avons le champ de texte de sortie, où les informations qui doivent être vues par l'utilisateur sont affichées. Ainsi qu'un bouton "Clear" pour effacer tous les champs de texte de la fenêtre.</p>
 <p>Dans la partie inférieure de la fenêtre, il y a 4 champs de saisie de texte qui doivent être utilisés pour ajouter de nouveaux médias à la liste. Pour ajouter une vidéo, mettez le nom du fichier dans le premier champ, le chemin d'accès dans le second, sa durée dans le troisième et le quatrième champ ne doit pas être utilisé (sinon le logiciel considérera ce fichier comme une Photographie). Pour ajouter une photo, vous devez mettre le nom du fichier dans le premier champ de texte, le chemin d'accès au fichier dans le deuxième champ, votre latitude dans le troisième champ et la longitude dans le quatrième champ. Dans les deux cas, seulement après avoir rempli les champs de texte appropriés, l'utilisateur doit cliquer sur le bouton "Add Media".</p>
+<p><img src="./swing/screenshots/08_adding_telecom.png" alt="plot" class="inline"/></p>
 <h2><a class="anchor" id="autotoc_md16"></a>
 Installation des dépendances</h2>
 <ul>
-<li>Java Development Kit: <em><b>sudo apt-get install openjdk-8-jdk</b></em></li>
-<li>Compile and run the program (always first the server side and finally the client side): <em><b>make run</b></em> </li>
+<li>Java Development Kit: **_sudo apt-get install openjdk-8-jdk_**</li>
+<li>Compiler et exécuter le programme (toujours d'abord le côté serveur et enfin le côté client): **_make run_** </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

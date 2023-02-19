@@ -71,44 +71,41 @@ $(function() {
 <div class="title">Group.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Développé par Alaf do Nascimento Santos</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * INF224 Paradigmes de Programmation</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * 2023</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef GROUP_H</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define GROUP_H</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Multimedia_8h.html">Multimedia.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;version.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef VERSION_ETAPES_9</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">typedef</span> std::shared_ptr&lt;Multimedia&gt; <a class="code" href="Manager_8h.html#a05d41e4e110e20f6ae397be147ab1980">MultimediaPtr</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classGroup.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGroup.html">Group</a> : <span class="keyword">public</span> std::list&lt;MultimediaPtr&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef VERSION_ETAPES_9</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;              class <a class="code" href="classGroup.html">Group</a> : <span class="keyword">public</span> std::list&lt;Multimedia *&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::string name;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classGroup.html">Group</a>(std::string name);                 <span class="comment">// constructeur</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::string getName() <span class="keyword">const</span>;             <span class="comment">// accesseur</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::string showGroup() <span class="keyword">const</span>;           <span class="comment">// méthode d&#39;affichage pour le client TCP</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> showGroup(std::ostream &amp;dst) <span class="keyword">const</span>; <span class="comment">// méthode d&#39;affichage pour le terminal</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="Group_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef GROUP_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define GROUP_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Multimedia_8h.html">Multimedia.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;version.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef VERSION_ETAPES_9</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="Group_8h.html#a2bbb5d053db7f814e422ace79a889ca1">   27</a></span>&#160;<span class="keyword">typedef</span> std::shared_ptr&lt;Multimedia&gt; <a class="code" href="Group_8h.html#a2bbb5d053db7f814e422ace79a889ca1">MultimediaPtr</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classGroup.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGroup.html">Group</a> : <span class="keyword">public</span> std::list&lt;MultimediaPtr&gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef VERSION_ETAPES_9</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;              class <a class="code" href="classGroup.html">Group</a> : <span class="keyword">public</span> std::list&lt;Multimedia *&gt;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string name;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classGroup.html">Group</a>(std::string name);                 </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::string <a class="code" href="classGroup.html#a2441b4048116108fe8f65bdf71d02494">getName</a>() <span class="keyword">const</span>;             </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string <a class="code" href="classGroup.html#a751271b37a7d59ddfe17f3bfaacd9d30">showGroup</a>() <span class="keyword">const</span>;           </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classGroup.html#a751271b37a7d59ddfe17f3bfaacd9d30">showGroup</a>(std::ostream &amp;dst) <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aMultimedia_8h_html"><div class="ttname"><a href="Multimedia_8h.html">Multimedia.h</a></div><div class="ttdoc">INF224 Paradigmes de Programmation.</div></div>
-<div class="ttc" id="aManager_8h_html_a05d41e4e110e20f6ae397be147ab1980"><div class="ttname"><a href="Manager_8h.html#a05d41e4e110e20f6ae397be147ab1980">MultimediaPtr</a></div><div class="ttdeci">std::shared_ptr&lt; Multimedia &gt; MultimediaPtr</div><div class="ttdef"><b>Definition:</b> Manager.h:28</div></div>
-<div class="ttc" id="aclassGroup_html"><div class="ttname"><a href="classGroup.html">Group</a></div><div class="ttdef"><b>Definition:</b> Group.h:17</div></div>
+<div class="ttc" id="aGroup_8h_html_a2bbb5d053db7f814e422ace79a889ca1"><div class="ttname"><a href="Group_8h.html#a2bbb5d053db7f814e422ace79a889ca1">MultimediaPtr</a></div><div class="ttdeci">std::shared_ptr&lt; Multimedia &gt; MultimediaPtr</div><div class="ttdoc">Cette classe sert à contenir un groupe d'objets dérivant de la classe de base. Un groupe peut conteni...</div><div class="ttdef"><b>Definition:</b> Group.h:27</div></div>
+<div class="ttc" id="aMultimedia_8h_html"><div class="ttname"><a href="Multimedia_8h.html">Multimedia.h</a></div><div class="ttdoc">Fichier d'en-tête de la classe Multimedia.</div></div>
+<div class="ttc" id="aclassGroup_html"><div class="ttname"><a href="classGroup.html">Group</a></div><div class="ttdef"><b>Definition:</b> Group.h:28</div></div>
+<div class="ttc" id="aclassGroup_html_a2441b4048116108fe8f65bdf71d02494"><div class="ttname"><a href="classGroup.html#a2441b4048116108fe8f65bdf71d02494">Group::getName</a></div><div class="ttdeci">std::string getName() const</div><div class="ttdef"><b>Definition:</b> Group.cpp:16</div></div>
+<div class="ttc" id="aclassGroup_html_a751271b37a7d59ddfe17f3bfaacd9d30"><div class="ttname"><a href="classGroup.html#a751271b37a7d59ddfe17f3bfaacd9d30">Group::showGroup</a></div><div class="ttdeci">std::string showGroup() const</div><div class="ttdef"><b>Definition:</b> Group.cpp:30</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">

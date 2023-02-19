@@ -1,12 +1,12 @@
 /**
  * @file Video.cpp
  * @author Alaf do Nascimento Santos
- * @brief INF224 Paradigmes de Programmation
- * @version 0.1
+ * @brief Fichier d'implémentation de la classe Video
+ * @version 1.0.0
  * @date 2023-02-18
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #include "Video.h"

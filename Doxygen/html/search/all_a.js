@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['read_35',['read',['../classSocketBuffer.html#ae8a72a818dfb3a0986dc72a2e0ca5a87',1,'SocketBuffer']]],
-  ['readline_36',['readLine',['../classSocketBuffer.html#afa3a2f239eb56c2e4fd4fa465f7fb54d',1,'SocketBuffer']]],
-  ['receive_37',['receive',['../classSocket.html#a01b463d51433a10658854446bde71c40',1,'Socket']]],
-  ['receivefrom_38',['receiveFrom',['../classSocket.html#aa19f1c03af97458c042880c6be638151',1,'Socket']]],
-  ['run_39',['run',['../classTCPServer.html#a1409041961e91f1dbc4933483b4c3b23',1,'TCPServer']]]
+  ['photo_40',['Photo',['../classPhoto.html',1,'']]],
+  ['photo_2ecpp_41',['Photo.cpp',['../Photo_8cpp.html',1,'']]],
+  ['photo_2eh_42',['Photo.h',['../Photo_8h.html',1,'']]],
+  ['play_43',['play',['../classPhoto.html#a5a58935947ddddfd4240eec161ae312b',1,'Photo::play()'],['../classVideo.html#aa59df584d1c1cbef763a7eca12986d80',1,'Video::play()']]],
+  ['playmultimedia_44',['playMultimedia',['../classManager.html#ae27bfbcd311c34879c17e016ffb97274',1,'Manager']]],
+  ['protocol_2ecpp_45',['protocol.cpp',['../protocol_8cpp.html',1,'']]],
+  ['protocol_2eh_46',['protocol.h',['../protocol_8h.html',1,'']]],
+  ['protocoldealer_47',['protocolDealer',['../protocol_8cpp.html#aa42f142506556f4f8f78922a88731bdf',1,'protocolDealer(std::string request, Manager &amp;media):&#160;protocol.cpp'],['../protocol_8h.html#aa42f142506556f4f8f78922a88731bdf',1,'protocolDealer(std::string request, Manager &amp;media):&#160;protocol.cpp']]]
 ];

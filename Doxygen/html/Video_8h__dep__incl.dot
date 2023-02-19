@@ -3,22 +3,22 @@ digraph "/home/alaf/Desktop/P2/INF224/INF224_Paradigmes_de_Programmation/cpp/Vid
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Video.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="INF224 Paradigmes de Programmation."];
+  Node1 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Video.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Fichier d'en-tête de la classe Video."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Film.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Film_8h.html",tooltip="INF224 Paradigmes de Programmation."];
+  Node2 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Film.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Film_8h.html",tooltip="Fichier d'en-tête de la classe Film."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Film.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Film_8cpp.html",tooltip="INF224 Paradigmes de Programmation."];
+  Node3 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Film.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Film_8cpp.html",tooltip="Fichier d'implémentation de la classe Film."];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Manager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Manager_8h.html",tooltip="INF224 Paradigmes de Programmation."];
+  Node4 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Manager.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Manager_8h.html",tooltip="Fichier d'en-tête de la classe Manager."];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/protocol.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$protocol_8h.html",tooltip="INF224 Paradigmes de Programmation."];
+  Node5 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/protocol.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$protocol_8h.html",tooltip="Fichier d'en-tête de la bibliothèque protocol."];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip="INF224 Paradigmes de Programmation."];
+  Node6 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip="Fichier principal du backend du projet."];
   Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/protocol.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$protocol_8cpp.html",tooltip="INF224 Paradigmes de Programmation."];
+  Node7 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/protocol.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$protocol_8cpp.html",tooltip="Fichier d'implémentation de la bibliothèque protocol."];
   Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Manager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Manager_8cpp.html",tooltip="INF224 Paradigmes de Programmation."];
+  Node8 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Manager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Manager_8cpp.html",tooltip="Fichier d'implémentation de la classe Manager."];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Video.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Video_8cpp.html",tooltip="INF224 Paradigmes de Programmation."];
+  Node9 [label="/home/alaf/Desktop\l/P2/INF224/INF224_Paradigmes\l_de_Programmation/cpp/Video.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Video_8cpp.html",tooltip="Fichier d'implémentation de la classe Video."];
 }

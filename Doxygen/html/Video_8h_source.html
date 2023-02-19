@@ -72,34 +72,35 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="Video_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef VIDEO_H</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define VIDEO_H</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Multimedia_8h.html">Multimedia.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classVideo.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classVideo.html">Video</a> : <span class="keyword">public</span> <a class="code" href="classMultimedia.html">Multimedia</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length; <span class="comment">// Durée</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classVideo.html">Video</a>(std::string fileName, std::string path, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classVideo.html">Video</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classVideo.html">Video</a>(); <span class="comment">// Destructeur virtual à cause de la classe fille Film.h</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> setLength(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length); <span class="comment">// Modifieur de length</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getLength() <span class="keyword">const</span>;      <span class="comment">// Accesseur de length</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> play() <span class="keyword">override</span>;                                   <span class="comment">// Joue la vidéo</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> showVariables(std::ostream &amp;dst) <span class="keyword">const override</span>; <span class="comment">// Affiche la valeur des variables de l&#39;objet via terminal</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> std::string showVariables() <span class="keyword">const override</span>;           <span class="comment">// Affiche la valeur des variables de l&#39;objet via TCP (retourne une string)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef VIDEO_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define VIDEO_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Multimedia_8h.html">Multimedia.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classVideo.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classVideo.html">Video</a> : <span class="keyword">public</span> <a class="code" href="classMultimedia.html">Multimedia</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classVideo.html">Video</a>(std::string fileName, std::string path, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classVideo.html">Video</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classVideo.html">Video</a>(); </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVideo.html#a83536b4fa081c9d332a043b24c94f958">setLength</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length); </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classVideo.html#a4c93ec6d11ad39e5d323eef633f4ef18">getLength</a>() <span class="keyword">const</span>;      </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span> <a class="code" href="classVideo.html#aa59df584d1c1cbef763a7eca12986d80">play</a>() <span class="keyword">override</span>;                                   </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classVideo.html#accb22f6d616d3fd4ba5d529b8392afeb">showVariables</a>(std::ostream &amp;dst) <span class="keyword">const override</span>; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="classVideo.html#accb22f6d616d3fd4ba5d529b8392afeb">showVariables</a>() <span class="keyword">const override</span>;           </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVideo_html"><div class="ttname"><a href="classVideo.html">Video</a></div><div class="ttdef"><b>Definition:</b> Video.h:17</div></div>
-<div class="ttc" id="aclassMultimedia_html"><div class="ttname"><a href="classMultimedia.html">Multimedia</a></div><div class="ttdef"><b>Definition:</b> Multimedia.h:18</div></div>
-<div class="ttc" id="aMultimedia_8h_html"><div class="ttname"><a href="Multimedia_8h.html">Multimedia.h</a></div><div class="ttdoc">INF224 Paradigmes de Programmation.</div></div>
+<div class="ttc" id="aclassVideo_html"><div class="ttname"><a href="classVideo.html">Video</a></div><div class="ttdoc">Une sous-classe de la classe de base Multimedia correspondant à une vidéo. Une vidéo a une durée,...</div><div class="ttdef"><b>Definition:</b> Video.h:23</div></div>
+<div class="ttc" id="aclassMultimedia_html"><div class="ttname"><a href="classMultimedia.html">Multimedia</a></div><div class="ttdoc">Cette classe de base contient ce qui est commun à tous les objets multimédia. Ensuite elle est utilis...</div><div class="ttdef"><b>Definition:</b> Multimedia.h:24</div></div>
+<div class="ttc" id="aclassVideo_html_accb22f6d616d3fd4ba5d529b8392afeb"><div class="ttname"><a href="classVideo.html#accb22f6d616d3fd4ba5d529b8392afeb">Video::showVariables</a></div><div class="ttdeci">virtual std::string showVariables() const override</div><div class="ttdef"><b>Definition:</b> Video.cpp:49</div></div>
+<div class="ttc" id="aclassVideo_html_a4c93ec6d11ad39e5d323eef633f4ef18"><div class="ttname"><a href="classVideo.html#a4c93ec6d11ad39e5d323eef633f4ef18">Video::getLength</a></div><div class="ttdeci">unsigned int getLength() const</div><div class="ttdef"><b>Definition:</b> Video.cpp:32</div></div>
+<div class="ttc" id="aclassVideo_html_aa59df584d1c1cbef763a7eca12986d80"><div class="ttname"><a href="classVideo.html#aa59df584d1c1cbef763a7eca12986d80">Video::play</a></div><div class="ttdeci">const void play() override</div><div class="ttdef"><b>Definition:</b> Video.cpp:37</div></div>
+<div class="ttc" id="aMultimedia_8h_html"><div class="ttname"><a href="Multimedia_8h.html">Multimedia.h</a></div><div class="ttdoc">Fichier d'en-tête de la classe Multimedia.</div></div>
+<div class="ttc" id="aclassVideo_html_a83536b4fa081c9d332a043b24c94f958"><div class="ttname"><a href="classVideo.html#a83536b4fa081c9d332a043b24c94f958">Video::setLength</a></div><div class="ttdeci">void setLength(unsigned int length)</div><div class="ttdef"><b>Definition:</b> Video.cpp:27</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
